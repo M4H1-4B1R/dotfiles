@@ -1,0 +1,199 @@
+From ee036687ed9e1bb973b9e34694a57cf5dd67652d Mon Sep 17 00:00:00 2001
+From: Jonathan Hodgson <git@jonathanh.co.uk>
+Date: Mon, 6 May 2019 18:34:40 +0100
+Subject: [PATCH 1/4] Adds attach below option
+
+---
+ config.def.h |  1 +
+ dwm.c        | 31 ++++++++++++++++++++++++++++---
+ 2 files changed, 29 insertions(+), 3 deletions(-)
+
+diff --git a/config.def.h b/config.def.h
+index 1c0b587..51ad933 100644
+--- a/config.def.h
++++ b/config.def.h
+@@ -35,6 +35,7 @@ static const Rule rules[] = {
+ static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
+ static const int nmaster     = 1;    /* number of clients in master area */
+ static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
++static const int attachbelow = 1;    /* 1 means attach at the end */
+ 
+ static const Layout layouts[] = {
+ 	/* symbol     arrange function */
+diff --git a/dwm.c b/dwm.c
+index 4465af1..bd715a2 100644
+--- a/dwm.c
++++ b/dwm.c
+@@ -147,6 +147,7 @@ static int applysizehints(Client *c, int *x, int *y, int *w, int *h, int interac
+ static void arrange(Monitor *m);
+ static void arrangemon(Monitor *m);
+ static void attach(Client *c);
++static void attachBelow(Client *c);
+ static void attachstack(Client *c);
+ static void buttonpress(XEvent *e);
+ static void checkotherwm(void);
+@@ -405,6 +406,21 @@ attach(Client *c)
+ 	c->next = c->mon->clients;
+ 	c->mon->clients = c;
+ }
++void
++attachBelow(Client *c)
++{
++	//If there is nothing on the monitor or the selected client is floating, attach as normal
++	if(c->mon->sel == NULL || c->mon->sel == c || c->mon->sel->isfloating) {
++		attach(c);
++		return;
++	}
++
++	//Set the new client's next property to the same as the currently selected clients next
++	c->next = c->mon->sel->next;
++	//Set the currently selected clients next property to the new client
++	c->mon->sel->next = c;
++
++}
+ 
+ void
+ attachstack(Client *c)
+@@ -1062,7 +1078,10 @@ manage(Window w, XWindowAttributes *wa)
+ 		c->isfloating = c->oldstate = trans != None || c->isfixed;
+ 	if (c->isfloating)
+ 		XRaiseWindow(dpy, c->win);
+-	attach(c);
++	if( attachbelow )
++		attachBelow(c);
++	else
++		attach(c);
+ 	attachstack(c);
+ 	XChangeProperty(dpy, root, netatom[NetClientList], XA_WINDOW, 32, PropModeAppend,
+ 		(unsigned char *) &(c->win), 1);
+@@ -1417,7 +1436,10 @@ sendmon(Client *c, Monitor *m)
+ 	detachstack(c);
+ 	c->mon = m;
+ 	c->tags = m->tagset[m->seltags]; /* assign tags of target monitor */
+-	attach(c);
++	if( attachbelow )
++		attachBelow(c);
++	else
++		attach(c);
+ 	attachstack(c);
+ 	focus(NULL);
+ 	arrange(NULL);
+@@ -1897,7 +1919,10 @@ updategeom(void)
+ 					m->clients = c->next;
+ 					detachstack(c);
+ 					c->mon = mons;
+-					attach(c);
++					if( attachbelow )
++						attachBelow(c);
++					else
++						attach(c);
+ 					attachstack(c);
+ 				}
+ 				if (m == selmon)
+-- 
+2.21.0
+
+
+From e212c1d8cbdcc56c33c717131dfa7c1689e27e9f Mon Sep 17 00:00:00 2001
+From: Jonathan Hodgson <git@jonathanh.co.uk>
+Date: Mon, 6 May 2019 19:27:57 +0100
+Subject: [PATCH 2/4] fixes comment
+
+---
+ config.def.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/config.def.h b/config.def.h
+index 51ad933..cb8053a 100644
+--- a/config.def.h
++++ b/config.def.h
+@@ -35,7 +35,7 @@ static const Rule rules[] = {
+ static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
+ static const int nmaster     = 1;    /* number of clients in master area */
+ static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
+-static const int attachbelow = 1;    /* 1 means attach at the end */
++static const int attachbelow = 1;    /* 1 means attach after the currently active window */
+ 
+ static const Layout layouts[] = {
+ 	/* symbol     arrange function */
+-- 
+2.21.0
+
+
+From 7568ea3f8756e7e82b30c4943556ae646a445d1c Mon Sep 17 00:00:00 2001
+From: Jonathan Hodgson <git@jonathanh.co.uk>
+Date: Mon, 6 May 2019 20:00:30 +0100
+Subject: [PATCH 3/4] Makes changes to man page to reflect attach below patch
+
+---
+ dwm.1 | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/dwm.1 b/dwm.1
+index 13b3729..fb6e76c 100644
+--- a/dwm.1
++++ b/dwm.1
+@@ -29,6 +29,9 @@ color. The tags of the focused window are indicated with a filled square in the
+ top left corner.  The tags which are applied to one or more windows are
+ indicated with an empty square in the top left corner.
+ .P
++The attach below patch makes newly spawned windows attach after the currently
++selected window
++.P
+ dwm draws a small border around windows to indicate the focus state.
+ .SH OPTIONS
+ .TP
+-- 
+2.21.0
+
+
+From 362b95a5b9f91673f27f3e3343b5738df3c9d6e9 Mon Sep 17 00:00:00 2001
+From: Jonathan Hodgson <git@jonathanh.co.uk>
+Date: Sun, 2 Jun 2019 15:11:57 +0100
+Subject: [PATCH 4/4] Allows attach below to be toggled
+
+---
+ config.def.h | 2 +-
+ dwm.c        | 6 ++++++
+ 2 files changed, 7 insertions(+), 1 deletion(-)
+
+diff --git a/config.def.h b/config.def.h
+index cb8053a..b4d35aa 100644
+--- a/config.def.h
++++ b/config.def.h
+@@ -35,7 +35,7 @@ static const Rule rules[] = {
+ static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
+ static const int nmaster     = 1;    /* number of clients in master area */
+ static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
+-static const int attachbelow = 1;    /* 1 means attach after the currently active window */
++static int attachbelow = 1;    /* 1 means attach after the currently active window */
+ 
+ static const Layout layouts[] = {
+ 	/* symbol     arrange function */
+diff --git a/dwm.c b/dwm.c
+index bd715a2..5d88653 100644
+--- a/dwm.c
++++ b/dwm.c
+@@ -148,6 +148,7 @@ static void arrange(Monitor *m);
+ static void arrangemon(Monitor *m);
+ static void attach(Client *c);
+ static void attachBelow(Client *c);
++static void toggleAttachBelow();
+ static void attachstack(Client *c);
+ static void buttonpress(XEvent *e);
+ static void checkotherwm(void);
+@@ -422,6 +423,11 @@ attachBelow(Client *c)
+ 
+ }
+ 
++void toggleAttachBelow()
++{
++	attachbelow = !attachbelow;
++}
++
+ void
+ attachstack(Client *c)
+ {
+-- 
+2.21.0
+

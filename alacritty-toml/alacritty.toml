@@ -1,0 +1,14 @@
+import = ["~/.config/alacritty/tokyonight_night.toml"]
+
+[window]
+decorations = "None"
+opacity = 0.9
+padding = { x = 5, y = 2 }
+dimensions = {columns = 105, lines = 26}
+
+[font]
+normal = {family= "JetbrainsMono Nerd Font", style = "Regular"}
+bold = {family= "JetbrainsMono Nerd Font", style = "Bold"}
+italic = {family= "JetbrainsMono Nerd Font", style = "Italic"}
+bold_italic = {family= "JetbrainsMono Nerd Font", style = "Bold Italic"}
+size = 11.5
