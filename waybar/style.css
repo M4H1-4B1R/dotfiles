@@ -1,0 +1,22 @@
+* {
+  border: none;
+  border-radius: 0px;
+  font-family:
+    JetbrainsMono Nerd Font,
+    FontAwesome;
+  font-size: 14px;
+  min-height: 0;
+  background-color: rgba(17, 17, 27, 0.5);
+  color: #cdd6f4;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+#workspaces.focused {
+  background: #cdd6f4;
+  color: #11111b;
+}
+
+#workspaces.urgent {
+  background: #eb4d4b;
+}
