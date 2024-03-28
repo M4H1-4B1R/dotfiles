@@ -11,7 +11,7 @@
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:JetbrainsMono Nerd Font 9
+font pango:JetbrainsMono Nerd Font 10
 
 default_border none
 default_floating_border none
@@ -58,22 +58,22 @@ floating_modifier Mod4
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym Mod4+Return exec "alacritty"
+bindsym Mod4+Return exec --no-startup-id "alacritty"
 
 #start a browser
-bindsym Mod4+b exec "brave-browser"
+bindsym Mod4+b exec --no-startup-id "brave"
 
 # start a file manager
-bindsym Mod4+e exec "thunar"
+bindsym Mod4+e exec --no-startup-id "thunar"
 
 # lockscreen
-bindsym Mod1+Shift+x exec "betterlockscreen -l"
+bindsym Mod4+x exec --no-startup-id "archlinux-logout"
 
 # screenshot
-bindsym Mod4+s exec "flameshot gui"
+bindsym Mod4+s exec --no-startup-id "flameshot gui"
 
 # blue light filter
-bindsym Mod4+r exec "redshift -O 5000"
+bindsym Mod4+r exec --no-startup-id "redshift -O 5000" 
 
 # kill focused window
 bindsym Mod4+q kill
@@ -216,21 +216,42 @@ bindsym Mod1+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
+# bar {
+#         status_command SCRIPT_DIR=~/.config/i3blocks/scripts i3blocks
+#                 position top 
+#                 colors {
+#                         background #000000
+#                                 statusline #fcf1c7
+#                                 separator #928374
+#
+#                                 focused_workspace  #8ec07c #8ec07c #1d2021
+#                                 active_workspace   #83a598 #83a598 #1d2021
+#                                 inactive_workspace #121212 #121212 #928374
+#                                 urgent_workspace   #3c3836 #fb4934 #fbf1c7
+#                                 binding_mode       #3c3836 #fb4934 #fbf1c7
+#
+#                 }
+# }
 bar {
-        status_command i3status --config ~/.config/i3status/i3status.conf
-                position top 
-                colors {
-                        background #282828
-                                statusline #fcf1c7
-                                separator #928374
+  status_command /usr/bin/bumblebee-status \
+    -m cpu memory battery time \
+    -t iceberg-rainbow
 
-                                focused_workspace  #8ec07c #8ec07c #1d2021
-                                active_workspace   #83a598 #83a598 #1d2021
-                                inactive_workspace #3c3836 #3c3836 #928374
-                                urgent_workspace   #3c3836 #fb4934 #fbf1c7
-                                binding_mode       #3c3836 #fb4934 #fbf1c7
+    position top
+    font pango:FontAwesome, jetbrains mono nerd font 10
+    workspace_min_width 28
+    colors {
+      background #000000
+        statusline #fcf1c7
+        separator #928374
 
-                }
+        focused_workspace  #8ec07c #8ec07c #1d2021
+        active_workspace   #83a598 #83a598 #1d2021
+        inactive_workspace #121212 #121212 #928374
+        urgent_workspace   #3c3836 #fb4934 #fbf1c7
+        binding_mode       #3c3836 #fb4934 #fbf1c7
+
+    }
 }
 
 #######################################################################
@@ -241,5 +262,3 @@ bar {
 # in ~/.config/i3/config (or $XDG_CONFIG_HOME/i3/config if set) or
 # ~/.i3/config.
 #
-# Please remove the following exec line:
-#######################################################################

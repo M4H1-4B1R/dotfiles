@@ -1,0 +1,690 @@
+clear
+ls
+clear
+neofetch
+clear
+echo $shell
+clear
+which nu
+nvim .config/alacritty/alacritty.toml
+config nu
+$nu.config-path
+nvim .config/nushell/config.nu
+clear
+nvim .config/nushell/config.nu
+$nu.env-path
+nvim .config/nushell/env.nu
+ls
+clear
+sudo pacman -S toipe
+sudo pacman -S cargo
+clear
+cargo install toipe
+rustup default stable
+clear
+yay -S local-by-flywheel-bin
+neofetch
+clear
+nvim .bashrc
+alias random="nitrogen --random ~/walls/ --set-zoom-fill"
+alias random = "nitrogen --random ~/walls/ --set-zoom-fill"
+alias random = nitrogen --random ~/walls/ --set-zoom-fill
+random
+clear
+random
+clear
+yay -Ss ly
+pac ly
+sudo pacman -S ly
+clear
+sudo systemctl disable lightdm
+sudo systemctl enable ly
+nvim .config/i3/config
+random
+alias random = nitrogen --random ~/walls/ --set-zoom-fill
+random
+clear
+random
+nvim .config/i3/autostart.sh
+poweroff
+neofetch
+clear
+random
+alias random = nitrogen --random ~/walls/ --set-zoom-fill
+clear
+nvim .config/nushell/config.nu
+random
+clear
+nvim .config/i3/autostart.sh
+clear
+cd Downloads/aqua-233.14475.33/
+ls
+clear
+makepkg
+ls
+nvim Install-Linux-tar.txt
+cd bin/
+ls
+clear
+./aqua.sh
+cd
+clear
+killall aqua
+clear
+neofetch
+random
+clear
+neofetch
+clear
+neofetch
+clear
+random
+nvim .config/nushell/config.nu
+orphan
+orphan | pacman -Rns
+orphan | sudo pacman -Rns
+snv /etc/fstab
+xprop
+nvim .config/i3status/i3status.conf
+nvim .config/i3/config
+polybar
+nmcli wifi radio on
+nmcli radio wifi on
+pac polybar
+neofetch
+clear
+pacup
+clear
+pacrm chromium
+clear
+nvim .config/i3/config
+cd .config/
+mkdir i3blocks
+cd i3blocks/
+ls
+gh repo clone vivien/i3blocks-contrib
+ls
+clear
+mv i3blocks-contrib/ scripts
+cd scripts/
+ls
+cp config.example ../config
+cd ..
+clear
+ls
+nvim config
+zel
+cd
+clear
+random
+clear
+nvim .config/i3blocks/config
+nvim .config/i3/config
+nvim .config/i3blocks/config
+cd projects/awesomeNvim/
+ls
+cd awesomenvim/
+ls
+clear
+zel
+cd ..
+ls
+cd ..
+ls
+npm create vite@latest
+pacrm lightdm
+pacrm lightdm lightdm-gtk-greeter
+clear
+cd projects/
+ls
+rm react-app1/ react-codewithharry/ -rf
+ls
+mkdir learn-react
+cd learn-react/
+clear
+npm create vite@latest .
+random
+clear
+random
+pac hyprland waybar mako wofi xdg-desktop-portal-hyprland
+gh repo clone ChrisTitusTech/hyprland-titus
+pac swaybg swayidle kitty
+poweroff
+nvim .config/i3/autostart.sh
+zel
+cd hyprland-titus/
+ls
+cd dotconfig/
+ls
+cp -r hypr/ waybar/ ~/.config/
+cd 
+cd .config/hypr/
+clear
+zel
+neofetch
+clear
+neofetch
+clear
+zel
+zel a
+nvim .config/waybar/style.css
+nvim .config/alacritty/alacritty.toml
+clear
+nvim .config/alacritty/alacritty.toml
+clear
+nvim .config/alacritty/alacritty.toml
+nvim .config/nvim/
+alacritty migrate -h
+cd .config/alacritty/
+ls
+alacritty migrate -c catppuccin-mocha.yml
+nvim alacritty.toml
+clear
+nvim .config/hypr/hyprland.conf
+clear
+nvim .config/alacritty/alacritty.toml
+clear
+nvim .config/hypr/hyprland.conf
+neofetch
+clear
+nvim .config/hypr/hyprland.conf
+tlp stat
+tlp-stat
+sudo tlp-stat
+neofetch
+claear
+clear
+cd projects/
+ls
+cd learn-react/
+ls
+pacup
+pac ttf-font-awesome
+pac waybar-hyprland
+yay -Ss waybar
+pac waybar-git
+pac otf-font-awesome
+nvim .config/waybar/
+clear
+nvim .config/nvim
+nvim
+clear
+nvim .config/waybar/
+cd .config/waybar/
+ls
+cd ..
+mv waybar/ waybar.bak
+sudo find / -iname waybar
+cp -r /etc/xdg/waybar/ .
+cd waybar/
+clear
+ls
+pac nwg-look
+killall waybar
+waybar
+nvim style.css
+zel
+zel new wayb
+zel a
+nvim style.css
+zel a 
+zel a diligen-echidna
+zel a diligent-echidna
+nvim .config/waybar/style.css
+swaybg -h
+yay -Ss azote
+pac azote
+nvim .config/hypr/hyprland.conf
+nvim .config/waybar/style.css
+cd repos/dotfiles/
+ls
+cp -r ~/.config/hypr/ ~/.config/waybar .
+rm starship.toml
+cp -r ~/.config/starship.toml .
+git status
+clear
+ls
+git status
+git add .
+git commit -m 'hyprland & waybar'
+git push
+clear
+cd
+clear
+zel
+clear
+neofetch
+clear
+neofetch
+clear
+zel a
+clear
+neofetch
+clear
+cd Downloads/
+ls
+./xampp-linux-x64-8.2.12-0-installer.run
+chmod +x xampp-linux-x64-8.2.12-0-installer.run
+./xampp-linux-x64-8.2.12-0-installer.run
+sudo ./xampp-linux-x64-8.2.12-0-installer.run
+cd
+clear
+cd /opt/lampp/
+ls
+sudo chmod -R 755 htdocs/
+cd /opt/lampp/
+sudo chown -R 755 htdocs/
+sudo chmod -R 777 /opt/lampp/htdocs
+cd /opt/lampp/
+ls
+./xampp -h
+cd
+sudo /opt/lampp/./xampp start
+pac net-tools inetutils
+pac libxcrypt-compat
+clear
+sudo /opt/lampp/./xampp start
+sudo /opt/lampp/./xampp stop
+cd /opt/lampp/htdocs/
+ls
+cd 4ugamer/
+ls
+nvim wp-config.php
+clear
+cd
+sudo /opt/lampp/./xampp stop
+sudo /opt/lampp/./xampp start
+sudo /opt/lampp/./xampp stop
+clear
+neofetch
+clear
+sudo /opt/lampp/./xampp start
+pac gcolor2
+pac gcolor
+sudo /opt/lampp/./xampp stop
+sudo /opt/lampp/./xampp start
+sudo /opt/lampp/./xampp stop
+sudo /opt/lampp/./xampp start
+sudo /opt/lampp/./xampp stop
+random
+sudo /opt/lampp/./xampp start
+sudo /opt/lampp/./xampp stop
+neofetch
+clear
+random
+clear
+pacup
+clear
+sudo /opt/lampp/./xampp start
+sudo /opt/lampp/./xampp stop
+sudo /opt/lampp/./xampp start
+cd 4ugamer/
+ls
+cd Downloads/
+ls
+cd 4uplayer/
+ls
+nvim blob-haikei.svg
+sudo /opt/lampp/./xampp stop
+neofetch
+clear
+random
+clear
+random
+clear
+sudo /opt/lampp/./xampp start
+sudo /opt/lampp/./xampp stop
+neofetch
+clear
+pacup
+clear
+sudo /opt/lampp/./xampp start
+sudo /opt/lampp/./xampp stop
+random
+clear
+random
+clear
+sudo /opt/lampp/./xampp start
+neofetch
+clear
+sudo /opt/lampp/./xampp stop
+sudo /opt/lampp/./xampp start
+sudo /opt/lampp/./xampp stop
+neofetch
+clear
+sudo /opt/lampp/./xampp start
+sudo /opt/lampp/./xampp stop
+random
+clear
+random
+clear
+sudo /opt/lampp/./xampp start
+sudo /opt/lampp/./xampp stop
+poweroff
+neofetch
+clear
+sudo /opt/lampp/./xampp start
+pac galculator
+sudo /opt/lampp/./xampp stop
+sudo /opt/lampp/./xampp start
+pac evince
+sudo /opt/lampp/./xampp stop
+sudo /opt/lampp/./xampp start
+sudo /opt/lampp/./xampp stop
+neofetch
+pacrm hyprland waybar mako swaybg
+pacrm hyprland waybar-git mako swaybg xdg-desktop-portal-hyprland
+clear
+pac plasma-desktop
+clear
+nmcli radio wifi on
+sudo nmcli radio wifi on
+pac plasma-desktop
+pac plasma-nm powerdevil
+reboot
+nvim .config/alacritty/alacritty.toml
+clear
+neofetch
+exit
+pac dolphin
+clear
+pacfind plasm
+pacfind plasma
+pacfind plasma | grep battery
+pacfind plasma | grep applet
+pacfind plasma
+pac plasma-pa-applet
+pac plasma-applet
+pac cbatticon
+clear
+cbatticon
+neofetch
+clear
+pacup
+sudo /opt/lampp/./xampp start
+systemctl suspend
+sudo /opt/lampp/./xampp start
+sudo /opt/lampp/./xampp stop
+random
+clear
+neofetch
+clear
+nvim .config/picom/picom.conf
+clear
+sudo /opt/lampp/./xampp start
+pacrm plasma-desktop
+pacrm plasma-nm 
+clear
+pac bspwm polybar sxhkd
+sudo /opt/lampp/./xampp stop
+sudo /opt/lampp/./xampp start
+neofetch
+clear
+random
+clear
+sudo /opt/lampp/./xampp stop
+neofetch
+clear
+ls .config
+cd repos/dotfiles/
+ls
+cp -r bspwm/ ~/.config/
+ls ~
+cp -r bin/ ~
+cd
+clear
+nvim .config/bspwm/bspwmrc
+nvim .config/polybar/
+neofetch
+clear
+nvim .config/bspwm/bspwmrc
+sudo /opt/lampp/./xampp start
+zel
+clear
+mkdir 3d-hover-card
+cd 3d-hover-card/
+nvim index.html
+open index.html
+clear
+live-server .
+sudo /opt/lampp/./xampp stop
+neofetch
+clear
+pacup
+clear
+nvim .config/polybar/config.ini
+sudo /opt/lampp/./xampp start
+sudo /opt/lampp/./xampp stop
+neofetch
+clear
+sudo /opt/lampp/./xampp start
+sudo pacman -Qq kde
+sudo pacman -Qq
+sudo pacman -Qq | grep wallet
+pacrm kwallet
+pacrm kwallet kio
+pacrm kwallet kio baloo
+pacrm kwallet kio baloo kparts kcmutils dolphin baloo-widgets
+clear
+sudo /opt/lampp/./xampp stop
+neofetch
+sudo /opt/lampp/./xampp start
+clear
+sudo /opt/lampp/./xampp stop
+cd Downloads/4uplayer/
+ls
+clear
+tar -zcvf 4uplayer.tar.gz 4ugamer/
+sudo /opt/lampp/./xampp start
+sudo /opt/lampp/./xampp stop
+clear
+rm -rf 4ugamer/
+cp -r /opt/lampp/htdocs/4ugamer/ .
+ls
+clear
+tar -zcvf 4uplayer.tar.gz 4ugamer/
+sudo /opt/lampp/./xampp stop
+neofetch
+clear
+sudo /opt/lampp/./xampp start
+sudo /opt/lampp/./xampp stop
+sudo /opt/lampp/./xampp start
+sudo /opt/lampp/./xampp stop
+clear
+pac dash imlib2
+pac xorg-xsetroot
+clear
+git clone https://github.com/siduck/chadwm --depth 1  ~/.config/chadwm
+cd ~/.config/chadwm/<\n>
+mv eww ~/.config<\n>
+cd chadwm/
+clear
+ls
+clear
+nvim config.def.h
+sudo make clean install
+cd ..
+cd scripts/
+ls
+cd /usr/lib/polkit-gnome/
+ls
+nvim run.sh
+snv /usr/share/xsessions/chadwm.desktop  
+sudo /opt/lampp/./xampp start
+sudo /opt/lampp/./xampp stop
+sudo /opt/lampp/./xampp start
+sudo /opt/lampp/./xampp stop
+nvim .config/chadwm/scripts/run.sh
+cd Downloads/4uplayer/
+cp -r /opt/lampp/htdocs/4ugamer/ .
+ls
+clear
+tar -zcvf 4uplayer.tar.gz 4ugamer/
+clear
+ls
+clear
+nvim .config/chadwm/chadwm/config.def.h
+poweroff
+neofetch
+clear
+pacup
+clear
+nvim
+clear
+nvim .config/chadwm/chadwm/config.def.h
+cd .config/chadwm/chadwm/
+rm config.h
+sudo make clean install
+pac xcursor-breeze
+neofetch
+clear
+neofetch
+clear
+random
+clear
+pacup
+clear
+nvim
+clear
+nvim .config/zellij/config.kdl
+zel
+clear
+random
+clear
+random
+clea
+clear
+neofetch
+clear
+pacup
+clear
+brightnessctl set 50%
+sudo /opt/lampp/./xampp start
+sudo /opt/lampp/./xampp stop
+cd /opt/lampp/
+cd htdocs/grandcomputers/
+ls
+snv wp-config.php
+clear
+nvim .config/zellij/config.kdl
+zel
+clear
+zel
+clear
+nvim .config/zellij/config.kdl
+nvim .config/alacritty/alacritty.toml
+clear
+nvim .config/zellij/config.kdl
+zel
+nvim .config/zellij/config.kdl
+zel
+clear
+zel -h
+clear
+zel new vim
+zel new -s vim
+zel new -S vim
+zel --help
+clear
+zel -s vim
+zel a vim
+zel
+clear
+nvim .config/nvim
+nvim
+clear
+nvim .config/nvim
+clear
+tmux
+clear
+killall tmux
+clear
+zel
+neofetch
+clear
+nvim .config/picom/picom.conf
+neofetch
+clear
+pac bumblebee-status
+clear
+zel -s i3config
+clear
+nvim .config/i3/config
+clear
+nvim .config/i3/config
+nvim .config/i3/
+clear
+exit
+nvim .config/i3/
+clear
+nvim .config/i3/
+clear
+nvim .config/i3/autostart.sh
+clear
+nvim
+clear
+nvim
+clear
+mv .config/nvim/ .config/nvim.bak
+rm -rf .local/share/nvim
+clear
+nvim .config/i3/config
+clear
+nvim .config/i3/config
+git clone https://github.com/LazyVim/starter ~/.config/nvim
+nvim
+clear
+nvim
+clear
+nvim
+nvim .config/i3/config
+nvim .config/nvim
+clear
+nvim
+clear
+pac fonts-powerline
+pac ttf-fonts-powerline
+pacfind powerline
+pac awesome-terminal-fonts powerline-fonts
+neofetch
+zel list-session
+zel list-sessions
+zel a php
+clear
+nvim
+clear
+nvim .config/nvim
+nvim
+clear
+pacrm bspwm polybar
+cd .config/chadwm/chadwm/
+sudo make uninstall
+neofetch
+clear
+nvim .config/i3/config
+neofetch
+nvim .config/i3/config
+clear
+mkdir github
+cd github/
+git clone https://github.com/christitustech/mybash
+nvim .config/i3/config
+neofetch
+clear
+pac fastfetch
+clear
+nvim .config/i3/
+clear
+nvim .config/i3/config
+nvim .config/alacritty/alacritty.toml
+neofetch
+clear
+nvim .config/alacritty/alacritty.toml
+killall i3
+killall xorg
+htop
+clear
+neofetch
+clear
+cd repos/dotfiles/
+ls
