@@ -4,7 +4,7 @@
  bspc monitor -d I II III IV V VI
 
 bspc config border_width			0
-bspc config window_gap				10
+bspc config window_gap				20
 bspc config top_monocle_padding  0
 bspc config right_monocle_padding 0
 bspc config left_monocle_padding 0
