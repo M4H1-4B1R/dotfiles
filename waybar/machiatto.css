@@ -5,7 +5,8 @@
 *
 */
 
-@define-color base   #24273a;
+/*@define-color base   #24273a;*/
+@define-color base   #000000;
 @define-color mantle #1e2030;
 @define-color crust  #181926;
 
