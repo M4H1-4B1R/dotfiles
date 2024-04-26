@@ -1,0 +1,1 @@
+/home/abir/.asdf/completions/asdf.fish
