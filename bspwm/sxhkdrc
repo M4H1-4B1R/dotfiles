@@ -5,14 +5,14 @@ super + Return
   kitty
    	
 super + shift + Return
-	rofi -modi drun -show drun -line padding 4 -hide-scrollbar -show-icons
+	rofi -show drun -theme ~/.config/rofi/config.rasi
 
 # logout, shutdown, reboot
 super + x
   archlinux-logout
 
 super + e 	
-  thunar
+  pcmanfm 
 	
 super + shift + c
 	galculator
@@ -22,6 +22,9 @@ super + r
 
 super + s
   flameshot gui
+
+super + f
+    bspc node focused -t \~floating
 
 
 # make sxhkd reload its configuration files:
