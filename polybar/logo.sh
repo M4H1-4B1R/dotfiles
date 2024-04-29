@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "%{T1}  %{T-}"
+echo "%{T1} 󰣇 %{T-}"
