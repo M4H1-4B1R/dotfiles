@@ -1,8 +1,8 @@
 super + b
- brave
+ brave-browser
 
 super + Return
-  kitty
+  alacritty
    	
 super + shift + Return
 	rofi -show drun -theme ~/.config/rofi/config.rasi
@@ -12,7 +12,7 @@ super + x
   archlinux-logout
 
 super + e 	
-  pcmanfm 
+  thunar
 	
 super + shift + c
 	galculator
