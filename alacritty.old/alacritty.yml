@@ -6,7 +6,7 @@
 
 ## Import files (Colors, Fonts, Etc)
 import:
-  - ~/.config/alacritty/gruv.yml
+  - ~/.config/alacritty/colors.yml
   - ~/.config/alacritty/fonts.yml
 
 ## Set environment variables
@@ -21,8 +21,8 @@ window:
     lines: 25
 
   padding:
-    x: 10
-    y: 10
+    x: 5
+    y: 3
 
   decorations: full
   startup_mode: Windowed
@@ -33,7 +33,7 @@ window:
   multiplier: 3
 
   ## Background opacity
-  opacity: 0.9
+  opacity: 0.7
 
 ## Cursor
 cursor:
@@ -46,7 +46,7 @@ cursor:
 ## Live config reload
 live_config_reload: true
 ## Shell
-shell:
-  program: /bin/bash
+#shell:
+#  program: /bin/bash
 #  args:
 #    - --login
