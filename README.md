@@ -11,8 +11,8 @@ Used on arch<br>
 ### Essential Programs
 <ul>
 <li>Terminal = Alacritty/Kitty</li>
-<li>Run launcher = Rofi-ibonn-fork</li>
-<li>Browser = Brave</li>
+<li>Run launcher = Rofi (lbonn-fork if using wayland)</li>
+<li>Browser = Brave/firefox/min</li>
 <li>WM = Bspwm/Hyprland/Dwm</li>
 <li>Bar = Polybar/Waybar/gBar</li>
 <li>Editor = Neovim</li>
