@@ -23,8 +23,11 @@ super + r
 super + s
   flameshot gui
 
-super + f
+super + space
     bspc node focused -t \~floating
+
+super + f
+   bspc node -t \~fullscreen
 
 
 # make sxhkd reload its configuration files:
@@ -49,11 +52,9 @@ super + shift + i
 super + {shift + t,shift + f}
 	bspc node -t {tiled,fullscreen}
 
-super + { Left, Down, Up, Right}
-	bspc node -f {west,south,north,east}
-	
-super + shift + { Left, Down, Up, Right}
-	bspc node -s {west,south,north,east}
+# focus the node in the given direction
+super + {_,shift + }{h,j,k,l}
+	bspc node -{f,s} {west,south,north,east}	
 
 ## Change workspace 
 super + {_,shift + }{1-9,0}
