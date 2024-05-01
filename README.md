@@ -2,7 +2,7 @@
 Used on arch<br>
 
 [ Bspwm ]
-![bspwm2](https://github.com/autonomuscoder/dotfiles/assets/112854891/ddd619e5-950a-4145-9904-64875deed19a)
+![bspwm7](https://github.com/autonomuscoder/dotfiles/assets/112854891/14a29ee9-081f-426f-b4ca-31f576ade5b5)
 
 
 [ Hyprland ]
