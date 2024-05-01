@@ -2,7 +2,8 @@
 schemes:
   gruvbox_material_hard_dark: &gruvbox_material_hard_dark
     primary:
-      background: "0x1d2021"
+      # background: "0x1d2021"
+      background: "0x000000"
       foreground: "0xd4be98"
     normal:
       black: "0x32302f"
