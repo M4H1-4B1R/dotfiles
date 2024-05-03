@@ -4,7 +4,6 @@
 /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
 nitrogen --restore &
 picom --config ~/.config/picom/picom.conf &
-cbatticon &
 dunst &
 xclip &
 volumeicon &

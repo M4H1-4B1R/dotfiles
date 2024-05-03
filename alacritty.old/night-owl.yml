@@ -1,0 +1,114 @@
+schemes:
+  night-owl: &night-owl
+    primary:
+      #background: "#011627"
+      background: "#000000"
+      foreground: "#d6deeb"
+
+    # Cursor colors
+    cursor:
+      text: CellBackground
+      cursor: CellForeground
+
+    # Vi mode cursor colors
+    vi_mode_cursor:
+      text: CellBackground
+      cursor: "#22da6e"
+
+    # Selection colors
+    selection:
+      text: "#ffffff"
+      background: "#0d486e"
+
+    # Search colors
+    search:
+      matches:
+        foreground: "#000000"
+        background: "#22da6e"
+
+        focused_match:
+          foreground: "#ffffff"
+          background: "#22da6e"
+
+      footer_bar:
+        foreground: "#ffffff"
+        background: "#1d3b53"
+
+    # Normal colors
+    normal:
+      black: "#011627"
+      red: "#EF5350"
+      green: "#22da6e"
+      yellow: "#c5e478"
+      blue: "#82AAFF"
+      magenta: "#C792EA"
+      cyan: "#21c7a8"
+      white: "#ffffff"
+
+    # Bright colors
+    bright:
+      black: "#575656"
+      red: "#EF5350"
+      green: "#22da6e"
+      yellow: "#ffeb95"
+      blue: "#82AAFF"
+      magenta: "#C792EA"
+      cyan: "#7fdbca"
+      white: "#ffffff"
+
+  night-owl-light: &night-owl-light
+    primary:
+      background: "#F6F6F6"
+      foreground: "#403f53"
+
+    # Cursor colors
+    cursor:
+      text: CellBackground
+      cursor: "#90A7B2"
+
+    # Vi mode cursor colors
+    vi_mode_cursor:
+      text: CellBackground
+      cursor: "#08916a"
+
+    # Selection colors
+    selection:
+      text: "#000000"
+      background: "#E0E0E0"
+
+    # Search colors
+    search:
+      matches:
+        foreground: "#F6F6F6"
+        background: "#08916a"
+
+        focused_match:
+          foreground: "#000000"
+          background: "#08916a"
+
+      footer_bar:
+        foreground: "#403f53"
+        background: "#E0E0E0"
+
+    # Normal colors
+    normal:
+      black: "#403f53"
+      red: "#de3d3b"
+      green: "#08916a"
+      yellow: "#daaa01"
+      blue: "#288ed7"
+      magenta: "#d6438a"
+      cyan: "#2AA298"
+      white: "#F0F0F0"
+
+    # Bright colors
+    bright:
+      black: "#403f53"
+      red: "#de3d3b"
+      green: "#08916a"
+      yellow: "#daaa01"
+      blue: "#288ed7"
+      magenta: "#d6438a"
+      cyan: "#2AA298"
+      white: "#F0F0F0"
+colors: *night-owl

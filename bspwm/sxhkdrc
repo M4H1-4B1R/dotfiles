@@ -1,8 +1,14 @@
 super + b
- brave-browser
+  min
+
+super + shift + b
+  brave-browser
 
 super + Return
   alacritty
+
+super + t 
+  xfce4-terminal
    	
 super + shift + Return
 	rofi -show drun -theme ~/.config/rofi/config.rasi
@@ -22,6 +28,9 @@ super + r
 
 super + s
   flameshot gui
+
+ctrl + alt + l
+    betterlockscreen -u ~/.config/betterlockscreen/lock.png -l
 
 super + space
     bspc node focused -t \~floating
@@ -61,7 +70,7 @@ super + {_,shift + }{1-9,0}
 	bspc {desktop --focus,node --to-desktop} 'focused:^{1-9,10}' --follow; 
 
 ## Resizing windows
-super + ctrl + { Left, Down, Up, Right}
+super + ctrl + { h, j, k, l}
 	bspc node -z {left -80 0,bottom 0 80,top 0 -80,right 80 0}
 
 super + ctrl + shift + { Left, Down, Up, Right}

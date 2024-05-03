@@ -6,7 +6,7 @@
 
 ## Import files (Colors, Fonts, Etc)
 import:
-  - ~/.config/alacritty/gruv.yml
+  - ~/.config/alacritty/night-owl.yml
   - ~/.config/alacritty/fonts.yml
 
 ## Set environment variables

@@ -29,6 +29,7 @@ bspc rule -a mpv state=floating layer=normal center=true
 bspc rule -a Pavucontrol:pavucontrol state=floating 
 bspc rule -a Lxappearance state=floating layer=normal center=true
 bspc rule -a Galculator state=floating layer=normal center=true
+#bspc rule -a Alacritty state=floating layer=normal center=true
 bspc rule -a Xfce4-terminal state=floating layer=normal center=true
 bspc rule -a Gimp desktop='^8' follow=on
 bspc rule -a discord desktop='^10' follow=on
