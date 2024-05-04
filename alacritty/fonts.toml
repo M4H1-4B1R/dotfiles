@@ -1,0 +1,14 @@
+[font]
+size = 12
+
+[font.bold]
+family = "VictorMono Nerd Font"
+
+[font.bold_italic]
+family = "VictorMono Nerd Font"
+
+[font.italic]
+family = "VictorMono Nerd Font"
+
+[font.normal]
+family = "VictorMono Nerd Font"
