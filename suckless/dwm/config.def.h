@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx = 1; /* border pixel of windows */
+static const unsigned int borderpx = 0; /* border pixel of windows */
 static const unsigned int snap = 32;    /* snap pixel */
 static const unsigned int gappih = 20;  /* horiz inner gap between windows */
 static const unsigned int gappiv = 20;  /* vert inner gap between windows */
@@ -24,20 +24,18 @@ static const int systraypinningfailfirst =
 static const int showsystray = 1; /* 0 means no systray */
 static const int showbar = 1;     /* 0 means no bar */
 static const int topbar = 1;      /* 0 means bottom bar */
+static const int user_bh            = 22;        /* 2 is the default spacing around the bar's font */
 static const char *fonts[] = {"JetBrainsMono Nerd Font:size=10"};
 static const char dmenufont[] = "JetBrainsMono Nerd Font:size=10";
-static const char col_gray1[] = "#000000";
-static const char col_gray2[] = "#444444";
-static const char col_gray3[] = "#e0af68";
-static const char col_gray4[] = "#e0af68";
-// static const char col_cyan[]        = "#24283b";
-// static const char col_cyan[] = "#1a1b26";
-static const char col_cyan[] = "#121212";
-static const char col_red[] = "#7dcfff";
+static const char col_bg1[] = "#080808";
+static const char col_gray[] = "#7c6f64";
+static const char col_fg[] = "#ddc7a1";
+static const char col_bg2[] = "#1d2021";
+static const char col_cyan[] = "#89b482";
 static const char *colors[][3] = {
     /*               fg         bg         border   */
-    [SchemeNorm] = {col_gray3, col_gray1, col_red},
-    [SchemeSel] = {col_gray4, col_cyan, col_red},
+    [SchemeNorm] = {col_fg, col_bg1, col_cyan},
+    [SchemeSel] = {col_fg, col_bg2, col_cyan},
 };
 
 typedef struct {
@@ -109,15 +107,14 @@ static const Layout layouts[] = {
 static char dmenumon[2] =
     "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = {
-    "dmenu_run", "-m",      dmenumon, "-fn",    dmenufont, "-nb",     col_gray1,
-    "-nf",       col_gray3, "-sb",    col_cyan, "-sf",     col_gray4, NULL};
+    "dmenu_run", NULL};
 static const char *termcmd[] = {"kitty", NULL};
 
 static const Key keys[] = {
     /* modifier                     key        function        argument */
     {MODKEY, XK_Return, spawn, SHCMD("alacritty")},
-    {MODKEY, XK_b, spawn, SHCMD("brave-browser")},
-    {MODKEY, XK_e, spawn, SHCMD("nemo")},
+    {MODKEY, XK_b, spawn, SHCMD("min")},
+    {MODKEY, XK_e, spawn, SHCMD("thunar")},
     {MODKEY, XK_r, spawn, SHCMD("redshift -O 5000")},
     {MODKEY | ShiftMask, XK_r, spawn, SHCMD("redshift -x")},
     {MODKEY, XK_s, spawn, SHCMD("flameshot gui")},
