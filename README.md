@@ -14,6 +14,7 @@ Used on arch<br>
 
 ### Essential Programs
 <ul>
+<li>Fonts = {VictorMono, JetbrainsMono, Firacode} Nerd Font</li>
 <li>Terminal = Alacritty/Kitty</li>
 <li>Run launcher = Rofi (lbonn-fork if using wayland)</li>
 <li>Browser = Brave/firefox/min</li>
