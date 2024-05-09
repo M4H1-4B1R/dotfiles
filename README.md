@@ -1,6 +1,10 @@
 # My linux dotfiles
 Used on arch<br>
 
+[Qtile]
+![comfy-qtile](https://github.com/autonomuscoder/dotfiles/assets/112854891/88605823-87fb-457a-8167-c44d46c1658b)
+
+
 [ Bspwm ]
 ![bspwm7](https://github.com/autonomuscoder/dotfiles/assets/112854891/14a29ee9-081f-426f-b4ca-31f576ade5b5)
 
