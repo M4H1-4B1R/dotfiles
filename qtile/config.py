@@ -10,6 +10,7 @@ def autostart():
    subprocess.run([home])
 
 mod = "mod4"
+alt = "mod1"
 terminal = "alacritty"
 
 keys = [
@@ -49,6 +50,8 @@ keys = [
     Key([mod], "e", lazy.spawn("thunar"), desc="Launch file browser"),
     Key([mod], "s", lazy.spawn("flameshot gui"), desc="Screenshot"),
     Key([mod, "shift"], "Return", lazy.spawn("rofi -show drun"), desc="Launch run luancher"),
+    Key([alt], "b", lazy.spawn("brightnessctl s +10%"), desc="increase brightness"),
+    Key([alt, "shift"], "b", lazy.spawn("brightnessctl s 10%-"), desc="decrease brightness"),
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
     Key([mod], "q", lazy.window.kill(), desc="Kill focused window"),
@@ -143,11 +146,13 @@ screens = [
                 widget.TextBox(text="", font="fontawesome6", fontsize=44, padding=-5, foreground="#11111b", background="#1e1e2e"),
                 widget.Memory(background="#11111b", foreground="#a6e3a1", format=' {MemUsed: .0f}{mm}/{MemTotal: .0f}{mm}', fontsize=14, padding=4),
                 widget.TextBox(text="", font="fontawesome6", fontsize=44, padding=-5, foreground="#1e1e2e", background="#11111b"),
-                widget.Clock(background="#1e1e2e", format="  %Y-%m-%d", foreground="#94e2d5", font="fontawesome6", fontsize=15, padding=5),
+                widget.Backlight(foregound="#89b4fa", background="#1e1e2e", brightness_file="/sys/class/backlight/intel_backlight/brightness", max_brightness_file="/sys/class/backlight/intel_backlight/max_brightness", format=" {percent:2.0%}"),
                 widget.TextBox(text="", font="fontawesome6", fontsize=44, padding=-5, foreground="#11111b", background="#1e1e2e"),
-                widget.Clock(background="#11111b", format=" %I:%M %p", foreground="#94e2d5", font="fontawesome6", fontsize=15, padding=5),
+                widget.Clock(background="#11111b", format="  %Y-%m-%d", foreground="#94e2d5", font="fontawesome6", fontsize=15, padding=5),
                 widget.TextBox(text="", font="fontawesome6", fontsize=44, padding=-5, foreground="#1e1e2e", background="#11111b"),
-                widget.Systray(background="#1e1e2e"),
+                widget.Clock(background="#1e1e2e", format=" %I:%M %p", foreground="#94e2d5", font="fontawesome6", fontsize=15, padding=5),
+                widget.TextBox(text="", font="fontawesome6", fontsize=44, padding=-5, foreground="#11111b", background="#1e1e2e"),
+                widget.Systray(background="#11111b"),
             ],
             26,
             background="#15161e",
