@@ -1,5 +1,5 @@
 # My linux dotfiles
-Used on arch<br>
+Used on Arch and Debian<br>
 
 [Qtile]
 ![comfy-qtile](https://github.com/autonomuscoder/dotfiles/assets/112854891/88605823-87fb-457a-8167-c44d46c1658b)
