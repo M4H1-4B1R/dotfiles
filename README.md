@@ -1,5 +1,9 @@
 # My linux dotfiles
-Used on arch<br>
+Used on Arch and Debian<br>
+
+[Qtile]
+![comfy-qtile](https://github.com/autonomuscoder/dotfiles/assets/112854891/88605823-87fb-457a-8167-c44d46c1658b)
+
 
 [ Bspwm ]
 ![bspwm7](https://github.com/autonomuscoder/dotfiles/assets/112854891/14a29ee9-081f-426f-b4ca-31f576ade5b5)
@@ -10,6 +14,7 @@ Used on arch<br>
 
 ### Essential Programs
 <ul>
+<li>Fonts = {VictorMono, JetbrainsMono, Firacode} Nerd Font</li>
 <li>Terminal = Alacritty/Kitty</li>
 <li>Run launcher = Rofi (lbonn-fork if using wayland)</li>
 <li>Browser = Brave/firefox/min</li>
@@ -20,4 +25,7 @@ Used on arch<br>
 <li>Wallpaper switcher = nitrogen/azote</li>
 <li>clipboard = xclip/wl-clipboard</li>
 </ul>
+
+Wallpapers: 1. https://github.com/dharmx/walls<br>
+            2. https://wallhaven.cc/
 
