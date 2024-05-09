@@ -121,7 +121,7 @@ layouts = [
 ]
 
 widget_defaults = dict(
-    font="MesloLGS Nerd Font Mono",
+    font="JetbrainsMono Nerd Font",
     fontsize=14,
     padding=2,
 )
@@ -132,7 +132,8 @@ screens = [
         top=bar.Bar(
             [
                 # widget.CurrentLayoutIcon(scale=0.7),
-                widget.GroupBox(margin_x=5, active="#89b4fa", inactive="#ffffff", borderwidth=2, rounded=False),
+                widget.TextBox(text="", font="fontawesome6", fontsize=24, padding=5, foreground="#bb9af7"),
+                widget.GroupBox(margin_x=5, active="#bb9af7", inactive="#ffffff", borderwidth=2, rounded=False),
                 widget.Spacer(length=18),
                 widget.WindowName(max_chars=30, foreground="#a6e3a1"),
                 # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
@@ -142,12 +143,14 @@ screens = [
                 widget.TextBox(text="", font="fontawesome6", fontsize=44, padding=-5, foreground="#11111b", background="#1e1e2e"),
                 widget.Memory(background="#11111b", foreground="#a6e3a1", format=' {MemUsed: .0f}{mm}/{MemTotal: .0f}{mm}', fontsize=14, padding=4),
                 widget.TextBox(text="", font="fontawesome6", fontsize=44, padding=-5, foreground="#1e1e2e", background="#11111b"),
-                widget.Clock(background="#1e1e2e", format="  %Y-%m-%d   %I:%M %p", foreground="#94e2d5", font="fontawesome6", fontsize=15, padding=5),
+                widget.Clock(background="#1e1e2e", format="  %Y-%m-%d", foreground="#94e2d5", font="fontawesome6", fontsize=15, padding=5),
                 widget.TextBox(text="", font="fontawesome6", fontsize=44, padding=-5, foreground="#11111b", background="#1e1e2e"),
-                widget.Systray(background="#11111b"),
+                widget.Clock(background="#11111b", format=" %I:%M %p", foreground="#94e2d5", font="fontawesome6", fontsize=15, padding=5),
+                widget.TextBox(text="", font="fontawesome6", fontsize=44, padding=-5, foreground="#1e1e2e", background="#11111b"),
+                widget.Systray(background="#1e1e2e"),
             ],
             26,
-            background="#000000",
+            background="#15161e",
             # margin = [10,10,5,10],
             border_width = [0,0,0,0],
             # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
