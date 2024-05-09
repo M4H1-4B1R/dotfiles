@@ -7,6 +7,5 @@ dunst &
 xclip &
 volumeicon &
 nm-applet &
-cbatticon &
 numlockx on &
 xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
