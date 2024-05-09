@@ -26,3 +26,6 @@ Used on Arch and Debian<br>
 <li>clipboard = xclip/wl-clipboard</li>
 </ul>
 
+Wallpapers: 1. https://github.com/dharmx/walls
+            2. https://wallhaven.cc/
+
