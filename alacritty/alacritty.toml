@@ -1,4 +1,4 @@
-import = ["/home/abir/.config/alacritty/themes/catppuccin_mocha.toml", "/home/abir/.config/alacritty/fonts.toml"]
+import = ["/home/abir/.config/alacritty/colors.toml", "/home/abir/.config/alacritty/fonts.toml"]
 live_config_reload = true
 
 [cursor]
@@ -24,4 +24,4 @@ lines = 25
 
 [window.padding]
 x = 5
-y = 3
+y = 5
