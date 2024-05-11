@@ -1,8 +1,5 @@
 # .bashrc
 
-[[ $- == *i* ]] &&
-  source "$HOME/.local/share/blesh/ble.sh" --attach=none
-
 export TERM="xterm-256color"
 export HISTCONTROL=ignoredups:erasedups
 export EDITOR="nvim"
@@ -152,6 +149,3 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 source /usr/share/nvm/init-nvm.sh
-
-# Add the following line at the end of bashrc
-[[ ${BLE_VERSION-} ]] && ble-attach
