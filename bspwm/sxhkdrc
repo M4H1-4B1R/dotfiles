@@ -1,5 +1,8 @@
 super + b
-  brave
+  min-browser
+
+super + shift + b
+   brave
 
 super + Return
   alacritty

@@ -5,6 +5,7 @@
 #nitrogen --restore &
 feh --bg-fill --randomize ~/walls/ &
 picom --config ~/.config/picom/picom.conf &
+# compfy &
 dunst &
 xclip &
 volumeicon &
