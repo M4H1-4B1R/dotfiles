@@ -1,8 +1,5 @@
 super + b
-  min
-
-super + shift + b
-  brave-browser
+  brave
 
 super + Return
   alacritty
@@ -18,7 +15,7 @@ super + x
   archlinux-logout
 
 super + e 	
-  thunar
+  alacritty -e ranger 
 	
 super + shift + c
 	galculator
@@ -30,7 +27,10 @@ super + s
   flameshot gui
 
 ctrl + alt + l
-    betterlockscreen -u ~/.config/betterlockscreen/lock.png -l
+    betterlockscreen -l
+
+super + w
+   feh --bg-fill --randomize ~/walls/
 
 super + space
     bspc node focused -t \~floating

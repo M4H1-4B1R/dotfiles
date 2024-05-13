@@ -2,7 +2,8 @@
 ~/.config/bspwm/launch.sh
 #/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
-nitrogen --restore &
+#nitrogen --restore &
+feh --bg-fill --randomize ~/walls/ &
 picom --config ~/.config/picom/picom.conf &
 dunst &
 xclip &
