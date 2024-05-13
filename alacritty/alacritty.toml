@@ -1,4 +1,4 @@
-import = ["/home/abir/.config/alacritty/colors.toml", "/home/abir/.config/alacritty/fonts.toml"]
+import = ["/home/abir/.config/alacritty/themes/catppuccin_mocha.toml", "/home/abir/.config/alacritty/fonts.toml"]
 live_config_reload = true
 
 [cursor]
@@ -15,7 +15,7 @@ WINIT_X11_SCALE_FACTOR = "1.0"
 [window]
 decorations = "none"
 dynamic_title = true
-opacity = 0.8
+opacity = 0.9
 startup_mode = "Windowed"
 
 [window.dimensions]
