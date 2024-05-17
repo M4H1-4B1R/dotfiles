@@ -12,6 +12,10 @@ Used on Arch and Debian<br>
 [ Hyprland ]
 ![20240420_11h41m06s_grim](https://github.com/autonomuscoder/dotfiles/assets/112854891/3e88c25a-f7b1-4d59-9c83-41a239adeebf)
 
+[ Awesomewm ]
+![awesomewm](https://github.com/autonomuscoder/dotfiles/assets/112854891/3dc47c20-5d6f-4eb1-aca9-9dd97f3bd2bd)
+
+
 ### Essential Programs
 <ul>
 <li>Fonts = {VictorMono, JetbrainsMono, Firacode} Nerd Font</li>
