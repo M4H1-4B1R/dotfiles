@@ -15,7 +15,8 @@ local beautiful = require("beautiful")
 -- require("eminent")
 --require ("keys")
 require("autostart")
--- local battery_widget = require("awesome-wm-widgets.battery")
+
+local batteryarc_widget = require("awesome-wm-widgets.batteryarc-widget.batteryarc")
 
 --theming
 
@@ -247,9 +248,15 @@ awful.screen.connect_for_each_screen(function(s)
 		s.mytasklist, -- Middle widget
 		{           -- Right widgets
 			layout = wibox.layout.fixed.horizontal,
-			mytextclock,
-			wibox.widget.systray():set_base_size(27),
-			wibox.widget.systray(),
+			 batteryarc_widget({
+				 size = 25,
+				 font = "Hack Nerd font 9",
+            show_current_level = true,
+            arc_thickness = 1,
+        }),
+			mytextclock
+			-- wibox.widget.systray():set_base_size(27),
+			-- wibox.widget.systray(),
 			-- s.mylayoutbox,
 		},
 	})
@@ -313,11 +320,14 @@ globalkeys = gears.table.join(
 		awful.spawn("brave")
 	end, { description = "open a web browser", group = "launcher" }),
 	awful.key({ modkey }, "w", function()
-		awful.spawn("feh --bg-fill --randomize /home/abir/walls/")
+		awful.spawn("feh --bg-fill --randomize /home/abir/walls/", false)
 	end, { description = "change wallpapers at random", group = "abir" }),
 	awful.key({ modkey }, "r", function()
 		awful.spawn("redshift -O 5000")
-	end, { description = "open a web browser", group = "launcher" }),
+	end, { description = "bluelight filter", group = "launcher" }),
+	awful.key({ modkey }, "c", function()
+		awful.spawn("flameshot gui")
+	end, { description = "screenshot", group = "launcher" }),
 	awful.key({ modkey, "Control" }, "r", awesome.restart, { description = "reload awesome", group = "awesome" }),
 	awful.key({ modkey, "Shift" }, "q", awesome.quit, { description = "quit awesome", group = "awesome" }),
 	awful.key({ modkey }, "l", function()
@@ -584,3 +594,14 @@ end)
 
 -- }}}
 --
+--- Enable for lower memory consumption
+collectgarbage("setpause", 110)
+collectgarbage("setstepmul", 1000)
+gears.timer({
+	timeout = 5,
+	autostart = true,
+	call_now = true,
+	callback = function()
+		collectgarbage("collect")
+	end,
+})
