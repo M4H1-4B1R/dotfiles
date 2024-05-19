@@ -12,7 +12,7 @@ Used on Arch and Debian<br>
 [ Hyprland ]
 ![20240420_11h41m06s_grim](https://github.com/autonomuscoder/dotfiles/assets/112854891/3e88c25a-f7b1-4d59-9c83-41a239adeebf)
 
-[ Awesomewm ] ( for the barebone-get-work-done env )
+[ Awesomewm ]
 ![awesomewm2](https://github.com/autonomuscoder/dotfiles/assets/112854891/0063d38c-618b-447b-a292-b978e3e32614)
 
 
