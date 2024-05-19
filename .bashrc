@@ -3,6 +3,8 @@
 export TERM="xterm-256color"
 export HISTCONTROL=ignoredups:erasedups
 export EDITOR="nvim"
+export TERMINAL="alacritty"
+export BROWSER="brave"
 export PATH="/opt/lampp/:$PATH"
 export PATH="/home/xero/bin/:$PATH"
 export PATH="/home/xero/.local/bin/:$PATH"
@@ -106,6 +108,9 @@ fi
     alias cat='bat --theme Nord'
 		alias tx='tmux'
 		alias txa='tmux attach'
+		alias hist="history | fzf"
+		alias startxmp='sudo /opt/lampp/./xampp start'
+		alias stopxmp='sudo /opt/lampp/./xampp stop'
     alias mirror='sudo reflector -c Bangladesh -c India -a 12 -p https -p http --sort rate --save /etc/pacman.d/mirrorlist'
     alias ff='fd --type f --hidden --exclude .git | fzf-tmux -p | xargs nvim'
     alias xampp='sudo /opt/lampp/manager-linux-x64.run'
@@ -138,9 +143,9 @@ fi
 		 alias xbf='sudo xbps-query -Rs'
      
 # Starship Prompt
-#eval "$(starship init bash)"
+eval "$(starship init bash)"
 #PROMPT_COMMAND='PS1_CMD1=$(git branch --show-current 2>/dev/null)'; PS1='[\[\e[38;5;75m\]\u\[\e[0m\]@\[\e[38;5;121m\]\H\[\e[0m\]] [\w] \[\e[38;5;168m\]${PS1_CMD1}\[\e[0m\]\n∮ '
-PROMPT_COMMAND='PS1_CMD1=$(git branch --show-current 2>/dev/null)'; PS1='\[\e[38;5;75m\]\w \[\e[38;5;168m\]${PS1_CMD1}\[\e[0m\]\n∮ '
+# PROMPT_COMMAND='PS1_CMD1=$(git branch --show-current 2>/dev/null)'; PS1='\[\e[38;5;75m\]\w \[\e[38;5;168m\]${PS1_CMD1}\[\e[0m\]\n∮ '
 
 # Zoxide
 eval "$(zoxide init bash)"
@@ -149,3 +154,5 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 source /usr/share/nvm/init-nvm.sh
+
+# colorscript -r
