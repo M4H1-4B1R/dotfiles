@@ -17,6 +17,7 @@ local beautiful = require("beautiful")
 require("autostart")
 
 local batteryarc_widget = require("awesome-wm-widgets.batteryarc-widget.batteryarc")
+local volume_widget = require('awesome-wm-widgets.volume-widget.volume')
 
 --theming
 
@@ -248,13 +249,19 @@ awful.screen.connect_for_each_screen(function(s)
 		s.mytasklist, -- Middle widget
 		{           -- Right widgets
 			layout = wibox.layout.fixed.horizontal,
+			spacing = 7,
 			 batteryarc_widget({
 				 size = 25,
-				 font = "Hack Nerd font 9",
+				 font = "Hack Nerd Font 9",
             show_current_level = true,
             arc_thickness = 1,
         }),
-			mytextclock
+				volume_widget{
+					widget_type = 'arc',
+					font = "Hack Nerd Font 9",
+					size = 25
+				},
+				mytextclock
 			-- wibox.widget.systray():set_base_size(27),
 			-- wibox.widget.systray(),
 			-- s.mylayoutbox,
