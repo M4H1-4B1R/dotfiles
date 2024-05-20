@@ -1,0 +1,26 @@
+theme = "mynord"
+
+[editor]
+line-number = "relative"
+mouse = true
+cursorline = true
+auto-completion = true
+auto-format = true
+undercurl = true
+indent-heuristic = "tree-sitter"
+
+[editor.cursor-shape]
+insert = "bar"
+
+[editor.statusline]
+left = ["mode", "spinner"]
+center = ["file-name"]
+right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
+separator = "│"
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+
+[keys.normal]
+esc = ["collapse_selection", "keep_primary_selection"]
