@@ -1,1 +1,0 @@
-static Client *getpointerclient(void);
