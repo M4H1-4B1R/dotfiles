@@ -6,14 +6,15 @@ Used on Arch and Debian<br>
 
 
 [ Bspwm ]
-![bspwm7](https://github.com/autonomuscoder/dotfiles/assets/112854891/14a29ee9-081f-426f-b4ca-31f576ade5b5)
+![bsp3](https://github.com/autonomuscoder/dotfiles/assets/112854891/e25ab293-e195-4a87-9f56-0679c59261c7)
 
 
 [ Hyprland ]
 ![20240420_11h41m06s_grim](https://github.com/autonomuscoder/dotfiles/assets/112854891/3e88c25a-f7b1-4d59-9c83-41a239adeebf)
 
 [ Awesomewm ]
-![awesomewm2](https://github.com/autonomuscoder/dotfiles/assets/112854891/0063d38c-618b-447b-a292-b978e3e32614)
+![awesomewm3](https://github.com/autonomuscoder/dotfiles/assets/112854891/65b9e967-c457-4c1e-805d-e7a6ef1a1ed1)
+
 
 
 
