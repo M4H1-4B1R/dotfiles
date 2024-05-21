@@ -19,7 +19,6 @@ require("autostart")
 local batteryarc_widget = require("awesome-wm-widgets.batteryarc-widget.batteryarc")
 local volume_widget = require('awesome-wm-widgets.volume-widget.volume')
 
---theming
 
 -- Notification library
 local naughty = require("naughty")
@@ -200,10 +199,8 @@ awful.screen.connect_for_each_screen(function(s)
 	-- Each screen has its own tag table.
 	-- awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
 	awful.tag({ "  ", "  ", "  ", "   ", "  " }, s, awful.layout.layouts[1])
+	-- awful.tag({ " 一 ", " 二 ", " 三 ", " 四 ", " 五 " }, s, awful.layout.layouts[1])
 
-	-- Create a promptbox for each screen
-	s.mypromptbox = awful.widget.prompt()
-	-- Create an imagebox widget which will contain an icon indicating which layout we're using.
 	-- We need one layoutbox per screen.
 	s.mylayoutbox = awful.widget.layoutbox(s)
 	s.mylayoutbox:buttons(gears.table.join(
@@ -220,6 +217,7 @@ awful.screen.connect_for_each_screen(function(s)
 			awful.layout.inc(-1)
 		end)
 	))
+
 	-- Create a taglist widget
 	s.mytaglist = awful.widget.taglist({
 		screen = s,
@@ -237,14 +235,13 @@ awful.screen.connect_for_each_screen(function(s)
 	-- Create the wibox
 	s.mywibox = awful.wibar({ position = "top", screen = s })
 
+
 	-- Add widgets to the wibox
 	s.mywibox:setup({
 		layout = wibox.layout.align.horizontal,
 		{ -- Left widgets
 			layout = wibox.layout.fixed.horizontal,
-			mylauncher,
 			s.mytaglist,
-			s.mypromptbox,
 		},
 		s.mytasklist, -- Middle widget
 		{           -- Right widgets
@@ -261,10 +258,9 @@ awful.screen.connect_for_each_screen(function(s)
 					font = "Hack Nerd Font 9",
 					size = 25
 				},
-				mytextclock
+				mytextclock,
 			-- wibox.widget.systray():set_base_size(27),
 			-- wibox.widget.systray(),
-			-- s.mylayoutbox,
 		},
 	})
 end)
