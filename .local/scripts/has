@@ -1,0 +1,424 @@
+#!/usr/bin/env bash
+## source: https://github.com/kdabir/has
+
+## To add more tools, search for "__detect" function in this file
+
+## Important so that version is not extracted for failed commands (not found)
+set -o pipefail
+
+readonly BINARY_NAME="has"
+readonly VERSION="v1.5.0"
+
+## constants - symbols for success failure
+if [[ ! -t 1 ]]; then
+  TERM="dumb"
+elif [[ -z $TERM ]]; then
+  TERM="xterm"
+fi
+
+txtreset="$(tput -T "$TERM" sgr0)"
+readonly txtreset
+
+txtbold="$(tput -T "$TERM" bold)"
+readonly txtbold
+
+txtred="$(tput -T "$TERM" setaf 1)"
+readonly txtred
+
+txtgreen="$(tput -T "$TERM" setaf 2)"
+readonly txtgreen
+
+txtyellow="$(tput -T "$TERM" setaf 3)"
+readonly txtyellow
+
+# unicode "✗"
+readonly fancyx='\342\234\227'
+# unicode "✓"
+readonly checkmark='\342\234\223'
+# PASS="\e[1m\e[38;5;2m✔\e[m"
+# FAIL="\e[1m\e[38;5;1m✘\e[m"
+readonly PASS="${txtbold}${txtgreen}${checkmark}${txtreset}"
+readonly FAIL="${txtbold}${txtred}${fancyx}${txtreset}"
+
+## These variables are used to control decoration of output
+COLOR_AUTO="auto"
+COLOR_NEVER="never"
+COLOR_ALWAYS="always"
+COLOR_OPTS=("${COLOR_AUTO} ${COLOR_NEVER} ${COLOR_ALWAYS}")
+COLOR="${COLOR_AUTO}"
+COLOR_PREFIX="--color"
+
+## These variables are used to keep track of passed and failed commands
+OK=0
+KO=0
+
+## Regex to extract simple version - extracts numeric sem-ver style versions
+REGEX_SIMPLE_VERSION="([[:digit:]]+\.?){2,3}"
+
+## name of RC file that can contain list of tools to be checked
+RC_FILE=".hasrc"
+
+_usage() {
+  cat <<EOF
+Usage: ${BINARY_NAME} [OPTION] <command-names>...
+Has checks the presence of various command line tools on the PATH and reports their installed version.
+
+Options:
+        -q              Silent mode
+        -h, --help      Display this help text and quit
+        -V, --version   Show version number and quit
+
+Examples: ${BINARY_NAME} git curl node
+EOF
+}
+
+_version() {
+  printf '%s\n' "${VERSION}"
+}
+
+# function to parse color option
+_set_color() {
+  local found=0;
+  for opt in "${COLOR_OPTS[@]}"; do
+    [ "${1}" == "${COLOR_PREFIX}-${opt}" ] && COLOR="${opt}" && found=1 && break
+  done
+  [ ${found} -eq 1 ] || >&2 echo "Error: wrong flag ${1}"
+}
+
+# try to extract version by executing "${1}" with "${2}" arg
+# command name to be executed is dynamically passed to this function as ${1}
+# arg to ${1} is passed in ${2}
+__dynamic_detect(){
+  cmd="${1}"
+  params="${2}"
+  version=$( eval "${cmd}" "${params}" "2>&1" | grep -Eo "${REGEX_SIMPLE_VERSION}" | head -1)
+  status=$?
+}
+
+# commands that use `--version` flag
+__dynamic_detect--version(){
+  __dynamic_detect "${1}" "--version"
+}
+
+# commands that use `-version` flag
+__dynamic_detect-version(){
+  __dynamic_detect "${1}" "-version"
+}
+
+# commands that use `-v` flag
+__dynamic_detect-v(){
+  __dynamic_detect "${1}" "-v"
+}
+
+# commands that use `-V` flag
+__dynamic_detect-V(){
+  __dynamic_detect "${1}" "-V"
+}
+
+# commands that use `version` argument
+__dynamic_detect-arg_version(){
+  __dynamic_detect "${1}" "version"
+}
+
+## the main function
+__detect(){
+  name="${1}"
+
+  # default values (for case when decoration applied)
+  fail=${FAIL}
+  pass=${PASS}
+  wrapper_beg="${txtbold}${txtyellow}"
+  wrapper_end="${txtreset}"
+
+  # setup aliases - maps commonly used name to exact command name
+  case ${name} in
+    rust                  ) command="rustc"         ;;
+    ssl                   ) command="openssl"       ;;
+    openssh               ) command="ssh"           ;;
+    golang                ) command="go"            ;;
+    jre                   ) command="java"          ;;
+    jdk                   ) command="javac"         ;;
+    nodejs                ) command="node"          ;;
+    goreplay              ) command="gor"           ;;
+    httpie                ) command="http"          ;;
+    homebrew              ) command="brew"          ;;
+    awsebcli              ) command="eb"            ;;
+    awscli                ) command="aws"           ;;
+    postgresql            ) command="psql"          ;;
+    *coreutils|linux*utils) command="gnu_coreutils" ;;
+    *                     ) command=${name}         ;;
+  esac
+
+  case "${command}" in
+
+    # commands that need --version flag
+
+    ## Shells
+    bash|zsh|fish)          __dynamic_detect--version "${command}" ;;
+
+    ## VCS
+    git|hg|svn|bzr)         __dynamic_detect--version "${command}" ;;
+
+    ## Http
+    curl|wget|http)         __dynamic_detect--version "${command}" ;;
+
+    ## Editors
+    vim|emacs|nano)         __dynamic_detect--version "${command}" ;;
+    subl|code|codium)       __dynamic_detect--version "${command}" ;;
+
+    ## File system search and navigation
+    jq)                     __dynamic_detect--version "${command}" ;;
+    ag|ack|rg)              __dynamic_detect--version "${command}" ;;
+    tree|autojump)          __dynamic_detect--version "${command}" ;;
+
+    ## OS Package managers
+    apt|apt-get|aptitude)   __dynamic_detect--version "${command}" ;;
+    brew)                   __dynamic_detect--version "${command}" ;;
+
+    ## System tools
+    sed|awk|grep|file|sudo) __dynamic_detect--version "${command}" ;;
+    gzip|xz|unar|bzip2)     __dynamic_detect--version "${command}" ;;
+    tar|pv)                 __dynamic_detect--version "${command}" ;;
+    gunzip)                 __dynamic_detect--version "${command}" ;;
+    tee)                    __dynamic_detect--version "${command}" ;;
+    screen)                 __dynamic_detect-v "${command}" ;;
+
+    # Container runtimes
+    docker|podman)          __dynamic_detect--version "${command}" ;;
+
+    ## Database CLI
+    psql)                   __dynamic_detect--version "${command}" ;;
+    sqlite3)                __dynamic_detect-version "${command}" ;;
+
+
+    ########### Programming languages Build tools & Package managers ###########
+
+
+    ## Build and Compile
+    gcc|make|cmake|bats)    __dynamic_detect--version "${command}" ;;
+    g++|clang|ccache)       __dynamic_detect--version "${command}" ;;
+    ninja)                  __dynamic_detect--version "${command}" ;;
+    composer)               __dynamic_detect-V "${command}" ;;
+    pip|pip3|conda)         __dynamic_detect-V "${command}" ;;
+    lein|gradle|mvn)        __dynamic_detect--version "${command}" ;;
+    grunt|brunch)           __dynamic_detect--version "${command}" ;;
+    gem|rake|bundle)        __dynamic_detect--version "${command}" ;;
+    npm|yarn|pnpm)          __dynamic_detect--version "${command}" ;;
+    act)                    __dynamic_detect--version "${command}" ;;
+
+    ## Scripting Language / runtime
+    ruby|R|python|python3)  __dynamic_detect--version "${command}" ;;
+    perl|perl6|php|php5)    __dynamic_detect--version "${command}" ;;
+    groovy|node)            __dynamic_detect--version "${command}" ;;
+
+    # JVM tools that need -version flag
+    ant)                               __dynamic_detect-version "${command}" ;;
+    java|javac|scala|kotlin)           __dynamic_detect-version "${command}" ;;
+
+    ## Rust
+    rustc|cargo)            __dynamic_detect--version "${command}" ;;
+
+    ## Cloud Tools
+    aws|eb|sls|gcloud)      __dynamic_detect--version "${command}" ;;
+    heroku)                 __dynamic_detect--version "${command}" ;;
+    netlify)                __dynamic_detect--version "${command}" ;;
+    netlifyctl)             __dynamic_detect-arg_version "${command}" ;;
+
+    ## GPG Tools
+    gpg|gpgconf|gpg-agent)  __dynamic_detect--version "${command}" ;;
+    gpg-connect-agent)      __dynamic_detect--version "${command}" ;;
+    gpgsm)                  __dynamic_detect--version "${command}" ;;
+
+    ## Hashicorp Tools
+    terraform|packer)       __dynamic_detect--version "${command}" ;;
+    vagrant|consul)         __dynamic_detect--version "${command}" ;;
+    nomad)                  __dynamic_detect--version "${command}" ;;
+
+    ## Browsers
+    firefox)                __dynamic_detect-v "${command}" ;;
+
+    # commands that need -v flag
+    unzip)                  __dynamic_detect-v "${command}" ;;
+
+    # commands that need -V flag
+    ab)                     __dynamic_detect-V "${command}" ;;
+
+
+    # commands that need version arg
+    go|hugo)                __dynamic_detect-arg_version "${command}" ;;
+
+    ## Example of commands that need custom processing
+
+    gulp)
+      version=$( gulp --version 2>&1| grep -Eo "${REGEX_SIMPLE_VERSION}" | head -1)
+      status=$?
+      ;;
+
+    ## gor returns version but does not return normal status code, hence needs custom processing
+    gor)
+      version=$( gor version 2>&1 | grep -Eo "${REGEX_SIMPLE_VERSION}" | head -1)
+      if [ $? -eq 1 ]; then status=0; else status=127; fi
+      ;;
+
+    sbt)
+      version=$( sbt about 2>&1 | grep -Eo "([[:digit:]]{1,4}\.){2}[[:digit:]]{1,4}" | head -1)
+      status=$?
+      ;;
+
+    # openssl can have a letter at the end of the version number (eg. "1.1.1j")
+    openssl)
+      version=$( openssl version 2>&1 | grep -Eo "${REGEX_SIMPLE_VERSION}[[:alnum:]]*" |head -1)
+      status=$?
+      ;;
+
+    # openssh version output has a lot going on
+    ssh)
+      version=$(ssh -V 2>&1 |grep -Eo "OpenSSH_${REGEX_SIMPLE_VERSION}[[:alnum:]]*" |cut -d'_' -f2)
+      status=$?
+      ;;
+
+    ## use 'readlink' to test for GNU coreutils
+    # readlink (GNU coreutils) 8.28
+    gnu_coreutils)    __dynamic_detect--version readlink ;;
+
+    ## hub uses --version but version string is on second line, or third if HUB_VERBOSE set
+    hub)
+      version=$( HUB_VERBOSE='' hub --version 2>&1 | sed -n 2p | grep -Eo "${REGEX_SIMPLE_VERSION}" | head -1)
+      status=$?
+      ;;
+
+    ## zip uses -v but version string is on second line
+    zip)
+      version=$( zip -v 2>&1 | sed -n 2p | grep -Eo "${REGEX_SIMPLE_VERSION}" | head -1)
+      status=$?
+      ;;
+
+    has)
+      version=$( has -v 2>&1 | grep -Eo "${REGEX_SIMPLE_VERSION}" | head -1)
+      status=$?
+      ;;
+
+    *)
+      ## Can allow dynamic checking here, i.e. checking commands that are not listed above
+      if [[ "${HAS_ALLOW_UNSAFE}" == "y" ]]; then
+        __dynamic_detect--version "${command}"
+        ## fallback checking based on status!=127 (127 means command not found)
+        ## TODO can check other type of supported version-checks if status was not 127
+      else
+        ## -1 is special way to tell command is not supported/whitelisted by `has`
+        status="-1"
+      fi
+      ;;
+  esac
+
+  if [ "${COLOR}" == "${COLOR_NEVER}" ] || [[ ! -t 1 && "${COLOR}" == "${COLOR_AUTO}" ]]; then
+    pass=${checkmark}
+    fail=${fancyx}
+    wrapper_beg=""
+    wrapper_end=""
+  fi
+
+  if [ "$status" -eq "-1" ]; then     ## When unsafe processing is not allowed, the -1 signifies
+    printf '%b %s not understood\n' "${fail}" "${command}" > "$OUTPUT"
+    KO=$(( KO+1 ))
+
+  elif [ ${status} -eq 127 ]; then    ## command not installed
+    printf '%b %s\n' "${fail}" "${command}" > "$OUTPUT"
+    KO=$(( KO+1 ))
+
+  elif [ ${status} -eq 0 ] || [ ${status} -eq 141 ]; then      ## successfully executed
+    printf "%b %s %b\n" "${pass}" "${command}" "${wrapper_beg}${version}${wrapper_end}" > "$OUTPUT"
+    OK=$(( OK+1 ))
+
+  else  ## as long as its not 127, command is there, but we might not have been able to extract version
+    printf '%b %s\n' "${pass}" "${command}" > "$OUTPUT"
+    OK=$(( OK+1 ))
+  fi
+} #end __detect
+
+OPTIND=1
+OUTPUT=/dev/stdout
+
+while getopts ":qhv-" OPTION; do
+  case "$OPTION" in
+  q)
+    OUTPUT=/dev/null
+    ;;
+  h)
+    _usage
+    exit 0
+    ;;
+  v)
+    _version
+    exit 0
+    ;;
+  -)
+    [ $OPTIND -ge 1 ] && optind=$((OPTIND - 1)) || optind=$OPTIND
+    eval OPTION="\$$optind"
+    OPTARG=$(echo "$OPTION" | cut -d'=' -f2)
+    OPTION=$(echo "$OPTION" | cut -d'=' -f1)
+    case $OPTION in
+    --version)
+      _version
+      exit 0
+      ;;
+    --help)
+      _usage
+      exit 0
+      ;;
+    ${COLOR_PREFIX}*)
+      _set_color "${OPTION}"
+      ;;
+    *)
+      printf '%s: unrecognized option '%s'\n' "${BINARY_NAME}" "${OPTARG}"
+      _usage
+      exit 2
+      ;;
+    esac
+    OPTIND=1
+    shift
+    ;;
+  ?)
+    printf '%s: unrecognized option '%s'\n' "${BINARY_NAME}" "${OPTARG}"
+    _usage
+    exit 2
+    ;;
+  esac
+done
+
+shift $((OPTIND - 1))
+
+if [ -s "${RC_FILE}" ];  then
+  HASRC="true"
+fi
+
+# if HASRC is not set AND no arguments passed to script
+if [[ -z "${HASRC}" ]] && [ "$#" -eq 0 ]; then
+  _usage
+else
+  # for each cli-arg
+  for cmd in "$@"; do
+    __detect "${cmd}"
+  done
+
+  ## display found / total
+  #  echo  ${OK} / $(($OK+$KO))
+
+  ## if HASRC has been set
+  if [[ -n "${HASRC}" ]]; then
+    ## for all
+    while read -r line; do
+      __detect "${line}"
+    done <<<"$( grep -Ev "^\s*(#|$)" "${RC_FILE}" )"
+  fi
+
+  ## max status code that can be returned
+  MAX_STATUS_CODE=126
+
+  if [[ "${KO}" -gt "${MAX_STATUS_CODE}" ]]; then
+    exit "${MAX_STATUS_CODE}"
+  else
+    exit "${KO}"
+  fi
+
+fi
