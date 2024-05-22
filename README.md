@@ -32,6 +32,21 @@ Used on Arch and Debian<br>
 <li>clipboard = xclip/wl-clipboard</li>
 </ul>
 
+### Cli Programs & scripts
+<ul>
+<li>Ranger</li>
+<li>Shell-colorscripts</li>
+<li><a href="https://github.com/lincheney/fzf-tab-completion">fzf-tab-completion</a></li>
+<li><a href="https://github.com/dvorka/hstr">fzf-tab-completion</a></li>
+<li>Tmux</li>
+<li>Tmux-sessionizer (primeagen)</li>
+<li>Figlet</li>
+<li>Zoxide</li>
+<li>Starship</li>
+<li>Github-cli</li>
+
+</ul>
+
 Wallpapers: 1. https://github.com/dharmx/walls<br>
             2. https://wallhaven.cc/
 
