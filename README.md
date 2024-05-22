@@ -6,7 +6,7 @@ Used on Arch and Debian<br>
 
 
 [ Bspwm ]
-![bsp3](https://github.com/autonomuscoder/dotfiles/assets/112854891/e25ab293-e195-4a87-9f56-0679c59261c7)
+![bsp4](https://github.com/autonomuscoder/dotfiles/assets/112854891/dba9cfdc-177d-4b19-b02f-23a42fdf8ef1)
 
 
 [ Hyprland ]
