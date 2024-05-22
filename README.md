@@ -44,6 +44,7 @@ Used on Arch and Debian<br>
 <li>Zoxide</li>
 <li>Starship</li>
 <li>Github-cli</li>
+<li>fzf</li>
 
 </ul>
 
