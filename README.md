@@ -45,6 +45,8 @@ Used on Arch and Debian<br>
 <li>Starship</li>
 <li>Github-cli</li>
 <li>fzf</li>
+<li><a href="https://github.com/kdabir/has">has</a></li>
+
 
 </ul>
 
