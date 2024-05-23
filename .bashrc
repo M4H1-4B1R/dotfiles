@@ -112,7 +112,7 @@ fi
 alias ls='exa --icons'
 alias ll='exa -al --icons'
 alias snv='sudo -E -s nvim'
-alias cat='bat --theme Nord'
+alias cat='bat --theme "Catppuccin Mocha"'
 alias tx='tmux'
 alias txa='tmux attach'
 alias hist="history | fzf"
@@ -163,7 +163,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 source /usr/share/nvm/init-nvm.sh
 
-colorscript -r
+# colorscript -r
 # figlet ArchLinux -c | lolcat
 
 # HSTR configuration - add this to ~/.bashrc
