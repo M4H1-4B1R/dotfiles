@@ -4,13 +4,13 @@ offset.x = 0
 offset.y = 3
 
 [font.bold]
-family = "MesloLGS Nerd Font"
+family = "FiraCode Nerd Font"
 
 [font.bold_italic]
-family = "MesloLGS Nerd Font"
+family = "FiraCode Nerd Font"
 
 [font.italic]
-family = "MesloLGS Nerd Font"
+family = "FiraCode Nerd Font"
 
 [font.normal]
-family = "MesloLGS Nerd Font"
+family = "FiraCode Nerd Font"
