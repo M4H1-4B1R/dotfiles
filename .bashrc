@@ -9,6 +9,28 @@ export PATH="/opt/lampp/:$PATH"
 export PATH="/home/xero/bin/:$PATH"
 export PATH="/home/xero/.local/bin/:$PATH"
 export PATH="$PATH":"$HOME/.local/scripts/"
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+
+# fzf catppuccin
+export FZF_DEFAULT_OPTS=" \
+--color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
+--color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
+--color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
+
+# function to fuzzy searching and killing processes
+fzf_kill() {
+    if [[ $(uname) == Linux ]]; then
+        local pids=$(ps -f -u $USER | sed 1d | fzf | awk '{print $2}')
+    elif [[ $(uname) == Darwin ]]; then
+        local pids=$(ps -f -u $USER | sed 1d | fzf | awk '{print $3}')
+    else
+        echo 'Error: unknown platform'
+        return
+    fi
+    if [[ -n "$pids" ]]; then
+        echo "$pids" | xargs kill -9 "$@"
+    fi
+}
 
 ### SET VI MODE ###
 # Comment this line out to enable default emacs-like bindings
@@ -116,6 +138,7 @@ alias cat='bat --theme "Catppuccin Mocha"'
 alias tx='tmux'
 alias txa='tmux attach'
 alias hist="history | fzf"
+alias fk="fzf_kill"
 alias startxmp='sudo /opt/lampp/./xampp start'
 alias stopxmp='sudo /opt/lampp/./xampp stop'
 alias mirror='sudo reflector -c Bangladesh -c India -a 12 -p https -p http --sort rate --save /etc/pacman.d/mirrorlist'
