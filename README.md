@@ -12,8 +12,8 @@ Used on Arch and Debian<br>
 [ Hyprland ]
 ![20240420_11h41m06s_grim](https://github.com/autonomuscoder/dotfiles/assets/112854891/3e88c25a-f7b1-4d59-9c83-41a239adeebf)
 
-[ Awesomewm ]
-![awesomewm3](https://github.com/autonomuscoder/dotfiles/assets/112854891/65b9e967-c457-4c1e-805d-e7a6ef1a1ed1)
+[ Dwm ] (flexipatch)
+![dwm](https://github.com/M4H1-4B1R/dotfiles/assets/112854891/520fb605-1f13-4c24-ba1f-f4a3d553c65f)
 
 
 
