@@ -69,5 +69,5 @@ static const struct arg args[] = {
     {cpu_perc, " %s%% ", NULL},
     {ram_perc, " %s%% ", NULL},
     {battery_perc, " %s%% ", "BAT1"},
-    {datetime, "%s", "%l:%M"},
+    {datetime, " %s", "%l:%M"},
 };
