@@ -75,7 +75,7 @@
 #define Button7                 7
 #define Button8                 8
 #define Button9                 9
-#define NUMTAGS                 5
+#define NUMTAGS                 9
 #define NUMVIEWHIST             NUMTAGS
 #define BARRULES                20
 #if TAB_PATCH
