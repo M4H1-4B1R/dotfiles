@@ -56,7 +56,7 @@ static const int showtab                 = showtab_auto;        /* Default tab b
 static const int toptab                  = False;               /* False means bottom tab bar */
 #endif // TAB_PATCH
 #if BAR_HEIGHT_PATCH
-static const int bar_height              = 30;   /* 0 means derive from font, >= 1 explicit height */
+static const int bar_height              = 0;   /* 0 means derive from font, >= 1 explicit height */
 #endif // BAR_HEIGHT_PATCH
 #if BAR_PADDING_PATCH
 static const int vertpad                 = 10;  /* vertical padding of bar */
