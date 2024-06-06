@@ -1,11 +1,11 @@
 super + b
-  min-browser
+  qutebrowser
 
 super + shift + b
    brave
 
 super + Return
-  alacritty
+   kitty
 
 super + t 
   xfce4-terminal
