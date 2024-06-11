@@ -18,7 +18,10 @@ super + x
   archlinux-logout
 
 super + e 	
-  alacritty -e ranger 
+  thunar
+
+super + c 
+  ~/gpt4all/bin/chat
 	
 super + shift + c
 	galculator
@@ -34,6 +37,9 @@ ctrl + alt + l
 
 super + w
    feh --bg-fill --randomize ~/walls/
+
+super + ctrl + f
+    kitty -e ~/.local/scripts/tmux-sessionizer
 
 super + space
     bspc node focused -t \~floating
