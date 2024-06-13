@@ -902,9 +902,9 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_Escape,     setkeymode,             {.ui = COMMANDMODE} },
 	#endif // KEYMODES_PATCH
 	{ MODKEY,                       XK_Return,     spawn,                  {.v = termcmd } },
-	{ MODKEY|ShiftMask,             XK_Return,     spawn,                  {.v = dmenucmd } },
+	{ MODKEY|ShiftMask,             XK_Return,     spawn,                  SHCMD("rofi -show drun") },
 	{ MODKEY,                       XK_b,          spawn,                  SHCMD("brave") },
-	{ MODKEY,                       XK_e,          spawn,                  SHCMD("kitty -e ranger") },
+	{ MODKEY,                       XK_e,          spawn,                  SHCMD("thunar") },
 	{ MODKEY,                       XK_w,          spawn,                  SHCMD("feh --bg-fill --randomize ~/walls/") },
 	{ MODKEY,                       XK_s,          spawn,                  SHCMD("flameshot gui") },
 	{ MODKEY,                       XK_x,          spawn,                  SHCMD("archlinux-logout") },
