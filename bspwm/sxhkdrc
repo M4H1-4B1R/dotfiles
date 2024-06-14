@@ -1,8 +1,5 @@
 super + b
-  qutebrowser
-
-super + shift + b
-   brave
+  brave
 
 super + Return
    kitty
