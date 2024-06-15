@@ -37,7 +37,7 @@ Used on Arch and Debian. Managed with GNU Stow<br>
 <li>Ranger</li>
 <li>Shell-colorscripts</li>
 <li><a href="https://github.com/lincheney/fzf-tab-completion">fzf-tab-completion</a></li>
-<li><a href="https://github.com/dvorka/hstr">fzf-tab-completion</a></li>
+<li><a href="https://github.com/dvorka/hstr">hstr</a></li>
 <li>Tmux</li>
 <li>Tmux-sessionizer (primeagen)</li>
 <li>Figlet</li>
@@ -45,7 +45,7 @@ Used on Arch and Debian. Managed with GNU Stow<br>
 <li>Starship</li>
 <li>Github-cli</li>
 <li>fzf</li>
-<li><a href="https://github.com/kdabir/has">has</a></li>
+
 
 
 </ul>
