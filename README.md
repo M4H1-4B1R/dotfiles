@@ -1,12 +1,12 @@
 # My linux dotfiles
-Used on Arch and Debian<br>
+Used on Arch and Debian. Managed with GNU Stow<br>
 
 [Qtile]
 ![comfy-qtile](https://github.com/autonomuscoder/dotfiles/assets/112854891/88605823-87fb-457a-8167-c44d46c1658b)
 
 
 [ Bspwm ]
-![bsp4](https://github.com/autonomuscoder/dotfiles/assets/112854891/dba9cfdc-177d-4b19-b02f-23a42fdf8ef1)
+![bsp](https://github.com/M4H1-4B1R/dotfiles/assets/112854891/efa72c9e-8544-45e9-bed0-02ec43508541)
 
 
 [ Hyprland ]
