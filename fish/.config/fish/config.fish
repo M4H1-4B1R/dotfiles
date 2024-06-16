@@ -6,8 +6,8 @@ bind \cf "tmux-sessionizer"
 
 ### Aliases ###
 
-    alias ls='eza --icons=always -a --no-permissions'
-    alias ll='eza --long --tree --level=2 | fzf'
+    alias ls='exa --icons -a --no-permissions' 
+    alias ll='exa --long --tree --level=2'
 		alias snv='sudo -E -s nvim'
 		alias cat='bat --theme catppuccin_mocha'
 		alias startxmp='sudo /opt/lampp/./xampp start'
@@ -35,4 +35,3 @@ bind \cf "tmux-sessionizer"
 
  set -U fish_greeting
  set -gx NVM_DIR $HOME/.nvm
- source ~/.asdf/asdf.fish
