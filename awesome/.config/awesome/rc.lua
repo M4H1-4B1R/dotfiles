@@ -8,6 +8,7 @@ local awful = require("awful")
 require("awful.autofocus")
 -- Widget and layout library
 local wibox = require("wibox")
+local vicious = require("vicious")
 -- Theme handling library
 local beautiful = require("beautiful")
 
@@ -15,10 +16,6 @@ local beautiful = require("beautiful")
 -- require("eminent")
 --require ("keys")
 require("autostart")
-
-local batteryarc_widget = require("awesome-wm-widgets.batteryarc-widget.batteryarc")
-local volume_widget = require('awesome-wm-widgets.volume-widget.volume')
-
 
 -- Notification library
 local naughty = require("naughty")
@@ -67,7 +64,7 @@ end
 beautiful.init("/home/abir/.config/awesome/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "alacritty"
+terminal = "kitty"
 editor = os.getenv("nvim") or "code"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -132,6 +129,35 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 
 -- {{{ Wibar
 -- Create a textclock widget
+local label_color = "#d791a8"
+local info_color = "#ffffff"
+
+local function get_kernel_version(callback)
+    awful.spawn.easy_async_with_shell("uname -r", function(stdout)
+        callback(stdout)
+    end)
+end
+
+-- Create and update the kernel widget
+local kernel_widget = wibox.widget.textbox()
+get_kernel_version(function(kernel)
+    kernel_widget:set_markup(string.format("<span foreground='%s'>  </span> <span foreground='%s'>%s</span>", label_color, info_color, kernel))
+end)
+
+-- Create CPU widget
+local cpu_widget = wibox.widget.textbox()
+
+-- Register the widget with Vicious
+vicious.register(cpu_widget, vicious.widgets.cpu, function (widget, args)
+	return string.format("<span foreground='%s'> </span> <span foreground='%s'>%d%%</span>", label_color, info_color, args[1]) end, 2) --Updates every 2 seconds
+
+-- Create Memory widget
+local mem_widget = wibox.widget.textbox()
+
+-- Register the widget with Vicious
+vicious.register(mem_widget, vicious.widgets.mem, function (widget, args)
+	return string.format("<span foreground='%s'> </span> <span foreground='%s'>%d%%</span>", label_color, info_color, args[1]) end, 15) --Updates every 15 seconds
+
 mytextclock = wibox.widget.textclock()
 
 -- Create a wibox for each screen and add it
@@ -197,8 +223,8 @@ awful.screen.connect_for_each_screen(function(s)
 	set_wallpaper(s)
 
 	-- Each screen has its own tag table.
-	-- awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
-	awful.tag({ "  ", "  ", "  ", "   ", "  " }, s, awful.layout.layouts[1])
+	-- awful.tag({ "1 ", "2 ", "3 ", "4 ", "5 ", "6 ", "7 ", "8 ", "9 " }, s, awful.layout.layouts[1])
+	awful.tag({ "  ", " 󰈹 ", "  ", " 󰽱 ", "  " }, s, awful.layout.layouts[1])
 	-- awful.tag({ " 一 ", " 二 ", " 三 ", " 四 ", " 五 " }, s, awful.layout.layouts[1])
 
 	-- We need one layoutbox per screen.
@@ -233,7 +259,7 @@ awful.screen.connect_for_each_screen(function(s)
 	})
 
 	-- Create the wibox
-	s.mywibox = awful.wibar({ position = "top", screen = s })
+	s.mywibox = awful.wibar({ position = "top", screen = s, height = 25 })
 
 
 	-- Add widgets to the wibox
@@ -247,20 +273,12 @@ awful.screen.connect_for_each_screen(function(s)
 		{           -- Right widgets
 			layout = wibox.layout.fixed.horizontal,
 			spacing = 7,
-			 batteryarc_widget({
-				 size = 25,
-				 font = "Hack Nerd Font 9",
-            show_current_level = true,
-            arc_thickness = 1,
-        }),
-				volume_widget{
-					widget_type = 'arc',
-					font = "Hack Nerd Font 9",
-					size = 25
-				},
+			kernel_widget,
+			cpu_widget,
+			mem_widget,
 				mytextclock,
 			-- wibox.widget.systray():set_base_size(27),
-			-- wibox.widget.systray(),
+			wibox.widget.systray(),
 		},
 	})
 end)
@@ -314,13 +332,13 @@ globalkeys = gears.table.join(
 		awful.spawn(terminal)
 	end, { description = "open a terminal", group = "launcher" }),
 	awful.key({ modkey }, "e", function()
-		awful.spawn("alacritty -e ranger")
+		awful.spawn("thunar")
 	end, { description = "open a file manager", group = "launcher" }),
 	awful.key({ modkey }, "x", function()
 		awful.util.spawn("archlinux-logout")
 	end, { description = "logout menu", group = "launcher" }),
 	awful.key({ modkey }, "b", function()
-		awful.spawn("brave")
+		awful.spawn("brave-browser")
 	end, { description = "open a web browser", group = "launcher" }),
 	awful.key({ modkey }, "w", function()
 		awful.spawn("feh --bg-fill --randomize /home/abir/walls/", false)

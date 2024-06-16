@@ -13,18 +13,16 @@ local theme = {theme}
 
 theme.font          = "JetbrainsMono Nerd Font 11"
 
--- theme.bg_normal     = "#1d2021cc"
-theme.bg_normal     = "#080808aa"
--- theme.bg_focus      = "#121415cc"
+theme.bg_normal     = "#040507"
 theme.bg_focus      = "#b4befe"
 theme.bg_urgent     = "#f38ba8"
 theme.bg_minimize   = "#3b4252"
 theme.bg_systray    = theme.bg_normal
 
-theme.fg_normal     = "#cdd6f4"
-theme.fg_focus      = "#1e1e2e"
-theme.fg_urgent     = "#d8dee9"
-theme.fg_minimize   = "#d8dee9"
+theme.fg_normal     = "#ffffff"
+theme.fg_focus      = "#121212"
+theme.fg_urgent     = "#ffffff"
+theme.fg_minimize   = "#ffffff"
 
 theme.useless_gap   = dpi(10)
 theme.border_width  = dpi(0)
