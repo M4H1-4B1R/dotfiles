@@ -13,7 +13,7 @@ Used on Arch and Debian. Managed with GNU Stow<br>
 ![20240420_11h41m06s_grim](https://github.com/autonomuscoder/dotfiles/assets/112854891/3e88c25a-f7b1-4d59-9c83-41a239adeebf)
 
 [Awesome]
-![awesome](https://github.com/M4H1-4B1R/dotfiles/assets/112854891/010e7a32-f951-4087-9b30-e6a12f6f3e5b)
+![awesome](https://github.com/M4H1-4B1R/dotfiles/assets/112854891/1ca0eec0-a429-4983-99b0-f2cf01634734)
 
 
 ### Essential Programs
