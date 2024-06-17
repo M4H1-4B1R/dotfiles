@@ -129,7 +129,7 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 
 -- {{{ Wibar
 -- Create a textclock widget
-local label_color = "#d791a8"
+local label_color = "#83a598"
 local info_color = "#ffffff"
 
 local function get_kernel_version(callback)
