@@ -38,7 +38,7 @@
 "info" = "aqua1"
 "hint" = "blue1"
 
-"ui.background" = { bg = "bg0" }
+#"ui.background" = { bg = "bg0" }
 "ui.linenr" = { fg = "bg4" }
 "ui.linenr.selected" = { fg = "yellow1" }
 "ui.cursorline" = { bg = "bg1" }
