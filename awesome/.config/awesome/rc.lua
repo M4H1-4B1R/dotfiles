@@ -338,7 +338,7 @@ globalkeys = gears.table.join(
 		awful.util.spawn("archlinux-logout")
 	end, { description = "logout menu", group = "launcher" }),
 	awful.key({ modkey }, "b", function()
-		awful.spawn("brave-browser")
+		awful.spawn("brave")
 	end, { description = "open a web browser", group = "launcher" }),
 	awful.key({ modkey }, "w", function()
 		awful.spawn("feh --bg-fill --randomize /home/abir/walls/", false)
