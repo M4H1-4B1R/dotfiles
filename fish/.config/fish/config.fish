@@ -2,6 +2,7 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 set PATH "$PATH":"$HOME/.local/scripts/"
+set PATH "$PATH": "~/.nix-profile/bin"
 bind \cf "tmux-sessionizer"
 
 ### Aliases ###
@@ -14,6 +15,7 @@ bind \cf "tmux-sessionizer"
 		alias stopxmp='sudo /opt/lampp/./xampp stop'
 		alias restartxmp='sudo /opt/lampp/./xampp restart'
 		alias tshift='sudo -E timeshift-launcher'
+		alias zel='zellij'
 ### Debian ###
     alias install='sudo apt install --no-install-recommends'
     alias update='sudo apt update'
