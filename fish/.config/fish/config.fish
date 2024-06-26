@@ -3,7 +3,7 @@ if status is-interactive
 end
 set PATH "$PATH":"$HOME/.local/scripts/"
 set PATH "$PATH": "~/.nix-profile/bin"
-bind \cf "tmux-sessionizer"
+bind \cf "zelly"
 
 ### Aliases ###
 
@@ -16,6 +16,9 @@ bind \cf "tmux-sessionizer"
 		alias restartxmp='sudo /opt/lampp/./xampp restart'
 		alias tshift='sudo -E timeshift-launcher'
 		alias zel='zellij'
+		alias python='python3'
+		alias lvim='NVIM_APPNAME="lvim" nvim'
+		alias fetch="fastfetch"
 ### Debian ###
     alias install='sudo apt install --no-install-recommends'
     alias update='sudo apt update'
@@ -26,10 +29,10 @@ bind \cf "tmux-sessionizer"
     alias purge='sudo apt purge'
     alias autoremove='sudo apt autoremove'
 ### Arch ###
-	  alias pac='sudo pacman'
-		alias orphan='sudo pacman -Qtd'
-		alias foreign='sudo pacman -Qm'
-		alias rmall='sudo pacman -Rsunc $(pacman -Qtdq)'
+#  alias pac='sudo pacman'
+	  #	alias orphan='sudo pacman -Qtd'
+	  #	alias foreign='sudo pacman -Qm'
+	  #	alias rmall='sudo pacman -Rsunc $(pacman -Qtdq)'
 
     ### Starship ###
 		     starship init fish | source
@@ -37,3 +40,6 @@ bind \cf "tmux-sessionizer"
 
  set -U fish_greeting
  set -gx NVM_DIR $HOME/.nvm
+bass source ~/.nvm/nvm.sh
+# Created by `pipx` on 2024-06-25 07:23:06
+set PATH $PATH /home/abir/.local/bin

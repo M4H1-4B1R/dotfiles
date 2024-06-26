@@ -92,9 +92,9 @@ myawesomemenu = {
 			hotkeys_popup.show_help(nil, awful.screen.focused())
 		end,
 	},
-	{ "manual",      terminal .. " -e man awesome" },
+	{ "manual", terminal .. " -e man awesome" },
 	{ "edit config", editor_cmd .. " " .. awesome.conffile },
-	{ "restart",     awesome.restart },
+	{ "restart", awesome.restart },
 	{
 		"quit",
 		function()
@@ -133,30 +133,49 @@ local label_color = "#83a598"
 local info_color = "#ffffff"
 
 local function get_kernel_version(callback)
-    awful.spawn.easy_async_with_shell("uname -r", function(stdout)
-        callback(stdout)
-    end)
+	awful.spawn.easy_async_with_shell("uname -r", function(stdout)
+		callback(stdout)
+	end)
 end
 
 -- Create and update the kernel widget
 local kernel_widget = wibox.widget.textbox()
 get_kernel_version(function(kernel)
-    kernel_widget:set_markup(string.format("<span foreground='%s'>  </span> <span foreground='%s'>%s</span>", label_color, info_color, kernel))
+	kernel_widget:set_markup(
+		string.format(
+			"<span foreground='%s'>  </span> <span foreground='%s'>%s</span>",
+			label_color,
+			info_color,
+			kernel
+		)
+	)
 end)
 
 -- Create CPU widget
 local cpu_widget = wibox.widget.textbox()
 
 -- Register the widget with Vicious
-vicious.register(cpu_widget, vicious.widgets.cpu, function (widget, args)
-	return string.format("<span foreground='%s'> </span> <span foreground='%s'>%d%%</span>", label_color, info_color, args[1]) end, 2) --Updates every 2 seconds
+vicious.register(cpu_widget, vicious.widgets.cpu, function(widget, args)
+	return string.format(
+		"<span foreground='%s'> </span> <span foreground='%s'>%d%%</span>",
+		label_color,
+		info_color,
+		args[1]
+	)
+end, 2) --Updates every 2 seconds
 
 -- Create Memory widget
 local mem_widget = wibox.widget.textbox()
 
 -- Register the widget with Vicious
-vicious.register(mem_widget, vicious.widgets.mem, function (widget, args)
-	return string.format("<span foreground='%s'> </span> <span foreground='%s'>%d%%</span>", label_color, info_color, args[1]) end, 15) --Updates every 15 seconds
+vicious.register(mem_widget, vicious.widgets.mem, function(widget, args)
+	return string.format(
+		"<span foreground='%s'> </span> <span foreground='%s'>%d%%</span>",
+		label_color,
+		info_color,
+		args[1]
+	)
+end, 15) --Updates every 15 seconds
 
 mytextclock = wibox.widget.textclock()
 
@@ -261,7 +280,6 @@ awful.screen.connect_for_each_screen(function(s)
 	-- Create the wibox
 	s.mywibox = awful.wibar({ position = "top", screen = s, height = 25 })
 
-
 	-- Add widgets to the wibox
 	s.mywibox:setup({
 		layout = wibox.layout.align.horizontal,
@@ -270,13 +288,13 @@ awful.screen.connect_for_each_screen(function(s)
 			s.mytaglist,
 		},
 		s.mytasklist, -- Middle widget
-		{           -- Right widgets
+		{ -- Right widgets
 			layout = wibox.layout.fixed.horizontal,
 			spacing = 7,
 			kernel_widget,
 			cpu_widget,
 			mem_widget,
-				mytextclock,
+			mytextclock,
 			-- wibox.widget.systray():set_base_size(27),
 			wibox.widget.systray(),
 		},
@@ -338,7 +356,7 @@ globalkeys = gears.table.join(
 		awful.util.spawn("archlinux-logout")
 	end, { description = "logout menu", group = "launcher" }),
 	awful.key({ modkey }, "b", function()
-		awful.spawn("brave")
+		awful.spawn("firefox")
 	end, { description = "open a web browser", group = "launcher" }),
 	awful.key({ modkey }, "w", function()
 		awful.spawn("feh --bg-fill --randomize /home/abir/walls/", false)
@@ -545,7 +563,7 @@ awful.rules.rules = {
 			role = {
 				"AlarmWindow", -- Thunderbird's calendar.
 				"ConfigManager", -- Thunderbird's about:config.
-				"pop-up",    -- e.g. Google Chrome's (detached) Developer Tools.
+				"pop-up", -- e.g. Google Chrome's (detached) Developer Tools.
 			},
 		},
 		properties = { floating = true },
@@ -565,7 +583,9 @@ awful.rules.rules = {
 client.connect_signal("manage", function(c)
 	-- Set the windows at the slave,
 	-- i.e. put it at the end of others instead of setting it master.
-	if not awesome.startup then awful.client.setslave(c) end
+	if not awesome.startup then
+		awful.client.setslave(c)
+	end
 
 	if awesome.startup and not c.size_hints.user_position and not c.size_hints.program_position then
 		-- Prevent clients from being unreachable after screen count changes.
