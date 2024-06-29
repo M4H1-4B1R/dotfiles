@@ -64,7 +64,7 @@ end
 beautiful.init("/home/abir/.config/awesome/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "kitty"
+terminal = "alacritty"
 editor = os.getenv("nvim") or "code"
 editor_cmd = terminal .. " -e " .. editor
 
