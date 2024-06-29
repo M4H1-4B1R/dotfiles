@@ -2,7 +2,7 @@ super + b
   brave
 
 super + Return
-   kitty
+  alacritty
 
 super + t 
   xfce4-terminal

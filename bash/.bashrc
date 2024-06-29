@@ -39,12 +39,12 @@ fzf_kill() {
 # bind -m vi-insert 'Control-l: clear-screen'
 
 ################## Keybinds ######################
-bind -s '"\C-f": "tmux-sessionizer\n"'
+bind -s '"\C-f": "zelly\n"'
 
 if [[ $- =~ .*i.* ]]; then bind '"\C-g": "zi \n"'; fi
 
-source /home/abir/.local/scripts/fzf-bash-completion.sh
-bind -x '"\t": fzf_bash_completion'
+# source /home/abir/.local/scripts/fzf-bash-completion.sh
+# bind -x '"\t": fzf_bash_completion'
 #####################################################
 
 # Use bash-completion, if available
@@ -151,6 +151,7 @@ alias stopapache='sudo /opt/lampp/xampp stopapache'
 alias stopsql='sudo /opt/lampp/xampp stopmysql'
 alias stopftp='sudo /opt/lampp/xampp stopftp'
 alias fal='alias | fzf'
+alias zel='zellij'
 
 ### Debian ###
 alias install='sudo apt install --no-install-recommends'
@@ -184,7 +185,6 @@ eval "$(zoxide init bash)"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-source /usr/share/nvm/init-nvm.sh
 
 # colorscript -r
 # figlet ArchLinux -c | lolcat

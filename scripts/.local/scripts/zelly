@@ -18,7 +18,7 @@ if [[ $# -eq 1 ]]; then
     selected_path=$1
 else
     # If no argument was provided, interactively choose a directory
-    selected_path=$(fdfind . ~/repos ~/projects ~/.config --min-depth 1 --max-depth 2 --type d | fzf)
+    selected_path=$(fd . ~/repos ~/projects ~/.config --min-depth 1 --max-depth 2 --type d | fzf)
 fi
 
 # If no directory was selected, exit the script
