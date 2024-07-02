@@ -13,7 +13,7 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 _gen_fzf_default_opts() {
 
-local color00='#32302f'
+local color00='#040507'
 local color01='#3c3836'
 local color02='#504945'
 local color03='#665c54'
@@ -174,6 +174,8 @@ alias stopsql='sudo /opt/lampp/xampp stopmysql'
 alias stopftp='sudo /opt/lampp/xampp stopftp'
 alias fal='alias | fzf'
 alias zel='zellij'
+alias asq='asciiquarium'
+alias fig='figlet "Hello Reddit"'
 
 ### Debian ###
 alias install='sudo apt install --no-install-recommends'
