@@ -9,8 +9,12 @@ Used on Arch and Debian. Managed with GNU Stow<br>
 ![bsp](https://github.com/M4H1-4B1R/dotfiles/assets/112854891/efa72c9e-8544-45e9-bed0-02ec43508541)
 
 
-[ Hyprland ]
+[ Hyprland ] ( since changed the waybar config)
 ![20240420_11h41m06s_grim](https://github.com/autonomuscoder/dotfiles/assets/112854891/3e88c25a-f7b1-4d59-9c83-41a239adeebf)
+
+(present config)
+![2024-07-03-123354_hyprshot](https://github.com/M4H1-4B1R/dotfiles/assets/112854891/3287d9b5-c625-4788-9565-08b3559eb378)
+
 
 [Awesome]
 ![awesome](https://github.com/M4H1-4B1R/dotfiles/assets/112854891/1ca0eec0-a429-4983-99b0-f2cf01634734)
