@@ -2,15 +2,15 @@
     border: none;
     border-radius: 0px;
     /* `ttf-font-awesome` is required to be installed for icons */
-    font-family: "JetbrainsMono Nerd Font", Helvetica, Arial, sans-serif;
+    font-family: "SpaceMono Nerd Font", Helvetica, Arial, sans-serif;
 
     /* adjust font-size value to your liking: */
-    font-size: 12px;
+    font-size: 13px;
     min-height: 0;
 }
 
 window#waybar {
-    background-color: rgba(04, 05, 07, 0.9);
+    background-color: rgba(04, 05, 07, 1);
     /* border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
     color: #ffffff;
     /* transition-property: background-color; */
@@ -41,7 +41,7 @@ window#waybar.chromium {
 } */
 
 #workspaces button {
-    /* padding: 0 0.4em; */
+    padding: 0 4px;
     /* background-color: transparent; */
     color: #ffffff;
     /* Use box-shadow instead of border so the text isn't offset */
@@ -81,15 +81,22 @@ window#waybar.chromium {
 #mode,
 #idle_inhibitor,
 #mpd {
-    padding: 2px 6px;
+    padding: 0px 6px;
     margin: 6px 3px; 
-    color: #689d6a;
+    color: #000000;
 		border-radius: 4px;
 }
 
 #window,
 #workspaces {
     margin: 0 4px;
+}
+#workspaces button {
+	border-radius: 0px;
+}
+#workspaces button.active {
+	border-bottom: 2px solid #8ec07c;
+	background: #000000;
 }
 
 /* If workspaces is the leftmost module, omit left margin */
@@ -103,18 +110,18 @@ window#waybar.chromium {
 }
 
 #clock {
-    background-color: #000000;
-    color: white;
+    background-color: #8ec07c;
+    color: #040507;
 }
 
 #battery {
-    background-color: #000000;
-    color: white;
+    background-color: #83a598;
+    color: #040507;
 }
 
 #battery.charging {
-    color: #ffffff;
-    background-color: #000000;
+    color: #040507;
+    background-color: #83a598;
 }
 
 @keyframes blink {
@@ -139,13 +146,13 @@ label:focus {
 }
 
 #cpu {
-    background-color: #000000;
-    color: #ffffff;
+    background-color: #83a598;
+    color: #040507;
 }
 
 #memory {
-    background-color: #000000;
-    color: white;
+    background-color: #8ec07c;
+    color: #040507;
 }
 
 #backlight {
@@ -164,13 +171,13 @@ label:focus {
 }
 
 #pulseaudio {
-    background-color: #000000;
-    color: #ffffff;
+    background-color: #8ec07c;
+    color: #040507;
 }
 
 #pulseaudio.muted {
-    background-color: #000000;
-    color: #ffffff;
+    background-color: #8ec07c;
+    color: #040507;
 }
 
 #custom-media {
