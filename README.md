@@ -13,7 +13,7 @@ Used on Arch and Debian. Managed with GNU Stow<br>
 ![20240420_11h41m06s_grim](https://github.com/autonomuscoder/dotfiles/assets/112854891/3e88c25a-f7b1-4d59-9c83-41a239adeebf)
 
 (present config)
-![2024-07-03-123354_hyprshot](https://github.com/M4H1-4B1R/dotfiles/assets/112854891/3287d9b5-c625-4788-9565-08b3559eb378)
+![2024-07-04-155559_hyprshot](https://github.com/M4H1-4B1R/dotfiles/assets/112854891/84f5a582-5123-47bf-a270-4f0450295928)
 
 
 [Awesome]
