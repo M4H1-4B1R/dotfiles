@@ -3,7 +3,7 @@
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 # /usr/libexec/polkit-gnome-authentication-agent-1 &
 #nitrogen --restore &
-feh --bg-fill --randomize ~/walls/ &
+feh --bg-fill ~/walls/EhgW9crWsAAtXy6.jpeg &
 picom --config ~/.config/picom/picom.conf &
 # compfy &
 dunst &

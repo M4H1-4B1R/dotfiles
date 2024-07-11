@@ -162,9 +162,9 @@ static void (*bartabmonfns[])(Monitor *) = { NULL /* , customlayoutfn */ };
 #if BAR_PANGO_PATCH
 static const char font[]                 = "monospace 10";
 #else
-static const char *fonts[]               = { "FiraCode Nerd Font:size=13" };
+static const char *fonts[]               = { "JetbrainsMono Nerd Font:size=17" };
 #endif // BAR_PANGO_PATCH
-static const char dmenufont[]            = "FiraCode Nerd Font:size=13";
+static const char dmenufont[]            = "JebrainsMono Nerd Font:size=17";
 
 static char c000000[]                    = "#000000"; // placeholder value
 
@@ -174,9 +174,9 @@ static char normbordercolor[]            = "#6c7086";
 static char normfloatcolor[]             = "#b16286";
 
 static char selfgcolor[]                 = "#f4f4f9";
-static char selbgcolor[]                 = "#191e26";
-static char selbordercolor[]             = "#191e26";
-static char selfloatcolor[]              = "#191e26";
+static char selbgcolor[]                 = "#040507";
+static char selbordercolor[]             = "#040507";
+static char selfloatcolor[]              = "#040507";
 
 static char titlenormfgcolor[]           = "#d8dee9";
 static char titlenormbgcolor[]           = "#040507";
@@ -184,19 +184,19 @@ static char titlenormbordercolor[]       = "#444444";
 static char titlenormfloatcolor[]        = "#b16286";
 
 static char titleselfgcolor[]            = "#f4f4f9";
-static char titleselbgcolor[]            = "#191e26";
-static char titleselbordercolor[]        = "#191e26";
-static char titleselfloatcolor[]         = "#191e26";
+static char titleselbgcolor[]            = "#040507";
+static char titleselbordercolor[]        = "#040507";
+static char titleselfloatcolor[]         = "#040507";
 
 static char tagsnormfgcolor[]            = "#d8dee9";
 static char tagsnormbgcolor[]            = "#040507";
 static char tagsnormbordercolor[]        = "#444444";
 static char tagsnormfloatcolor[]         = "#b16286";
 
-static char tagsselfgcolor[]             = "#f4f4f9";
-static char tagsselbgcolor[]             = "#191e26";
-static char tagsselbordercolor[]         = "#191e26";
-static char tagsselfloatcolor[]          = "#191e26";
+static char tagsselfgcolor[]             = "#8ec07c";
+static char tagsselbgcolor[]             = "#040507";
+static char tagsselbordercolor[]         = "#040507";
+static char tagsselfloatcolor[]          = "#040507";
 
 static char hidnormfgcolor[]             = "#c4e2d5";
 static char hidselfgcolor[]              = "#94e2d5";
@@ -257,7 +257,7 @@ static char selfloatbgcolor[]            = "#117799";
 #endif // BAR_FLEXWINTITLE_PATCH
 
 #if BAR_ALPHA_PATCH
-static const unsigned int baralpha = 0xd0;
+static const unsigned int baralpha = 0xdf;
 static const unsigned int borderalpha = OPAQUE;
 static const unsigned int alphas[][3] = {
 	/*                       fg      bg        border     */

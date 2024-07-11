@@ -1,16 +1,17 @@
 [global]
-frame_color = "#89B4FA"
+frame_color = "#8ec07c"
 separator_color= frame
+font = JetbrainsMono Nerd font 10
 
 [urgency_low]
-background = "#1E1E2E"
-foreground = "#CDD6F4"
+background = "#040507"
+foreground = "#f4f4f9"
 
 [urgency_normal]
-background = "#1E1E2E"
-foreground = "#CDD6F4"
+background = "#040507"
+foreground = "#f4f4f9"
 
 [urgency_critical]
-background = "#1E1E2E"
-foreground = "#CDD6F4"
-frame_color = "#FAB387"
+background = "#040507"
+foreground = "#f4f4f9"
+frame_color = "#fb4934"
