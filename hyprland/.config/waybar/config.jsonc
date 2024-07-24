@@ -2,28 +2,33 @@
 {
     // "layer": "top", // Waybar at top layer
      "position": "top", // Waybar position (top|bottom|left|right)
-    "height": 4, // Waybar height (to be removed for auto height)
+    "height": 2, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
     // Choose the order of the modules
     "modules-left": ["hyprland/workspaces"],
     "modules-center": ["hyprland/window"],
     "modules-right": ["pulseaudio", "cpu", "memory", "battery", "clock", "tray"],
     // Modules configuration
-    // "sway/workspaces": {
-    //     "disable-scroll": true,
-    //     "all-outputs": true,
-    //     "format": "{name}: {icon}",
-    //     "format-icons": {
-    //         "1": "",
-    //         "2": "",
-    //         "3": "",
-    //         "4": "",
-    //         "5": "",
-    //         "urgent": "",
-    //         "focused": "",
-    //         "default": ""
-    //     }
-    // },
+     "hyprland/workspaces": {
+         "disable-scroll": true,
+         "all-outputs": true,
+          "active-only": false,
+         // "format": "{name}: {icon}",
+         "format": " {name} ",
+         // "format-icons": {
+         //     "1": "   ",
+         //     "2": "   ",
+         //     "3": "   ",
+         //     "4": "   ",
+         //     "5": "   ",
+         //     "urgent": "   ",
+         //     "focused": "   ",
+         //     "default": "   "
+         // },
+    "persistent-workspaces": {
+    "*": 9, // 5 workspaces by default on every monitor
+  }
+     },
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
