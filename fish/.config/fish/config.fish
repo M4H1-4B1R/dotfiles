@@ -29,7 +29,7 @@ bind \cf "zelly"
     alias purge='sudo apt purge'
     alias autoremove='sudo apt autoremove'
 ### Arch ###
-#  alias pac='sudo pacman'
+ alias pac='sudo pacman'
 	  #	alias orphan='sudo pacman -Qtd'
 	  #	alias foreign='sudo pacman -Qm'
 	  #	alias rmall='sudo pacman -Rsunc $(pacman -Qtdq)'
