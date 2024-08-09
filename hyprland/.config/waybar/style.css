@@ -50,10 +50,9 @@ window#waybar {
 #mode,
 #idle_inhibitor,
 #mpd {
-  padding: 0px 3px;
-  margin: 4px 0px;
-  color: #ffffff;
-  border-radius: 4px;
+  padding: 2px 3px;
+  margin: 6px 0px;
+	border-radius: 10px;
 }
 
 #window,
@@ -81,13 +80,15 @@ window#waybar {
 }
 
 #clock {
-  /*color: #b4befe;*/
-  /*color: #040507;*/
+  background-color: #b4befe;
+  color: #040507;
+	margin-right: 10px;
 }
 
 #battery {
-  /*color: #f5c2f7;*/
-  /*color: #040507;*/
+  background-color: #a6adc8;
+  color: #040507;
+	margin-right: 10px;
 }
 
 #battery.charging {
@@ -117,13 +118,15 @@ label:focus {
 }
 
 #cpu {
-  /*color: #f5c2e7;*/
-  /*color: #040507;*/
+  background-color: #a6adc8;
+  color: #040507;
+	margin-right: 10px;
 }
 
 #memory {
-  /*color: #b4befe;*/
-  /*color: #040507;*/
+  background-color: #b4befe;
+  color: #040507;
+	margin-right: 10px;
 }
 
 #backlight {
@@ -142,9 +145,11 @@ label:focus {
 }
 
 #pulseaudio {
-  /*color: #b4befe;*/
-  /*color: #040507;*/
-  margin: 4px 20px;
+  background-color: #b4befe;
+  color: #040507;
+	padding: 2px;
+  margin: 6px 17px;
+	border-radius: 10px;
 }
 
 #pulseaudio.muted {
