@@ -12,7 +12,7 @@ super + shift + Return
 
 # logout, shutdown, reboot
 super + x
-  archlinux-logout
+  ~/.local/scripts/power
 
 super + e 	
   thunar
@@ -91,3 +91,15 @@ super + @Print
 	scrot -e 'mv $f ~/Pictures'; \
 	notify-send 'Scrot' 'Image saved to ~/Pictures'
 	
+XF86MonBrightnessDown
+ brightnessctl set 10%-
+
+XF86MonBrightnessUp
+ brightnessctl set +10%
+
+XF86AudioRaiseVolume
+    pactl set-sink-volume 0 +5%
+XF86AudioLowerVolume
+    pactl set-sink-volume 0 -5%
+XF86AudioMute
+    pactl set-sink-mute 0 toggle
