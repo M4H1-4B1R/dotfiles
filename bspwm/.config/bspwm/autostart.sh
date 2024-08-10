@@ -13,3 +13,4 @@ nm-applet &
 blueman-applet &
 #xfce4-power-manager &
 sxhkd -c ~/.config/bspwm/sxhkdrc &
+xinput set-prop "Elan Touchpad" "libinput Tapping Enabled" 1
