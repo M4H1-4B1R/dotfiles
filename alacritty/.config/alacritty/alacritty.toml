@@ -1,4 +1,4 @@
-import = ["/home/abir/.config/alacritty/themes/catppuccin_mocha.toml", "/home/abir/.config/alacritty/fonts.toml"]
+import = ["/home/abir/.config/alacritty/themes/tokyo-night.toml", "/home/abir/.config/alacritty/fonts.toml"]
 live_config_reload = true
 #shell = "/bin/fish"
 
