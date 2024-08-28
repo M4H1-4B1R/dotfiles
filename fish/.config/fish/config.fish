@@ -21,6 +21,7 @@ alias lvim='NVIM_APPNAME="lvim" nvim'
 alias fetch="fastfetch"
 alias v='nvim'
 alias r="feh --bg-fill --randomize ~/walls/"
+alias mirror='sudo reflector -c Bangladesh -c India -a 12 -p https -p http --sort rate --save /etc/pacman.d/mirrorlist'
 ### Debian ###
 alias install='sudo apt install --no-install-recommends'
 alias update='sudo apt update'

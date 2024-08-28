@@ -1,16 +1,16 @@
 [font]
 size = 16
 offset.x = 0
-offset.y = 3
+offset.y = 0
 
 [font.bold]
-family = "FiraCode Nerd Font"
+family = "VictorMono Nerd Font"
 
 [font.bold_italic]
-family = "FiraCode Nerd Font"
+family = "VictorMono Nerd Font"
 
 [font.italic]
-family = "FiraCode Nerd Font"
+family = "VictorMono Nerd Font"
 
 [font.normal]
-family = "FiraCode Nerd Font"
+family = "VictorMono Nerd Font"
