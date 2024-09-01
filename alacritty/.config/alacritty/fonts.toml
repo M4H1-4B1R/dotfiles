@@ -1,16 +1,16 @@
 [font]
-size = 16
+size = 17
 offset.x = 0
 offset.y = 0
 
 [font.bold]
-family = "VictorMono Nerd Font"
+family = "JetbrainsMono Nerd Font"
 
 [font.bold_italic]
-family = "VictorMono Nerd Font"
+family = "JetbrainsMono Nerd Font"
 
 [font.italic]
-family = "VictorMono Nerd Font"
+family = "JetbrainsMono Nerd Font"
 
 [font.normal]
-family = "VictorMono Nerd Font"
+family = "JetbrainsMono Nerd Font"
