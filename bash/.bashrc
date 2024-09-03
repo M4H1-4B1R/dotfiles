@@ -156,7 +156,7 @@ function ex {
 
 ### Aliases ###
 
-alias ls='exa --icons'
+alias ls='exa -a --icons'
 alias ll='exa -al --icons'
 alias snv='sudo -E -s nvim'
 alias cat='bat --theme "Catppuccin Mocha"'
@@ -233,5 +233,3 @@ function hstrnotiocsti {
 # if this is interactive shell, then bind hstr to Ctrl-r (for Vi mode check doc)
 if [[ $- =~ .*i.* ]]; then bind -x '"\C-r": "hstrnotiocsti"'; fi
 export HSTR_TIOCSTI=n
-
-fastfetch

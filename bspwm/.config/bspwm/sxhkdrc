@@ -15,7 +15,7 @@ super + x
   ~/.local/scripts/power
 
 super + e 	
-  thunar
+ pcmanfm
 
 super + c 
   ~/gpt4all/bin/chat
