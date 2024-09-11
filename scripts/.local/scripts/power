@@ -16,11 +16,11 @@ chosen=$(echo -e "[Cancel]\nLogout\nShutdown\nReboot\nSuspend\nHibernate\nHybrid
 # https://www.freedesktop.org/software/systemd/man/systemd-sleep.conf.html#Description
 
 if [[ $chosen = "Logout" ]]; then
-  killall dwm
+  killall bspwm
 elif [[ $chosen = "Shutdown" ]]; then
-  systemctl poweroff
+  sudo poweroff
 elif [[ $chosen = "Reboot" ]]; then
-  systemctl reboot
+  sudo reboot
 elif [[ $chosen = "Suspend" ]]; then
   systemctl suspend
 elif [[ $chosen = "Hibernate" ]]; then
