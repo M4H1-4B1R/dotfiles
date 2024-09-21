@@ -18,9 +18,9 @@ chosen=$(echo -e "[Cancel]\nLogout\nShutdown\nReboot\nSuspend\nHibernate\nHybrid
 if [[ $chosen = "Logout" ]]; then
   killall bspwm
 elif [[ $chosen = "Shutdown" ]]; then
-  sudo poweroff
+  systemctl poweroff
 elif [[ $chosen = "Reboot" ]]; then
-  sudo reboot
+  systemctl reboot
 elif [[ $chosen = "Suspend" ]]; then
   systemctl suspend
 elif [[ $chosen = "Hibernate" ]]; then

@@ -9,7 +9,12 @@
     "hyprland/workspaces": {
          "disable-scroll": true,
          "sort-by-name": true,
+         "active-only": false,
+         "all-outputs": true,
          "format": " {icon} ",
+        // "persistent-workspaces": {
+         //   "*": 9,
+         // },
          "format-icons": {
              "default": "",
          },

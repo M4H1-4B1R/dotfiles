@@ -1,16 +1,16 @@
 [font]
-size = 17
+size = 18
 offset.x = 0
-offset.y = 0
+offset.y = -2
 
 [font.bold]
-family = "FiraCode Nerd Font"
+family = "Source Code Pro "
 
 [font.bold_italic]
-family = "FiraCode Nerd Font"
+family = "Source Code Pro "
 
 [font.italic]
-family = "FiraCode Nerd Font"
+family = "Source Code Pro "
 
 [font.normal]
-family = "FiraCode Nerd Font"
+family = "Source Code Pro "
