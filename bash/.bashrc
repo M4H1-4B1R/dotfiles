@@ -158,6 +158,7 @@ function ex {
 
 alias ls='exa -a --icons'
 alias ll='exa -al --icons'
+alias v='nvim'
 alias snv='sudo -E -s nvim'
 alias cat='bat --theme "Catppuccin Mocha"'
 alias tx='tmux'
@@ -166,7 +167,7 @@ alias hist="history | fzf"
 alias fk="fzf_kill"
 alias startxmp='sudo /opt/lampp/./xampp start'
 alias stopxmp='sudo /opt/lampp/./xampp stop'
-alias mirror='sudo reflector -c Bangladesh -a 12 -p https -p http --sort rate --save /etc/pacman.d/mirrorlist'
+alias mirror='sudo reflector -c Bangladesh -c India -a 12 -p https -p http --sort rate --save /etc/pacman.d/mirrorlist'
 alias ff='fd --type f --hidden --exclude .git | fzf-tmux -p | xargs nvim'
 alias xampp='sudo /opt/lampp/manager-linux-x64.run'
 alias startapache='sudo /opt/lampp/xampp startapache'
