@@ -4,13 +4,13 @@ offset.x = 0
 offset.y = -2
 
 [font.bold]
-family = "Source Code Pro "
+family = "BlexMono Nerd Font "
 
 [font.bold_italic]
-family = "Source Code Pro "
+family = "BlexMono Nerd Font "
 
 [font.italic]
-family = "Source Code Pro "
+family = "BlexMono Nerd Font "
 
 [font.normal]
-family = "Source Code Pro "
+family = "BlexMono Nerd Font "
