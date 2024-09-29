@@ -20,6 +20,8 @@ alias python='python3'
 alias lvim='NVIM_APPNAME="lvim" nvim'
 alias fetch="fastfetch"
 alias v='nvim'
+alias lgit='lazygit'
+alias restore="git restore --source=HEAD --staged --worktree -- ."
 alias r="feh --bg-fill --randomize ~/walls/"
 alias mirror='sudo reflector -c Bangladesh -c India -a 12 -p https -p http --sort rate --save /etc/pacman.d/mirrorlist'
 ### Debian ###
