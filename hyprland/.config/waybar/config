@@ -12,12 +12,12 @@
          "active-only": false,
          "all-outputs": true,
          "format": " {icon} ",
-        // "persistent-workspaces": {
-         //   "*": 9,
-         // },
-         "format-icons": {
-             "default": "",
-         },
+         "persistent-workspaces": {
+            "*": 9,
+          },
+         //"format-icons": {
+          //   "default": "",
+         //},
      },
     "tray": {
         "icon-size": 21,
