@@ -8,7 +8,7 @@ bind \cf zelly
 ### Aliases ###
 
 alias ls='exa --icons -a --no-permissions'
-alias ll='exa --long --tree --level=2'
+alias ll='exa -la'
 alias snv='sudo -E -s nvim'
 alias cat='bat --theme catppuccin_mocha'
 alias startxmp='sudo /opt/lampp/./xampp start'
