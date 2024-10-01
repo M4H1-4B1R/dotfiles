@@ -19,10 +19,11 @@
 #workspaces button {
 	color: @lavender;
 	padding: 0.4rem;
+	border-radius: 0;
 }
 
 #workspaces button.active {
-	color: @sky;
+	color: @mauve;
 }
 
 #workspaces button:hover {

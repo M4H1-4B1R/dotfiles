@@ -3,9 +3,9 @@
     "position": "top", // Waybar position (top|bottom|left|right)
     // "width": 1280, // Waybar width
     // Choose the order of the modules
-    "modules-left": ["hyprland/workspaces"],
-    "modules-center": ["hyprland/window"],
-    "modules-right": ["pulseaudio", "backlight", "battery", "clock", "tray"],
+    "modules-left": ["custom/icon", "hyprland/window"],
+    "modules-center": ["hyprland/workspaces"],
+    "modules-right": ["pulseaudio", "battery", "clock", "tray"],
     "hyprland/workspaces": {
          "disable-scroll": true,
          "sort-by-name": true,
@@ -15,14 +15,26 @@
          "persistent-workspaces": {
             "*": 9,
           },
-         //"format-icons": {
-          //   "default": "",
-         //},
+         "format-icons": {
+             "default": "",
+             "empty": "",
+						 "active": "󰮯"
+         },
      },
+		 "hyrpland/window": {
+				 "format": "{initialClass}"
+			 },
     "tray": {
         "icon-size": 21,
         "spacing": 10
     },
+
+		"custom/icon":
+		{
+			"exec": "~/.local/scripts/logo.sh",
+			"interval": 5,
+			"tooltip": false
+		},
     "custom/music": {
         "format": "  {}",
         "escape": true,
