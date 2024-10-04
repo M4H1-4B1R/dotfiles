@@ -9,7 +9,7 @@ Used on Archlinux. Managed with GNU Stow<br>
 ![bsp](https://github.com/M4H1-4B1R/dotfiles/assets/112854891/efa72c9e-8544-45e9-bed0-02ec43508541)
 
 
-[ Hyprland ] ( outdated )
+[ Hyprland ] ( outdated image )
 ![20240420_11h41m06s_grim](https://github.com/autonomuscoder/dotfiles/assets/112854891/3e88c25a-f7b1-4d59-9c83-41a239adeebf)
 
 [ Dwm ]
