@@ -9,12 +9,11 @@ Used on Archlinux. Managed with GNU Stow<br>
 ![bsp](https://github.com/M4H1-4B1R/dotfiles/assets/112854891/efa72c9e-8544-45e9-bed0-02ec43508541)
 
 
-[ Hyprland ] ( previous config)
+[ Hyprland ] ( outdated )
 ![20240420_11h41m06s_grim](https://github.com/autonomuscoder/dotfiles/assets/112854891/3e88c25a-f7b1-4d59-9c83-41a239adeebf)
 
-(present config)
-![2024-07-04-155559_hyprshot](https://github.com/M4H1-4B1R/dotfiles/assets/112854891/84f5a582-5123-47bf-a270-4f0450295928)
-
+[ Dwm ]
+![lin-dev3](https://github.com/user-attachments/assets/b3f4bbfc-85b0-4e71-955a-89578e958288)
 
 [Awesome]
 ![awesome](https://github.com/M4H1-4B1R/dotfiles/assets/112854891/1ca0eec0-a429-4983-99b0-f2cf01634734)
@@ -34,19 +33,7 @@ Used on Archlinux. Managed with GNU Stow<br>
 <li>clipboard = xclip/wl-clipboard</li>
 </ul>
 
-### Cli Programs & scripts
-<ul>
-<li>Ranger</li>
-<li>Shell-colorscripts</li>
-<li><a href="https://github.com/lincheney/fzf-tab-completion">fzf-tab-completion</a></li>
-<li><a href="https://github.com/dvorka/hstr">hstr</a></li>
-<li>Tmux</li>
-<li>Tmux-sessionizer (primeagen)</li>
-<li>Figlet</li>
-<li>Zoxide</li>
-<li>Starship</li>
-<li>Github-cli</li>
-<li>fzf</li>
+##### Actual Dwm config is in https://github.com/M4H1-4B1R/my-flexipatch. 
 
 
 
