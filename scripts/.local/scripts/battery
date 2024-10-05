@@ -7,7 +7,7 @@ for battery in /sys/class/power_supply/BAT?*; do
 	case "$(cat "$battery/status" 2>&1)" in
 		"Full") fin="󱊦 " ;;
 		"Discharging") status="d" ;;
-		"Charging") fin="🔌 " ;;
+		"Charging") fin="󰂄 " ;;
 		"Not charging") fin="󰏝 " ;;
 		"Unknown") fin="󰂑 " ;;
 		*) exit 1 ;;
