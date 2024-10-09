@@ -131,6 +131,9 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 -- Create a textclock widget
 local label_color = "#86abdc"
 local info_color = "#ffffff"
+local pink_color = "#f5c2e7"
+local mauve_color = "#cba6f7"
+local red_color = "#f38ba8"
 
 local function get_kernel_version(callback)
 	awful.spawn.easy_async_with_shell("uname -r", function(stdout)
@@ -144,7 +147,7 @@ get_kernel_version(function(kernel)
 	kernel_widget:set_markup(
 		string.format(
 			"<span foreground='%s'>  KERN </span> <span foreground='%s'>%s</span>",
-			label_color,
+			pink_color,
 			info_color,
 			kernel
 		)
@@ -158,7 +161,7 @@ local cpu_widget = wibox.widget.textbox()
 vicious.register(cpu_widget, vicious.widgets.cpu, function(widget, args)
 	return string.format(
 		"<span foreground='%s'> CPU </span> <span foreground='%s'>%d%%</span>",
-		label_color,
+		mauve_color,
 		info_color,
 		args[1]
 	)
@@ -171,7 +174,7 @@ local mem_widget = wibox.widget.textbox()
 vicious.register(mem_widget, vicious.widgets.mem, function(widget, args)
 	return string.format(
 		"<span foreground='%s'> MEM </span> <span foreground='%s'>%d%%</span>",
-		label_color,
+		red_color,
 		info_color,
 		args[1]
 	)
@@ -278,7 +281,7 @@ awful.screen.connect_for_each_screen(function(s)
 	})
 
 	-- Create the wibox
-	s.mywibox = awful.wibar({ position = "top", screen = s, height = 25 })
+	s.mywibox = awful.wibar({ position = "top", screen = s, height = 27 })
 
 	-- Add widgets to the wibox
 	s.mywibox:setup({
@@ -350,16 +353,19 @@ globalkeys = gears.table.join(
 		awful.spawn(terminal)
 	end, { description = "open a terminal", group = "launcher" }),
 	awful.key({ modkey }, "e", function()
-		awful.spawn("pcmanfm")
+		awful.spawn("thunar")
 	end, { description = "open a file manager", group = "launcher" }),
 	awful.key({ modkey }, "x", function()
-		awful.util.spawn("archlinux-logout")
+		awful.util.spawn("/home/abir/.local/scripts/power")
 	end, { description = "logout menu", group = "launcher" }),
+	awful.key({ "Control", "Shift" }, "l", function()
+		awful.util.spawn("betterlockscreen -l")
+	end, { description = "lockscreen", group = "launcher" }),
 	awful.key({ modkey }, "b", function()
-		awful.spawn("brave-browser-stable")
+		awful.spawn("zen-browser")
 	end, { description = "open a web browser", group = "launcher" }),
 	awful.key({ modkey }, "w", function()
-		awful.spawn("feh --bg-fill --randomize /home/abir/walls/", false)
+		awful.spawn("feh --bg-fill --randomize /home/abir/walls/")
 	end, { description = "change wallpapers at random", group = "abir" }),
 	awful.key({ modkey }, "r", function()
 		awful.spawn("redshift -O 5000")
