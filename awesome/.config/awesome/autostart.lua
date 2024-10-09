@@ -10,4 +10,7 @@ awful.spawn.with_shell("feh --bg-fill --randomize /home/abir/walls/")
 awful.spawn.with_shell("cbatticon")
 awful.spawn.with_shell("dunst")
 awful.spawn.with_shell("xclip")
-awful.spawn.with_shell("brightnessctl set 40%")
+
+awful.spawn.with_shell(
+	"[ -z '$DBUS_SESSION_BUS_ADDRESS' ] && eval $(/usr/bin/dbus-launch --exit-with-session --sh-syntax) dbus-update-activation-environment --verbose --all"
+)
