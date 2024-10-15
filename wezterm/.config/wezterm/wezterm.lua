@@ -1,9 +1,9 @@
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
-config.color_scheme = "GruvboxDarkHard"
+config.color_scheme = "Catppuccin Mocha"
 -- config.enable_tab_bar = false
 config.window_background_opacity = 0.8
-config.font = wezterm.font("BlexMono Nerd Font", { weight = "Bold" })
+config.font = wezterm.font("BlexMono Nerd Font", { weight = "Medium" })
 config.font_size = 17
 config.default_prog = { "/bin/fish", "-l" }
 
