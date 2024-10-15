@@ -1,0 +1,177 @@
+{
+    "layer": "top",
+    "position": "top", // Waybar position (top|bottom|left|right)
+    "height": 30,
+    // "output": "DP-1", // Uncomment to specify a display
+    // "width": 1850, // Uncomment to set a custom width
+
+// Configuration - modules-left
+
+    "modules-left": [
+        "custom/launcher",
+        "sway/workspaces",
+        "sway/mode",
+        "sway/window"
+    ],    
+    "custom/launcher": {
+    	"format":"󰀻 ",
+    	"on-click": "exec nwg-drawer",
+    	"tooltip": false,
+    },
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format": "{icon}",
+        "format-icons": {
+		"3": "3",
+		"4": "4",
+		"5": "5",
+		"6": "6",
+		"7": "7",
+		"8": "8",
+		"9": "9",
+		"10": "10",
+        }
+    },
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+    "sway/window": {
+        //"all-outputs": true, // Uncomment for active window on all outputs
+        "format": "{}"
+    },
+
+// Configuration - modules-right
+
+    "modules-right": [
+        "network",
+        "custom/updates",
+        "custom/keyboard-layout",
+        "cpu",
+        "temperature",
+        "memory",
+        "idle_inhibitor",
+        "backlight",
+        "pulseaudio",
+        "battery",
+        "clock",
+        "tray",
+        "custom/power"
+    ],
+
+    "network": {
+        "format": " Disabled",
+        "format-wifi": "{bandwidthDownBits:>}{bandwidthUpBits:>}",
+        "tooltip-format-wifi": "{essid}",
+        "format-ethernet": "{bandwidthDownBits:>}{bandwidthUpBits:>}",
+        "tooltip-format-ethernet": "{ifname}: {ipaddr}/{cidr}",
+        "format-disconnected": " Disconnected",
+        "on-click": "footclient -T waybar_nmtui -e nmtui",
+        "interval": 2,
+    },
+    "custom/updates": {
+        "format": "{} {icon}",
+        "return-type": "json",
+        "format-icons": {
+            "has-updates": "",
+            "updated": ""
+        },
+        "exec-if": "which waybar-module-pacman-updates",
+        "exec": "waybar-module-pacman-updates",
+        "on-click": "footclient -T waybar_garuda-update -e bash -c 'garuda-update && (read -p \"Update complete. Press Enter to exit.\" && exit 0) || (read -p \"Update failed. Press Enter to exit.\" && exit 1)'",
+        "on-click-right": "footclient -T waybar_pacseek -e pacseek"
+    },
+    "custom/keyboard-layout": {
+      	"exec": "i=$(swaymsg -t get_inputs); echo \"\"; echo \"$i\" | grep -m1 'xkb_active_layout_name' | cut -d '\"' -f4",
+      	// Interval set only as a fallback, as the value is updated by signal
+      	"interval": 30,
+      	"format": "",
+      	"signal": 1,
+        "on-click": "~/.config/waybar/scripts/keyhint.sh",
+    },
+    "cpu": {
+        "format": "{usage: >3}%",
+        "on-click": "footclient -T waybar_btop -e btop"
+    },
+    "memory": {
+        "format": "{: >3}%",
+        "on-click": "footclient -T waybar_btop -e btop"
+    },
+    "temperature": {
+        "critical-threshold": 80,
+        "format-critical": " {temperatureC}°C",
+        "format": " {temperatureC}°C",
+        "tooltip-format": "{temperatureC}° Celsius\n{temperatureF}° Fahrenheit\n{temperatureK}° Kelvin",
+        "on-click": "footclient -T waybar_btop -e btop"
+    },    
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        },
+        "tooltip-format-activated": "Idle Inhibitor Activated",
+        "tooltip-format-deactivated": "Idle Inhibitor Deactivated"
+    },
+    "backlight": {
+        "format": "{icon}{percent: >3}%",
+        "format-icons": ["", ""],
+        "tooltip-format": "Backlight (Scroll): {percent: >3}%",
+        "on-scroll-down": "brightnessctl -c backlight set 5%-",
+        "on-scroll-up": "brightnessctl -c backlight set +5%"
+    },
+    "pulseaudio": {
+        "scroll-step": 5,
+        "format": "{icon}{volume: >3}%",
+        "format-bluetooth": "{icon}{volume: >3}%",
+        "format-muted":" muted",
+        "format-icons": {
+            "headphones": "",
+            "handsfree": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", ""]
+        },
+        "on-click": "footclient -T waybar_alsamixer -e alsamixer -M",
+        "on-click-right": "pavucontrol"
+    },
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}{capacity: >3}%",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "clock": {
+        "format": " {:%OI:%M %p}",
+        "on-click": "footclient -T waybar_calcurse -e calcurse",
+        // Uncomment to enable right-click calcurse-caldav sync (you need to set it up in calcurse config)
+        //"on-click-right": "notify-send \"Running calcurse-caldav...\" \"$(calcurse-caldav)\"",
+        "tooltip-format": " {:%A %m/%d}\n\n<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "on-scroll": 1,
+            "format": {
+                "months":     "<span color='#ffead3'><b>{}</b></span>",
+                "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+            },
+        },
+        "actions": {
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        },
+    },
+    "tray": {
+        "icon-size": 22
+    },
+    "custom/power": {
+      	"format":"⏻",
+       	"on-click": "nwgbar",
+      	"tooltip": false,
+    },
+}

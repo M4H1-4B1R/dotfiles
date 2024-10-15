@@ -1,0 +1,41 @@
+# Auth with polkit-gnome:
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
+# Desktop notifications
+exec mako
+
+# GTK3 applications take a long time to start
+exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
+exec hash dbus-update-activation-environment 2>/dev/null && \
+     dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
+     
+# Sway Fader
+exec python3 ~/.config/sway/scripts/swayfader.py     
+
+# Autotiling
+exec autotiling
+
+# nm-applet
+exec nm-applet --indicator
+
+# Welcome
+exec dex -a -s /etc/xdg/autostart/:~/.config/autostart/
+
+# cliphist
+exec wl-paste --type text --watch cliphist store
+exec wl-paste --type image --watch cliphist store
+
+# Gnome Keyring
+exec gnome-keyring-daemon --daemonize --start --components=gpg,pkcs11,secrets,ssh
+
+# for Touchpad gestures
+exec libinput-gestures-setup start
+
+# Outputs
+exec kanshi
+
+# nwg-drawer
+exec_always nwg-drawer -r -c 7 -is 90 -mb 10 -ml 50 -mr 50 -mt 10
+
+# swayrd
+exec_always swayrd
