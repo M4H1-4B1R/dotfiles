@@ -353,16 +353,16 @@ globalkeys = gears.table.join(
 		awful.spawn(terminal)
 	end, { description = "open a terminal", group = "launcher" }),
 	awful.key({ modkey }, "e", function()
-		awful.spawn("thunar")
+		awful.spawn("pcmanfm")
 	end, { description = "open a file manager", group = "launcher" }),
 	awful.key({ modkey }, "x", function()
-		awful.util.spawn("/home/abir/.local/scripts/power")
+		awful.util.spawn("archlinux-logout")
 	end, { description = "logout menu", group = "launcher" }),
 	awful.key({ "Control", "Shift" }, "l", function()
 		awful.util.spawn("betterlockscreen -l")
 	end, { description = "lockscreen", group = "launcher" }),
 	awful.key({ modkey }, "b", function()
-		awful.spawn("zen-browser")
+		awful.spawn("brave")
 	end, { description = "open a web browser", group = "launcher" }),
 	awful.key({ modkey }, "w", function()
 		awful.spawn("feh --bg-fill --randomize /home/abir/walls/")
