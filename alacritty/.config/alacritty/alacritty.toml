@@ -1,5 +1,3 @@
-import = ["/home/abir/.config/alacritty/themes/catppuccin_mocha.toml", "/home/abir/.config/alacritty/fonts.toml"]
-live_config_reload = true
 #shell = "/bin/fish"
 
 [cursor]
@@ -16,7 +14,7 @@ WINIT_X11_SCALE_FACTOR = "1.0"
 [window]
 decorations = "none"
 dynamic_title = true
-opacity = 0.8
+opacity = 0.5
 startup_mode = "Windowed"
 
 [window.dimensions]
@@ -26,3 +24,7 @@ lines = 25
 [window.padding]
 x = 7 
 y = 7
+
+[general]
+live_config_reload = true
+import = ["/home/abir/.config/alacritty/themes/catppuccin_mocha.toml", "/home/abir/.config/alacritty/fonts.toml"]
