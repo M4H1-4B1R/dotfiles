@@ -161,6 +161,7 @@ alias ll='exa -al --icons'
 alias v='nvim'
 alias snv='sudo -E -s nvim'
 alias cat='bat --theme "Catppuccin Mocha"'
+alias grep='rg'
 alias tx='tmux'
 alias txa='tmux attach'
 alias hist="history | fzf"
