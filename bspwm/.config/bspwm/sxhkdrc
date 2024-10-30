@@ -1,5 +1,5 @@
 super + b
-  brave-browser-stable
+  brave
 
 super + Return
   alacritty
@@ -12,7 +12,7 @@ super + shift + Return
 
 # logout, shutdown, reboot
 super + x
-  ~/.local/scripts/power
+  archlinux-logout
 
 super + e 	
  pcmanfm
