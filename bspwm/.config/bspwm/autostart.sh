@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 ~/.config/bspwm/launch.sh
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-feh --bg-fill ~/walls/pink-waves.jpg &
+feh --bg-fill ~/walls/background.png &
 picom --config ~/.config/picom/picom.conf &
 dunst &
 xclip &

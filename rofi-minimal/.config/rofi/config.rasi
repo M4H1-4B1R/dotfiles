@@ -5,7 +5,7 @@
   #///////////////////////#*/
 
 configuration {
-    font:				"JetBrainsMono Nerd Font Regular 13";
+    font:				"Hack Nerd Font Regular 14";
     show-icons:				true;
     icon-theme:				"Arc-X-D";
     display-drun:			"Apps";

@@ -1,8 +1,8 @@
 super + b
-  brave
+  brave-browser
 
 super + Return
-  alacritty
+  /home/abir/.local/kitty.app/bin/kitty
 
 super + t 
   xfce4-terminal
@@ -15,7 +15,7 @@ super + x
   archlinux-logout
 
 super + e 	
- pcmanfm
+  nemo
 
 super + c 
   ~/gpt4all/bin/chat
