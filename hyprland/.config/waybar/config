@@ -2,6 +2,7 @@
     "layer": "top", // Waybar at top layer
     "position": "top", // Waybar position (top|bottom|left|right)
     // "width": 1280, // Waybar width
+    "height": 10,
     // Choose the order of the modules
     "modules-left": ["custom/icon", "hyprland/window"],
     "modules-center": ["hyprland/workspaces"],
@@ -84,5 +85,12 @@
         "tooltip": false,
         "on-click": "wlogout &",
         "format": "襤"
-    }
-}
+    },
+
+},
+"memory": {
+			"format": " {}%",
+			"format-alt": " {used}/{total} GiB",
+			"interval": 5,
+		},
+
