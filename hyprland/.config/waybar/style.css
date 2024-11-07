@@ -1,7 +1,7 @@
 @import "mocha.css";
 
 * {
-	font-family: BlexMono Nerd Font;
+	font-family: JetbrainsMono Nerd Font;
 	font-size: 18px;
 	min-height: 0;
 }
@@ -9,7 +9,7 @@
 #waybar {
 	background: @crust;
 	color: @text;
-	margin: 2px 0px;
+	margin: 1px 0px;
 }
 
 #workspaces {
@@ -18,7 +18,7 @@
 
 #workspaces button {
 	color: @lavender;
-	padding: 0.4rem;
+	padding: 0.2rem;
 	border-radius: 0;
 }
 
@@ -39,7 +39,11 @@
 #custom-lock,
 #custom-power,
 #window {
-	padding: 0.5rem 1rem;
+	padding: 0.2rem 1rem;
+}
+
+#window {
+	color: @red;
 }
 
 #clock {
