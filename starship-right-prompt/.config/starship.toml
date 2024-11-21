@@ -17,9 +17,9 @@ $python\
 style = "blue"
 
 [character]
-success_symbol = "[∮](blue)"
-error_symbol = "[∮](red)"
-vimcmd_symbol = "[∮](green)"
+success_symbol = "[](blue)"
+error_symbol = "[](red)"
+vimcmd_symbol = "[](green)"
 
 [git_branch]
 format = "[$branch]($style)"
