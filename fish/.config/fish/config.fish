@@ -23,7 +23,7 @@ alias v='nvim'
 alias lgit='lazygit'
 alias restore="git restore --source=HEAD --staged --worktree -- ."
 alias r="feh --bg-fill --randomize ~/walls/"
-alias mirror='sudo reflector -c Bangladesh -c India -a 12 -p https -p http --sort rate --save /etc/pacman.d/mirrorlist'
+alias mirror='sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist'
 alias matlab='/home/abir/matlab/bin/matlab -softwareopengl'
 ### Debian ###
 alias install='sudo apt install --no-install-recommends'
