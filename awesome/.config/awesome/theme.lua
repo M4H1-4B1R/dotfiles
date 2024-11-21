@@ -14,7 +14,7 @@ local theme = { theme }
 theme.font = "BlexMono Nerd Font 14"
 
 theme.bg_normal = "#040507"
-theme.bg_focus = "#10101b"
+theme.bg_focus = "#111213"
 theme.bg_urgent = "#cc241d"
 theme.bg_minimize = "#665c54"
 theme.bg_systray = theme.bg_normal
