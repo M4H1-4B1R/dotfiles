@@ -11,6 +11,7 @@ local wibox = require("wibox")
 local vicious = require("vicious")
 -- Theme handling library
 local beautiful = require("beautiful")
+local sep = require("widgets.sep")
 
 -- Sourcing configs
 -- require("eminent")
@@ -129,11 +130,10 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 
 -- {{{ Wibar
 -- Create a textclock widget
-local label_color = "#86abdc"
-local info_color = "#ffffff"
-local pink_color = "#f5c2e7"
-local mauve_color = "#cba6f7"
-local red_color = "#f38ba8"
+local text_color = "#ffffff"
+local blue_color = "#83a598"
+local teal_color = "#8ec07c"
+local magenta_color = "#d3869b"
 
 local function get_kernel_version(callback)
 	awful.spawn.easy_async_with_shell("uname -r", function(stdout)
@@ -147,8 +147,8 @@ get_kernel_version(function(kernel)
 	kernel_widget:set_markup(
 		string.format(
 			"<span foreground='%s'>  KERN </span> <span foreground='%s'>%s</span>",
-			pink_color,
-			info_color,
+			blue_color,
+			text_color,
 			kernel
 		)
 	)
@@ -161,8 +161,8 @@ local cpu_widget = wibox.widget.textbox()
 vicious.register(cpu_widget, vicious.widgets.cpu, function(widget, args)
 	return string.format(
 		"<span foreground='%s'> CPU </span> <span foreground='%s'>%d%%</span>",
-		mauve_color,
-		info_color,
+		teal_color,
+		text_color,
 		args[1]
 	)
 end, 2) --Updates every 2 seconds
@@ -174,8 +174,8 @@ local mem_widget = wibox.widget.textbox()
 vicious.register(mem_widget, vicious.widgets.mem, function(widget, args)
 	return string.format(
 		"<span foreground='%s'> MEM </span> <span foreground='%s'>%d%%</span>",
-		red_color,
-		info_color,
+		magenta_color,
+		text_color,
 		args[1]
 	)
 end, 15) --Updates every 15 seconds
@@ -290,7 +290,8 @@ awful.screen.connect_for_each_screen(function(s)
 			layout = wibox.layout.fixed.horizontal,
 			s.mytaglist,
 		},
-		s.mytasklist, -- Middle widget
+		-- s.mytasklist, -- Middle widget
+		sep,
 		{ -- Right widgets
 			layout = wibox.layout.fixed.horizontal,
 			spacing = 7,
@@ -356,13 +357,13 @@ globalkeys = gears.table.join(
 		awful.spawn("pcmanfm")
 	end, { description = "open a file manager", group = "launcher" }),
 	awful.key({ modkey }, "x", function()
-		awful.util.spawn("archlinux-logout")
+		awful.util.spawn("/home/abir/.local/scripts/./power")
 	end, { description = "logout menu", group = "launcher" }),
 	awful.key({ "Control", "Shift" }, "l", function()
 		awful.util.spawn("betterlockscreen -l")
 	end, { description = "lockscreen", group = "launcher" }),
 	awful.key({ modkey }, "b", function()
-		awful.spawn("brave")
+		awful.spawn("firefox")
 	end, { description = "open a web browser", group = "launcher" }),
 	awful.key({ modkey }, "w", function()
 		awful.spawn("feh --bg-fill --randomize /home/abir/walls/")
