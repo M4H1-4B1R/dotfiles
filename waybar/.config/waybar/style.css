@@ -2,7 +2,7 @@
 
 * {
 	font-family: JetbrainsMono Nerd Font;
-	font-size: 18px;
+	font-size: 16px;
 	min-height: 0;
 }
 
@@ -38,6 +38,7 @@
 #pulseaudio,
 #custom-lock,
 #custom-power,
+#memory,
 #window {
 	padding: 0.2rem 1rem;
 }
@@ -47,12 +48,17 @@
 }
 
 #clock {
-	color: @blue;
+	color: @peach;
 	border-radius: 0px 1rem 1rem 0px;
 }
 
+#memory {
+	color: @pink;
+	margin: 0 2px 0 0;
+}
+
 #battery {
-	color: @green;
+	color: @red;
 }
 
 #battery.charging {
@@ -73,7 +79,7 @@
 }
 
 #pulseaudio {
-	color: @maroon;
+	color: @mauve;
 }
 
 #custom-music {
