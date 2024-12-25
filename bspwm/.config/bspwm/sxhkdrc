@@ -1,8 +1,8 @@
 super + b
-  brave-browser
+  brave
 
 super + Return
-  /home/abir/.local/kitty.app/bin/kitty
+  kitty
 
 super + t 
   xfce4-terminal
