@@ -1,8 +1,8 @@
 [font]
 size = 17
 offset.x = 0
-offset.y = -2
-glyph_offset = {x = 0, y = -3}
+offset.y = 0
+glyph_offset = {x = 0, y = 0}
 
 [font.bold]
 family = "BlexMono Nerd Font "
