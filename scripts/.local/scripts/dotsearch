@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Function to search dotfiles directories with fzf
+search_dotfiles() {
+  local dotfiles_dirs=("/home/abir/.config" "/home/abir/.local/scripts/")
+
+  # Find all files and directories within the specified directories
+  local files=$(find -L "${dotfiles_dirs[@]}" -type f)
+
+  # Use fzf to select a file
+  local selected_file=$(echo "$files" | fzf)
+
+  # Check if a file was selected
+  if [ -z "$selected_file" ]; then
+    echo "No file selected."
+    return
+  fi
+
+  # Open the selected file with neovim
+  nvim "$selected_file"
+}
+
+# Call the search_dotfiles function
+search_dotfiles
