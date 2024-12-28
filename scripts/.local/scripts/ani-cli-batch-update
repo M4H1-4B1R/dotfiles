@@ -1,0 +1,16 @@
+# This script updates the ani-cli-batch script
+
+echo "Downloading update"
+
+cd ~
+wget https://raw.githubusercontent.com/75rx/ani-cli-batch/main/ani-cli-batch -q
+wget https://raw.githubusercontent.com/75rx/ani-cli-batch/main/ani-cli-batch-update -q
+chmod +x ~/ani-cli-batch
+chmod +x ~/ani-cli-batch-update
+
+echo "Done!"; echo ""
+
+echo "Please enter the sudo password to finish updating the script in your PATH"
+echo ""
+
+sudo mv -t /usr/local/bin/ ~/ani-cli-batch ~/ani-cli-batch-update && echo "sudo access granted. Update successful"
