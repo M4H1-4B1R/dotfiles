@@ -4,9 +4,9 @@
     // "width": 1280, // Waybar width
     //"height": 10,
     // Choose the order of the modules
-    "modules-left": ["custom/icon", "hyprland/window"],
+    "modules-left": ["custom/icon"],
     "modules-center": ["hyprland/workspaces"],
-    "modules-right": ["memory", "pulseaudio", "battery", "clock", "tray"],
+    "modules-right": ["kernel", "memory", "pulseaudio", "battery", "clock", "tray"],
     "hyprland/workspaces": {
          "disable-scroll": true,
          "sort-by-name": true,
@@ -33,6 +33,13 @@
 		"custom/icon":
 		{
 			"exec": "~/.local/scripts/logo.sh",
+			"interval": 5,
+			"tooltip": false
+		},
+
+		"custom/kernel":
+		{
+			"exec": "~/.local/scripts/kernel",
 			"interval": 5,
 			"tooltip": false
 		},
