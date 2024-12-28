@@ -4,6 +4,7 @@ end
 set PATH "$PATH":"$HOME/.local/scripts/"
 set PATH "$PATH": "~/.nix-profile/bin"
 bind \cf tmux-sessionizer
+bind \ce dotsearch
 
 ### Aliases ###
 
