@@ -1,3 +1,5 @@
+set nocompatible
+set encoding=utf8
 set relativenumber
 set autoindent
 set tabstop=4
@@ -6,30 +8,87 @@ set smarttab
 set softtabstop=4
 set mouse=a
 set cursorline
-set nocompatible
 set background=dark
 set termguicolors
-set clipboard=unnamed
+set clipboard=unnamedplus
 set undofile
 set ignorecase smartcase
 set updatetime=300
 set completeopt=menuone,noselect 
-syntax enable
+
+syntax on
 filetype plugin on
+
+" Sets how many lines of history VIM has to remember
+set history=500
+
+" Enable filetype plugins
+filetype plugin on
+filetype indent on
+
+" Configure backspace so it acts as it should act
+set backspace=eol,start,indent
+set whichwrap+=<,>,h,l
  
 set path+=** " search down into subfolders
 set wildmenu " display all mathching results
+
+" Ignore case when searching
+set ignorecase
+
+" When searching try to be smart about cases
+set smartcase
+
+" Highlight search results
+set hlsearch
+
+" Makes search act like search in modern browsers
+set incsearch
+
+" Don't redraw while executing macros (good performance config)
+set lazyredraw
+
+" For regular expressions turn magic on
+set magic
+
+" Show matching brackets when text indicator is over them
+set showmatch
+
+set ffs=unix,dos,mac
+
+
+" Linebreak on 500 characters
+set lbr
+set tw=500
+
+set ai "Auto indent
+set si "Smart indent
+set wrap "Wrap lines
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Files, backups and undo
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Turn backup off, since most stuff is in SVN, git etc. anyway...
+set nobackup
+set nowb
+set noswapfile
 
 call plug#begin("~/plugged")
 Plug 'makccr/hepburn'
 Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'Exafunction/codeium.vim', { 'branch': 'main' }
 Plug 'https://github.com/tpope/vim-commentary' " For Commenting gcc & gc
 Plug 'https://github.com/ryanoasis/vim-devicons' " Developer Icons
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'https://github.com/mbbill/undotree'
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install --frozen-lockfile --production',
+  \ 'branch': 'release/0.x'
+  \ }
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'pangloss/vim-javascript'
 call plug#end()
 
 colorscheme catppuccin_mocha
@@ -72,5 +131,12 @@ inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
 			\: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
-nnoremap <C-e> :Ex<CR>
-nnoremap <C-f> :FZF<CR>
+" keymaps 
+let mapleader = " "
+nnoremap <leader>e :Ex<CR>
+nnoremap <leader>ff :FZF<CR>
+nnoremap ss :split<CR>
+nnoremap sv :vsplit<CR>
+nnoremap nt :tabnew<CR>
+nnoremap tn :tabnext<CR>
+nnoremap tp :tabprevious<CR>
