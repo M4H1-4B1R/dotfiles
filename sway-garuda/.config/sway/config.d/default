@@ -11,22 +11,27 @@ set $right l
 # exec_always --no-startup-id foot --server
 
 # Set default terminal emulator
-set $term wezterm
+set $term alacritty
+
+# set default web browser
+set $browser brave
+
+# set default file manager 
+set $file pcmanfm 
 
 # Application launcher
-set $launcher fuzzel
+set $launcher rofi -show drun 
 
 # Application menu
 set $menu nwg-drawer
 
-set $powermenu nwgbar
+set $powermenu archlinux-logout
 
 ### Idle configuration
 exec swayidle -w\
     timeout 1070 'swaylock -f -C ~/.config/swaylock/config'\
     timeout 770 'swaymsg "output * dpms off"' \
     resume 'swaymsg "output * dpms on"' \
-    before-sleep 'swaylock -C ~/.config/swaylock/config'
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
@@ -42,7 +47,7 @@ bindsym $mod+f1 exec ~/.config/sway/scripts/lockman.sh
     bindsym $mod+Return exec $term
 
     # Open the power menu
-    bindsym Ctrl+Alt+Delete exec $powermenu
+    bindsym $mod+x exec $powermenu
 
     # Kill focused window
 	bindsym $mod+Backspace kill
@@ -214,9 +219,9 @@ bindsym $mod+f1 exec ~/.config/sway/scripts/lockman.sh
 # App shortcuts
 #
     # Launch the file explorer
-    bindsym $mod+e exec thunar
+    bindsym $mod+e exec $file
     # Launch the browser
-    bindsym $mod+b exec librewolf
+    bindsym $mod+b exec $browser
     # Launch the text editor
     bindsym $mod+t exec mousepad
     # Launch the calculator
