@@ -8,9 +8,9 @@ corner_radius 10
 blur enable
 blur_xray off
 blur_passes 2
-blur_radius 2
+blur_radius 5
 
-shadows enable
+shadows disable 
 shadows_on_csd off
 shadow_blur_radius 8
 shadow_color #0000007F
