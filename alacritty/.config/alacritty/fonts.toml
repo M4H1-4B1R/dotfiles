@@ -5,13 +5,13 @@ offset.y = 0
 glyph_offset = {x = 0, y = 0}
 
 [font.bold]
-family = "BlexMono Nerd Font "
+family = "FiraCode Nerd Font "
 
 [font.bold_italic]
-family = "BlexMono Nerd Font "
+family = "FiraCode Nerd Font "
 
 [font.italic]
-family = "BlexMono Nerd Font "
+family = "FiraCode Nerd Font "
 
 [font.normal]
-family = "BlexMono Nerd Font "
+family = "FiraCode Nerd Font "
