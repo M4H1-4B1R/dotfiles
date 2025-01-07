@@ -29,3 +29,9 @@ y = 7
 [general]
 live_config_reload = true
 import = ["/home/abir/.config/alacritty/themes/catppuccin_mocha.toml", "/home/abir/.config/alacritty/fonts.toml"]
+
+[keyboard]
+bindings = [
+{key = "Space", action="ToggleViMode", mods="Control"}
+]
+
