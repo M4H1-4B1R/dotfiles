@@ -28,7 +28,7 @@ y = 7
 
 [general]
 live_config_reload = true
-import = ["/home/abir/.config/alacritty/themes/catppuccin_mocha.toml", "/home/abir/.config/alacritty/fonts.toml"]
+import = ["/home/abir/.config/alacritty/colors.toml", "/home/abir/.config/alacritty/fonts.toml"]
 
 [keyboard]
 bindings = [
