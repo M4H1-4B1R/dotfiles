@@ -4,8 +4,8 @@
     // "width": 1280, // Waybar width
     //"height": 10,
     // Choose the order of the modules
-    "modules-left": ["custom/icon"],
-    "modules-center": ["hyprland/workspaces"],
+    "modules-left": ["custom/icon", "hyprland/workspaces"],
+    "modules-center": [],
     "modules-right": ["kernel", "memory", "pulseaudio", "battery", "clock", "tray"],
     "hyprland/workspaces": {
          "disable-scroll": true,
@@ -43,6 +43,7 @@
 			"interval": 5,
 			"tooltip": false
 		},
+
     "custom/music": {
         "format": "  {}",
         "escape": true,
@@ -72,7 +73,7 @@
         "format-charging": "󰂄",
         "format-plugged": "󰂄",
         "format-alt": "{icon}",
-        "format-icons": ["󰂂", "󰂁",  "󰂀", "󰁿", "", "󰁾", "󰁽", "", "", "󰁼", "󰁻", ""]
+        "format-icons": ["󰂂", "󰂁",  "󰂀", "󰁿", "", "󰁾", "󰁽", "󱐋", "", "󰁼", "󰁻", " "]
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
