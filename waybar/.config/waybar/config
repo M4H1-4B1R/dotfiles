@@ -34,7 +34,8 @@
 		{
 			"exec": "~/.local/scripts/logo.sh",
 			"interval": 5,
-			"tooltip": false
+			"tooltip": false,
+			"on-click": "rofi -show drun",
 		},
 
 		"custom/kernel":
