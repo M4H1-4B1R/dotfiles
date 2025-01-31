@@ -48,7 +48,7 @@ super + f
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd; notify-send 'sxhkd' 'Reloaded config'
-	
+
 super + shift + r
 	bspc wm -r; notify-send 'bspwm' 'Restarted'
 
@@ -92,14 +92,14 @@ super + @Print
 	notify-send 'Scrot' 'Image saved to ~/Pictures'
 	
 XF86MonBrightnessDown
- brightnessctl set 10%-
+ brightnessctl set 10%-; notify-send 'Brightness' 'Reduced by 10%'
 
 XF86MonBrightnessUp
- brightnessctl set +10%
+ brightnessctl set +10%; notify-send 'Brightness' 'Increased by 10%'
 
 XF86AudioRaiseVolume
-    pactl set-sink-volume 0 +5%
+    pactl set-sink-volume 0 +5%; notify-send 'Volume' 'Increased by 5%'
 XF86AudioLowerVolume
-    pactl set-sink-volume 0 -5%
+    pactl set-sink-volume 0 -5%; notify-send 'Volume' 'Decreased by 5%'
 XF86AudioMute
-    pactl set-sink-mute 0 toggle
+    pactl set-sink-mute 0 toggle; notify-send 'Volume' 'Muted'
