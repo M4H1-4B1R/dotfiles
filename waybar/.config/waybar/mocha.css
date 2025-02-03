@@ -1,22 +1,18 @@
 /*
 *
-* gruvbox palette
+* catppuccin palette
 *
 */
 
 @define-color base #1e1e2e;
 @define-color mantle #181825;
-@define-color crust rgba(4, 5, 7, 0.8);
+@define-color crust rgba(4, 5, 7, 1);
 
 @define-color text #f4f4f9;
 
-@define-color blue #83a598;
-@define-color lavender #d3869b;
-@define-color sky #458588;
-@define-color teal #8ec07c;
-@define-color green #bdbb26;
-@define-color yellow #fabd2f;
-@define-color peach #d79921;
-@define-color maroon #cc241d;
-@define-color red #fb4934;
-@define-color mauve #b16286;
+@define-color blue #b4befe;
+@define-color lavender #f5c2e7;
+@define-color teal #94e2d5;
+@define-color green #a6e3a1;
+@define-color yellow #f9e2af;
+@define-color red #f38ba8;

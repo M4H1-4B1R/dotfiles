@@ -1,35 +1,35 @@
-@import "gruv.css";
+@import "mocha.css";
 
 * {
-	font-family: JetbrainsMono Nerd Font;
-	font-size: 16px;
-	min-height: 0;
+  font-family: JetbrainsMono Nerd Font;
+  font-size: 16px;
+  min-height: 0;
 }
 
 #waybar {
-	background: @crust;
-	color: @text;
-	margin: 1px 0px;
+  background: @crust;
+  color: @text;
+  margin: 2px 0px;
 }
 
 #workspaces {
-	margin: 3px;
-	background: @blue;
-	border-radius: 5px;
+  margin: 3px;
+  background: @blue;
+  border-radius: 5px;
 }
 
 #workspaces button {
-	color: @crust;
-	padding: 0.2rem;
-	border-radius: 0;
+  color: @crust;
+  padding: 0.2rem;
+  border-radius: 0;
 }
 
 #workspaces button.active {
-	color: @yellow;
+  color: @yellow;
 }
 
 #workspaces button:hover {
-	color: @mauve;
+  color: @green;
 }
 
 #custom-music,
@@ -42,11 +42,11 @@
 #custom-power,
 #memory,
 #window {
-	padding: 0.2rem 1rem;
-	color: @crust;
-	border-radius: 5px;
-	margin-right: 8px;
-	margin-bottom: 3px;
+  padding: 0.2rem 1rem;
+  color: @crust;
+  border-radius: 5px;
+  margin-right: 8px;
+  margin-bottom: 3px;
 }
 
 /* #window { */
@@ -54,41 +54,41 @@
 /* } */
 
 #clock {
-	background: @blue;
+  background: @blue;
 }
 
 #memory {
-	background: @teal;
+  background: @lavender;
 }
 
 #battery {
-	background: @teal;
+  background: @lavender;
 }
 
 #battery.charging {
-	background: @teal;
+  background: @lavender;
 }
 
 #battery.warning:not(.charging) {
-	background: @red;
+  background: @red;
 }
 
 #backlight {
-	background: @yellow;
+  background: @yellow;
 }
 
 #pulseaudio {
-	background: @blue;
+  background: @blue;
 }
 
 #custom-music {
-	color: @mauve;
+  color: @green;
 }
 
 #custom-lock {
-	color: @lavender;
+  color: @lavender;
 }
 
 #custom-power {
-	color: @red;
+  color: @red;
 }
