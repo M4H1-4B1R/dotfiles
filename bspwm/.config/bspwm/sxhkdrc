@@ -24,7 +24,7 @@ super + shift + c
 	galculator
 
 super + r
-  redshift -O 4000
+  redshift -O 4000; notify-send "Redshift" "Bluelight filter turned on"
 
 super + s
   flameshot gui
