@@ -1,5 +1,5 @@
 [terminal]
-#shell = "/bin/fish"
+shell = "/bin/fish"
 
 [cursor]
 unfocused_hollow = false
