@@ -1,0 +1,10 @@
+include catppuccin-mocha
+
+# enable copy to clipboard
+set selection-clipboard clipboard
+
+# Open document in fit-width mode by default
+set adjust-open "best-fit"
+
+
+set font "JetbrainsMono Nerd Font 13"
