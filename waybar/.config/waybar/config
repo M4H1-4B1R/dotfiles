@@ -6,7 +6,7 @@
     // Choose the order of the modules
     "modules-left": ["custom/icon", "hyprland/workspaces"],
     "modules-center": [],
-    "modules-right": ["kernel", "memory", "pulseaudio", "battery", "clock", "tray"],
+    "modules-right": ["cpu", "kernel", "memory", "pulseaudio", "battery", "clock", "tray"],
     "hyprland/workspaces": {
          "disable-scroll": true,
          "sort-by-name": true,
@@ -38,11 +38,12 @@
 			"on-click": "rofi -show drun",
 		},
 
-		"custom/kernel":
-		{
-			"exec": "~/.local/scripts/kernel",
-			"interval": 5,
-			"tooltip": false
+		"custom/kernel": {
+			"format": "Kernel: {}",
+			"tooltip": true,
+			"tooltip-format": "Kernel Version: {}",
+			"exec": "~/.local/scripts/kernel.sh",
+			"interval": 3600  // Update every hour (adjust as needed)
 		},
 
     "custom/music": {

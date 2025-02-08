@@ -14,8 +14,8 @@
 
 #workspaces {
   margin: 3px;
-  background: @blue;
-  border-radius: 5px;
+  background: @lavender;
+  border-radius: 999em;
 }
 
 #workspaces button {
@@ -41,12 +41,18 @@
 #custom-lock,
 #custom-power,
 #memory,
-#window {
+#cpu,
+#window,
+#custom-kernel {
   padding: 0.2rem 1rem;
   color: @crust;
-  border-radius: 5px;
+  border-radius: 999em;
   margin-right: 8px;
   margin-bottom: 3px;
+}
+
+#custom-kernel {
+  background: @lavender;
 }
 
 /* #window { */
@@ -54,19 +60,23 @@
 /* } */
 
 #clock {
-  background: @blue;
+  background: @lavender;
 }
 
 #memory {
+  background: @peach;
+}
+
+#cpu {
   background: @lavender;
 }
 
 #battery {
-  background: @lavender;
+  background: @peach;
 }
 
 #battery.charging {
-  background: @lavender;
+  background: @peach;
 }
 
 #battery.warning:not(.charging) {
@@ -78,7 +88,7 @@
 }
 
 #pulseaudio {
-  background: @blue;
+  background: @lavender;
 }
 
 #custom-music {
@@ -86,7 +96,7 @@
 }
 
 #custom-lock {
-  color: @lavender;
+  color: @peach;
 }
 
 #custom-power {

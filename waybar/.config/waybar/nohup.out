@@ -51,3 +51,201 @@ Gdk-Message: 13:21:58.250: Error reading events from display: Broken pipe
 [2024-12-11 14:28:32.328] [info] Loading persistent workspaces from Hyprland workspace rules
 [2024-12-11 14:28:32.370] [info] Bar configured (width: 1920, height: 32) for output: eDP-1
 Gdk-Message: 14:29:13.580: Error reading events from display: Broken pipe
+[2025-02-08 14:32:55.823] [info] Using configuration file /home/abir/.config/waybar/config
+[2025-02-08 14:32:55.828] [info] Unable to receive desktop appearance: GDBus.Error:org.freedesktop.DBus.Error.UnknownMethod: No such interface “org.freedesktop.portal.Settings” on object at path /org/freedesktop/portal/desktop
+[2025-02-08 14:32:55.828] [info] Using CSS file /home/abir/.config/waybar/style.css
+[2025-02-08 14:32:55.838] [info] Hyprland IPC starting
+[2025-02-08 14:32:55.839] [info] Loading persistent workspaces from Waybar config
+[2025-02-08 14:32:55.839] [info] Loading persistent workspaces from Hyprland workspace rules
+[2025-02-08 14:32:55.839] [warning] module kernel: Unknown module: kernel
+[2025-02-08 14:32:55.879] [info] Bar configured (width: 1920, height: 34) for output: eDP-1
+
+** (waybar:4082): WARNING **: 14:32:55.883: Status Notifier Item with bus name ':1.20' and object path '/org/ayatana/NotificationItem/nm_applet' is already registered
+[2025-02-08 14:34:28.581] [info] Hyprland config reloaded, reinitializing hyprland/workspaces module...
+[2025-02-08 14:34:28.603] [info] Loading persistent workspaces from Waybar config
+[2025-02-08 14:34:28.603] [info] Loading persistent workspaces from Hyprland workspace rules
+[2025-02-08 14:44:24.017] [info] Using configuration file /home/abir/.config/waybar/config
+[2025-02-08 14:44:24.019] [info] Unable to receive desktop appearance: GDBus.Error:org.freedesktop.DBus.Error.UnknownMethod: No such interface “org.freedesktop.portal.Settings” on object at path /org/freedesktop/portal/desktop
+[2025-02-08 14:44:24.019] [info] Using CSS file /home/abir/.config/waybar/style.css
+[2025-02-08 14:44:24.030] [info] Hyprland IPC starting
+[2025-02-08 14:44:24.031] [info] Loading persistent workspaces from Waybar config
+[2025-02-08 14:44:24.031] [info] Loading persistent workspaces from Hyprland workspace rules
+[2025-02-08 14:44:24.032] [warning] module kernel: Unknown module: kernel
+[2025-02-08 14:44:24.071] [info] Bar configured (width: 1920, height: 34) for output: eDP-1
+
+** (waybar:6001): WARNING **: 14:44:24.075: Status Notifier Item with bus name ':1.20' and object path '/org/ayatana/NotificationItem/nm_applet' is already registered
+
+** (waybar:6001): WARNING **: 14:44:45.011: Status Notifier Item with bus name ':1.20' and object path '/org/ayatana/NotificationItem/nm_applet' is already registered
+
+** (waybar:6001): WARNING **: 14:44:45.011: Status Notifier Item with bus name ':1.75' and object path '/org/ayatana/NotificationItem/azote_status_icon' is already registered
+
+** (waybar:6001): WARNING **: 14:46:05.215: Status Notifier Item with bus name ':1.20' and object path '/org/ayatana/NotificationItem/nm_applet' is already registered
+[2025-02-08 14:48:06.632] [info] Using configuration file /home/abir/.config/waybar/config
+[2025-02-08 14:48:06.634] [info] Unable to receive desktop appearance: GDBus.Error:org.freedesktop.DBus.Error.UnknownMethod: No such interface “org.freedesktop.portal.Settings” on object at path /org/freedesktop/portal/desktop
+[2025-02-08 14:48:06.634] [info] Using CSS file /home/abir/.config/waybar/style.css
+[2025-02-08 14:48:06.646] [info] Hyprland IPC starting
+[2025-02-08 14:48:06.647] [info] Loading persistent workspaces from Waybar config
+[2025-02-08 14:48:06.647] [info] Loading persistent workspaces from Hyprland workspace rules
+[2025-02-08 14:48:06.647] [warning] module kernel: Unknown module: kernel
+[2025-02-08 14:48:06.688] [info] Bar configured (width: 1920, height: 34) for output: eDP-1
+
+** (waybar:6837): WARNING **: 14:48:06.692: Status Notifier Item with bus name ':1.20' and object path '/org/ayatana/NotificationItem/nm_applet' is already registered
+[2025-02-08 14:51:52.114] [info] Using configuration file /home/abir/.config/waybar/config
+[2025-02-08 14:51:52.116] [info] Unable to receive desktop appearance: GDBus.Error:org.freedesktop.DBus.Error.UnknownMethod: No such interface “org.freedesktop.portal.Settings” on object at path /org/freedesktop/portal/desktop
+[2025-02-08 14:51:52.116] [info] Using CSS file /home/abir/.config/waybar/style.css
+[2025-02-08 14:51:52.128] [info] Hyprland IPC starting
+[2025-02-08 14:51:52.129] [info] Loading persistent workspaces from Waybar config
+[2025-02-08 14:51:52.129] [info] Loading persistent workspaces from Hyprland workspace rules
+[2025-02-08 14:51:52.129] [warning] module kernel: Unknown module: kernel
+[2025-02-08 14:51:52.174] [info] Bar configured (width: 1920, height: 34) for output: eDP-1
+
+** (waybar:7154): WARNING **: 14:51:52.179: Status Notifier Item with bus name ':1.20' and object path '/org/ayatana/NotificationItem/nm_applet' is already registered
+[2025-02-08 14:52:33.134] [info] Using configuration file /home/abir/.config/waybar/config
+[2025-02-08 14:52:33.137] [info] Unable to receive desktop appearance: GDBus.Error:org.freedesktop.DBus.Error.UnknownMethod: No such interface “org.freedesktop.portal.Settings” on object at path /org/freedesktop/portal/desktop
+[2025-02-08 14:52:33.137] [info] Using CSS file /home/abir/.config/waybar/style.css
+[2025-02-08 14:52:33.148] [info] Hyprland IPC starting
+[2025-02-08 14:52:33.149] [info] Loading persistent workspaces from Waybar config
+[2025-02-08 14:52:33.149] [info] Loading persistent workspaces from Hyprland workspace rules
+[2025-02-08 14:52:33.150] [warning] module kernel: Unknown module: kernel
+[2025-02-08 14:52:33.191] [info] Bar configured (width: 1920, height: 34) for output: eDP-1
+
+** (waybar:7326): WARNING **: 14:52:33.194: Status Notifier Item with bus name ':1.20' and object path '/org/ayatana/NotificationItem/nm_applet' is already registered
+[2025-02-08 14:52:51.176] [info] Using configuration file /home/abir/.config/waybar/config
+[2025-02-08 14:52:51.179] [info] Unable to receive desktop appearance: GDBus.Error:org.freedesktop.DBus.Error.UnknownMethod: No such interface “org.freedesktop.portal.Settings” on object at path /org/freedesktop/portal/desktop
+[2025-02-08 14:52:51.179] [info] Using CSS file /home/abir/.config/waybar/style.css
+[2025-02-08 14:52:51.191] [info] Hyprland IPC starting
+[2025-02-08 14:52:51.192] [info] Loading persistent workspaces from Waybar config
+[2025-02-08 14:52:51.192] [info] Loading persistent workspaces from Hyprland workspace rules
+[2025-02-08 14:52:51.193] [warning] module kernel: Unknown module: kernel
+[2025-02-08 14:52:51.237] [info] Bar configured (width: 1920, height: 34) for output: eDP-1
+
+** (waybar:7478): WARNING **: 14:52:51.241: Status Notifier Item with bus name ':1.20' and object path '/org/ayatana/NotificationItem/nm_applet' is already registered
+[2025-02-08 14:59:32.675] [info] Using configuration file /home/abir/.config/waybar/config
+[2025-02-08 14:59:32.678] [info] Unable to receive desktop appearance: GDBus.Error:org.freedesktop.DBus.Error.UnknownMethod: No such interface “org.freedesktop.portal.Settings” on object at path /org/freedesktop/portal/desktop
+[2025-02-08 14:59:32.678] [info] Using CSS file /home/abir/.config/waybar/style.css
+[2025-02-08 14:59:32.689] [info] Hyprland IPC starting
+[2025-02-08 14:59:32.690] [info] Loading persistent workspaces from Waybar config
+[2025-02-08 14:59:32.691] [info] Loading persistent workspaces from Hyprland workspace rules
+[2025-02-08 14:59:32.691] [warning] module kernel: Unknown module: kernel
+[2025-02-08 14:59:32.730] [info] Bar configured (width: 1920, height: 34) for output: eDP-1
+
+** (waybar:7919): WARNING **: 14:59:32.735: Status Notifier Item with bus name ':1.20' and object path '/org/ayatana/NotificationItem/nm_applet' is already registered
+[2025-02-08 15:03:07.696] [info] Using configuration file /home/abir/.config/waybar/config
+[2025-02-08 15:03:07.699] [info] Unable to receive desktop appearance: GDBus.Error:org.freedesktop.DBus.Error.UnknownMethod: No such interface “org.freedesktop.portal.Settings” on object at path /org/freedesktop/portal/desktop
+[2025-02-08 15:03:07.699] [info] Using CSS file /home/abir/.config/waybar/style.css
+[2025-02-08 15:03:07.710] [info] Hyprland IPC starting
+[2025-02-08 15:03:07.711] [info] Loading persistent workspaces from Waybar config
+[2025-02-08 15:03:07.712] [info] Loading persistent workspaces from Hyprland workspace rules
+[2025-02-08 15:03:07.712] [warning] module kernel: Unknown module: kernel
+[2025-02-08 15:03:07.753] [info] Bar configured (width: 1920, height: 34) for output: eDP-1
+
+** (waybar:8931): WARNING **: 15:03:07.757: Status Notifier Item with bus name ':1.20' and object path '/org/ayatana/NotificationItem/nm_applet' is already registered
+[2025-02-08 15:03:27.829] [info] Using configuration file /home/abir/.config/waybar/config
+[2025-02-08 15:03:27.831] [info] Unable to receive desktop appearance: GDBus.Error:org.freedesktop.DBus.Error.UnknownMethod: No such interface “org.freedesktop.portal.Settings” on object at path /org/freedesktop/portal/desktop
+[2025-02-08 15:03:27.831] [info] Using CSS file /home/abir/.config/waybar/style.css
+[2025-02-08 15:03:27.842] [info] Hyprland IPC starting
+[2025-02-08 15:03:27.843] [info] Loading persistent workspaces from Waybar config
+[2025-02-08 15:03:27.843] [info] Loading persistent workspaces from Hyprland workspace rules
+[2025-02-08 15:03:27.843] [warning] module kernel: Unknown module: kernel
+[2025-02-08 15:03:27.883] [info] Bar configured (width: 1920, height: 34) for output: eDP-1
+
+** (waybar:9064): WARNING **: 15:03:27.888: Status Notifier Item with bus name ':1.20' and object path '/org/ayatana/NotificationItem/nm_applet' is already registered
+[2025-02-08 15:03:59.781] [info] Using configuration file /home/abir/.config/waybar/config
+[2025-02-08 15:03:59.783] [info] Unable to receive desktop appearance: GDBus.Error:org.freedesktop.DBus.Error.UnknownMethod: No such interface “org.freedesktop.portal.Settings” on object at path /org/freedesktop/portal/desktop
+[2025-02-08 15:03:59.783] [info] Using CSS file /home/abir/.config/waybar/style.css
+[2025-02-08 15:03:59.795] [info] Hyprland IPC starting
+[2025-02-08 15:03:59.796] [info] Loading persistent workspaces from Waybar config
+[2025-02-08 15:03:59.796] [info] Loading persistent workspaces from Hyprland workspace rules
+[2025-02-08 15:03:59.796] [warning] module kernel: Unknown module: kernel
+[2025-02-08 15:03:59.839] [info] Bar configured (width: 1920, height: 34) for output: eDP-1
+
+** (waybar:9246): WARNING **: 15:03:59.843: Status Notifier Item with bus name ':1.20' and object path '/org/ayatana/NotificationItem/nm_applet' is already registered
+[2025-02-08 15:05:35.945] [info] Using configuration file /home/abir/.config/waybar/config
+[2025-02-08 15:05:35.948] [info] Unable to receive desktop appearance: GDBus.Error:org.freedesktop.DBus.Error.UnknownMethod: No such interface “org.freedesktop.portal.Settings” on object at path /org/freedesktop/portal/desktop
+[2025-02-08 15:05:35.948] [info] Using CSS file /home/abir/.config/waybar/style.css
+[2025-02-08 15:05:35.960] [info] Hyprland IPC starting
+[2025-02-08 15:05:35.961] [info] Loading persistent workspaces from Waybar config
+[2025-02-08 15:05:35.962] [info] Loading persistent workspaces from Hyprland workspace rules
+[2025-02-08 15:05:35.962] [warning] module kernel: Unknown module: kernel
+[2025-02-08 15:05:36.008] [info] Bar configured (width: 1920, height: 34) for output: eDP-1
+
+** (waybar:9703): WARNING **: 15:05:36.014: Status Notifier Item with bus name ':1.20' and object path '/org/ayatana/NotificationItem/nm_applet' is already registered
+[2025-02-08 15:07:06.724] [info] Using configuration file /home/abir/.config/waybar/config
+[2025-02-08 15:07:06.727] [info] Unable to receive desktop appearance: GDBus.Error:org.freedesktop.DBus.Error.UnknownMethod: No such interface “org.freedesktop.portal.Settings” on object at path /org/freedesktop/portal/desktop
+[2025-02-08 15:07:06.727] [info] Using CSS file /home/abir/.config/waybar/style.css
+[2025-02-08 15:07:06.738] [info] Hyprland IPC starting
+[2025-02-08 15:07:06.738] [info] Loading persistent workspaces from Waybar config
+[2025-02-08 15:07:06.739] [info] Loading persistent workspaces from Hyprland workspace rules
+[2025-02-08 15:07:06.739] [warning] module kernel: Unknown module: kernel
+[2025-02-08 15:07:06.897] [info] Bar configured (width: 1920, height: 34) for output: eDP-1
+
+** (waybar:9870): WARNING **: 15:07:06.911: Status Notifier Item with bus name ':1.20' and object path '/org/ayatana/NotificationItem/nm_applet' is already registered
+[2025-02-08 15:07:51.095] [info] Using configuration file /home/abir/.config/waybar/config
+[2025-02-08 15:07:51.097] [info] Unable to receive desktop appearance: GDBus.Error:org.freedesktop.DBus.Error.UnknownMethod: No such interface “org.freedesktop.portal.Settings” on object at path /org/freedesktop/portal/desktop
+[2025-02-08 15:07:51.097] [info] Using CSS file /home/abir/.config/waybar/style.css
+[2025-02-08 15:07:51.108] [info] Hyprland IPC starting
+[2025-02-08 15:07:51.109] [info] Loading persistent workspaces from Waybar config
+[2025-02-08 15:07:51.110] [info] Loading persistent workspaces from Hyprland workspace rules
+[2025-02-08 15:07:51.110] [warning] module kernel: Unknown module: kernel
+[2025-02-08 15:07:51.270] [info] Bar configured (width: 1920, height: 34) for output: eDP-1
+
+** (waybar:10042): WARNING **: 15:07:51.284: Status Notifier Item with bus name ':1.20' and object path '/org/ayatana/NotificationItem/nm_applet' is already registered
+[2025-02-08 15:09:26.081] [info] Using configuration file /home/abir/.config/waybar/config
+[2025-02-08 15:09:26.084] [info] Unable to receive desktop appearance: GDBus.Error:org.freedesktop.DBus.Error.UnknownMethod: No such interface “org.freedesktop.portal.Settings” on object at path /org/freedesktop/portal/desktop
+[2025-02-08 15:09:26.084] [info] Using CSS file /home/abir/.config/waybar/style.css
+[2025-02-08 15:09:26.096] [info] Hyprland IPC starting
+[2025-02-08 15:09:26.097] [info] Loading persistent workspaces from Waybar config
+[2025-02-08 15:09:26.098] [info] Loading persistent workspaces from Hyprland workspace rules
+[2025-02-08 15:09:26.098] [warning] module kernel: Unknown module: kernel
+[2025-02-08 15:09:26.263] [info] Bar configured (width: 1920, height: 34) for output: eDP-1
+
+** (waybar:10280): WARNING **: 15:09:26.276: Status Notifier Item with bus name ':1.20' and object path '/org/ayatana/NotificationItem/nm_applet' is already registered
+[2025-02-08 15:10:00.297] [info] Using configuration file /home/abir/.config/waybar/config
+[2025-02-08 15:10:00.299] [info] Unable to receive desktop appearance: GDBus.Error:org.freedesktop.DBus.Error.UnknownMethod: No such interface “org.freedesktop.portal.Settings” on object at path /org/freedesktop/portal/desktop
+[2025-02-08 15:10:00.299] [info] Using CSS file /home/abir/.config/waybar/style.css
+[2025-02-08 15:10:00.310] [info] Hyprland IPC starting
+[2025-02-08 15:10:00.311] [info] Loading persistent workspaces from Waybar config
+[2025-02-08 15:10:00.311] [info] Loading persistent workspaces from Hyprland workspace rules
+[2025-02-08 15:10:00.311] [warning] module kernel: Unknown module: kernel
+[2025-02-08 15:10:00.468] [info] Bar configured (width: 1920, height: 34) for output: eDP-1
+
+** (waybar:10442): WARNING **: 15:10:00.481: Status Notifier Item with bus name ':1.20' and object path '/org/ayatana/NotificationItem/nm_applet' is already registered
+
+** (waybar:10442): WARNING **: 15:11:35.822: Status Notifier Item with bus name ':1.20' and object path '/org/ayatana/NotificationItem/nm_applet' is already registered
+
+** (waybar:10442): WARNING **: 15:11:36.005: Status Notifier Item with bus name ':1.114' and object path '/org/ayatana/NotificationItem/azote_status_icon' is already registered
+
+** (waybar:10442): WARNING **: 15:11:47.154: Status Notifier Item with bus name ':1.20' and object path '/org/ayatana/NotificationItem/nm_applet' is already registered
+[2025-02-08 15:12:42.589] [info] Hyprland config reloaded, reinitializing hyprland/workspaces module...
+[2025-02-08 15:12:42.616] [info] Loading persistent workspaces from Waybar config
+[2025-02-08 15:12:42.617] [info] Loading persistent workspaces from Hyprland workspace rules
+[2025-02-08 15:14:30.376] [info] Hyprland config reloaded, reinitializing hyprland/workspaces module...
+[2025-02-08 15:14:30.411] [info] Loading persistent workspaces from Waybar config
+[2025-02-08 15:14:30.412] [info] Loading persistent workspaces from Hyprland workspace rules
+[2025-02-08 15:16:03.755] [info] Hyprland config reloaded, reinitializing hyprland/workspaces module...
+[2025-02-08 15:16:03.779] [info] Loading persistent workspaces from Waybar config
+[2025-02-08 15:16:03.780] [info] Loading persistent workspaces from Hyprland workspace rules
+[2025-02-08 15:16:21.874] [info] Hyprland config reloaded, reinitializing hyprland/workspaces module...
+[2025-02-08 15:16:21.911] [info] Loading persistent workspaces from Waybar config
+[2025-02-08 15:16:21.911] [info] Loading persistent workspaces from Hyprland workspace rules
+[2025-02-08 15:57:56.271] [info] Hyprland config reloaded, reinitializing hyprland/workspaces module...
+[2025-02-08 15:57:56.303] [info] Loading persistent workspaces from Waybar config
+[2025-02-08 15:57:56.304] [info] Loading persistent workspaces from Hyprland workspace rules
+[2025-02-08 16:03:52.089] [info] Hyprland config reloaded, reinitializing hyprland/workspaces module...
+[2025-02-08 16:03:52.114] [info] Loading persistent workspaces from Waybar config
+[2025-02-08 16:03:52.114] [info] Loading persistent workspaces from Hyprland workspace rules
+[2025-02-08 16:04:12.302] [info] Hyprland config reloaded, reinitializing hyprland/workspaces module...
+[2025-02-08 16:04:12.328] [info] Loading persistent workspaces from Waybar config
+[2025-02-08 16:04:12.330] [info] Loading persistent workspaces from Hyprland workspace rules
+[2025-02-08 16:10:41.308] [info] Hyprland config reloaded, reinitializing hyprland/workspaces module...
+[2025-02-08 16:10:41.334] [info] Loading persistent workspaces from Waybar config
+[2025-02-08 16:10:41.335] [info] Loading persistent workspaces from Hyprland workspace rules
+[2025-02-08 16:10:45.036] [info] Hyprland config reloaded, reinitializing hyprland/workspaces module...
+[2025-02-08 16:10:45.066] [info] Loading persistent workspaces from Waybar config
+[2025-02-08 16:10:45.066] [info] Loading persistent workspaces from Hyprland workspace rules
+
+** (waybar:10442): WARNING **: 16:10:59.636: Status Notifier Item with bus name ':1.20' and object path '/org/ayatana/NotificationItem/nm_applet' is already registered
+
+** (waybar:10442): WARNING **: 16:10:59.830: Status Notifier Item with bus name ':1.180' and object path '/org/ayatana/NotificationItem/azote_status_icon' is already registered
+
+** (waybar:10442): WARNING **: 16:12:09.510: Status Notifier Item with bus name ':1.20' and object path '/org/ayatana/NotificationItem/nm_applet' is already registered

@@ -6,13 +6,15 @@
 
 @define-color base #1e1e2e;
 @define-color mantle #181825;
-@define-color crust rgba(4, 5, 7, 1);
+@define-color crust rgba(4, 5, 7, 0.8);
 
 @define-color text #f4f4f9;
 
-@define-color blue #b4befe;
-@define-color lavender #f5c2e7;
+@define-color blue #89b4fa;
+@define-color lavender #b4befe;
 @define-color teal #94e2d5;
 @define-color green #a6e3a1;
 @define-color yellow #f9e2af;
 @define-color red #f38ba8;
+@define-color mauve #cba6f7;
+@define-color peach #fab387;
