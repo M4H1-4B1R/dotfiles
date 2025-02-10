@@ -22,6 +22,7 @@
   color: @crust;
   padding: 0.2rem;
   border-radius: 0;
+  margin-bottom: 3px;
 }
 
 #workspaces button.active {
