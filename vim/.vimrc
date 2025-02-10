@@ -89,6 +89,7 @@ Plug 'prettier/vim-prettier', {
   \ }
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'pangloss/vim-javascript'
+Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 
 colorscheme catppuccin_mocha
