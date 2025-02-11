@@ -1,11 +1,12 @@
 #!/bin/bash
 
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-# nitrogen --random ~/walls/ --set-zoom-fill &
 nitrogen --restore &
+# feh --bg-fill --randomize ~/walls &
 picom --config ~/.config/picom/picom.conf &
 numlockx on &
 dunst &
+xclip &
 nm-applet &
 blueman-applet &
 volumeicon &
