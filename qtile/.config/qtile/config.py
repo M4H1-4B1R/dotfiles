@@ -47,10 +47,11 @@ keys = [
     # ),
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
     Key([mod], "b", lazy.spawn("brave"), desc="Launch browser"),
-    Key([mod], "e", lazy.spawn("alacritty -e ranger"), desc="Launch file browser"),
+    Key([mod], "e", lazy.spawn("pcmanfm"), desc="Launch file browser"),
     Key([mod, "shift"], "e", lazy.spawn("thunar"), desc="Launch file browser"),
     Key([mod], "s", lazy.spawn("flameshot gui"), desc="Screenshot"),
     Key([mod], "w", lazy.spawn("feh --bg-fill --randomize /home/abir/walls/"), desc="random walls"),
+    Key([mod], "x", lazy.spawn("archlinux-logout"), desc="logout screen"),
     Key([mod, "shift"], "Return", lazy.spawn("rofi -show drun"), desc="Launch run luancher"),
     Key([alt], "b", lazy.spawn("brightnessctl s +10%"), desc="increase brightness"),
     Key([alt, "shift"], "b", lazy.spawn("brightnessctl s 10%-"), desc="decrease brightness"),
@@ -83,33 +84,45 @@ for vt in range(1, 8):
         )
     )
 
+groups = []
+group_names = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
 
-groups = [Group(i) for i in "123456789"]
+# group_labels = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
+# group_labels = ["DEV", "WWW", "SYS", "DOC", "VBOX", "CHAT", "MUS", "VID", "GFX"]
+# group_labels = [ "一", "二", "三", "四", "五", "六", "七", "八", "九" ]
+group_labels = ["", "", "", "", "", "", "", "", "" ]
+#group_labels = [" ", " ", " ", " ", " ", " ", "⛨ ", " ", " "]
 
+group_layouts = ["monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall"]
+
+
+for i in range(len(group_names)):
+    groups.append(
+        Group(
+            name=group_names[i],
+            layout=group_layouts[i].lower(),
+            label=group_labels[i],
+        ))
+ 
 for i in groups:
     keys.extend(
         [
-            # mod1 + group number = switch to group
+            # mod1 + letter of group = switch to group
             Key(
                 [mod],
                 i.name,
                 lazy.group[i.name].toscreen(),
                 desc="Switch to group {}".format(i.name),
             ),
-            # mod1 + shift + group number = switch to & move focused window to group
+            # mod1 + shift + letter of group = move focused window to group
             Key(
                 [mod, "shift"],
                 i.name,
-                lazy.window.togroup(i.name, switch_group=True),
-                desc="Switch to & move focused window to group {}".format(i.name),
+                lazy.window.togroup(i.name, switch_group=False),
+                desc="Move focused window to group {}".format(i.name),
             ),
-            # Or, use below if you prefer not to switch to that group.
-            # # mod1 + shift + group number = move focused window to group
-            # Key([mod, "shift"], i.name, lazy.window.togroup(i.name),
-            #     desc="move focused window to group {}".format(i.name)),
         ]
     )
-
 layouts = [
     #layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=4),
     layout.MonadTall(border_width=0, margin=10, ratio=0.5),
@@ -128,8 +141,7 @@ layouts = [
 
 widget_defaults = dict(
     font="JetbrainsMono Nerd Font",
-    fontsize=14,
-    padding=2,
+    fontsize=16,
 )
 extension_defaults = widget_defaults.copy()
 
@@ -139,25 +151,32 @@ screens = [
             [
                 # widget.CurrentLayoutIcon(scale=0.7),
                 widget.TextBox(text="󰣇", fontsize=24, padding=5, foreground="#e0af68"),
-                widget.GroupBox(margin_x=5, active="#bb9af7", inactive="#ffffff", this_current_screen_border="#bb9af7", borderwidth=2, rounded=True),
-                widget.Spacer(length=18),
+                widget.GroupBox(padding = 7, active="#bb9af7", inactive="#ffffff", this_current_screen_border="#bb9af7", borderwidth=2, rounded=True),
+
+                widget.TextBox(
+                    text = '|',
+                    font = "JetbrainsMono Nerd Font",
+                    foreground = "#7d7d7d",
+                    padding = 4,
+                    fontsize = 14
+                 ),
                 widget.WindowName(max_chars=30, foreground="#a6e3a1"),
                 # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
                 # widget.StatusNotifier(),
-                widget.TextBox(text="", font="fontawesome6", fontsize=44, padding=-5, foreground="#11111b"),
-                widget.Battery(background="#11111b", foreground="#89b4fa", battery="BAT1", format="  {percent:2.0%}", padding=5, mouse_callbacks={'Button1': lambda: qtile.cmd_spawn('alacritty -e sudo powertop')}),
-                widget.TextBox(text="", font="fontawesome6", fontsize=44, padding=-5, foreground="#1e1e2e", background="#11111b"),
-                widget.Memory(background="#1e1e2e", foreground="#a6e3a1", format='󰍛{MemUsed: .0f}{mm}/{MemTotal: .0f}{mm}', mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn('alacritty -e htop')}, padding=4),
-                widget.TextBox(text="", font="fontawesome6", fontsize=44, padding=-5, foreground="#11111b", background="#1e1e2e"),
-                widget.Backlight(foregound="#89b4fa", background="#11111b", brightness_file="/sys/class/backlight/intel_backlight/brightness", max_brightness_file="/sys/class/backlight/intel_backlight/max_brightness", mouse_callbacks={'Button1': lambda: qtile.cmd_spawn('arandr')}, format=" {percent:2.0%}"),
-                widget.TextBox(text="", font="fontawesome6", fontsize=44, padding=-5, foreground="#1e1e2e", background="#11111b"),
-                widget.Clock(background="#1e1e2e", format="󰥔 %I:%M %p", foreground="#94e2d5", mouse_callbacks={'Button1': lambda: qtile.cmd_spawn('alacritty -e calcurse')}, padding=5),
-                widget.TextBox(text="", font="fontawesome6", fontsize=44, padding=-5, foreground="#11111b", background="#1e1e2e"),
-                widget.Systray(background="#11111b"),
+                widget.TextBox(text="", font="JetbrainsMono Nerd Font", fontsize=44, padding=-6, foreground="#1e1e2e"),
+                widget.Battery(background="#1e1e2e", foreground="#f5c2e7", battery="BAT0", format="  {percent:2.0%}", padding=5, mouse_callbacks={'Button1': lambda: qtile.cmd_spawn('alacritty -e sudo powertop')}),
+                widget.TextBox(text="", font="JetbrainsMono Nerd Font", fontsize=44, padding=-6, foreground="#11111b", background="#1e1e2e"),
+                widget.Memory(background="#11111b", foreground="#cba6f7", format='󰍛{MemUsed: .0f}{mm}/{MemTotal: .0f}{mm}', mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn('alacritty -e htop')}, padding=4),
+                widget.TextBox(text="", font="JetbrainsMono Nerd Font", fontsize=44, padding=-6, foreground="#1e1e2e", background="#11111b"),
+                widget.Backlight(background="#1e1e2e", foreground="#f38ba8", brightness_file="/sys/class/backlight/intel_backlight/brightness", max_brightness_file="/sys/class/backlight/intel_backlight/max_brightness", mouse_callbacks={'Button1': lambda: qtile.cmd_spawn('arandr')}, format=" {percent:2.0%}"),
+                widget.TextBox(text="", font="JetbrainsMono Nerd Font", fontsize=44, padding=-6, foreground="#11111b", background="#1e1e2e"),
+                widget.Clock(background="#11111b", format="󰥔 %I:%M %p", foreground="#fab387", mouse_callbacks={'Button1': lambda: qtile.cmd_spawn('alacritty -e calcurse')}, padding=5),
+                widget.TextBox(text="", font="JetbrainsMono Nerd Font", fontsize=44, padding=-6, foreground="#1e1e2e", background="#11111b"),
+                widget.Systray(background="#1e1e2e"),
             ],
-            26,
+            35,
             background="#040507",
-            # margin = [10,10,5,10],
+            margin = [10,10,5,10],
             border_width = [0,0,0,0],
             # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
         ),
