@@ -1,0 +1,37 @@
+{
+  "workbench.startupEditor": "none",
+  "workbench.iconTheme": "symbols",
+  "editor.minimap.enabled": false,
+  "editor.fontFamily": "'FiraCode Nerd Font', 'Courier New', monospace",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "workbench.colorCustomizations": {
+    "terminal.background": "#00000000"
+  },
+  "workbench.settings.applyToAllProfiles": ["workbench.colorCustomizations"],
+  "window.titleBarStyle": "custom",
+  "editor.fontSize": 19,
+  "window.commandCenter": false,
+  "workbench.layoutControl.enabled": false,
+  "workbench.activityBar.location": "hidden",
+  "editor.inlineSuggest.suppressSuggestions": true,
+  "window.menuBarVisibility": "compact",
+  "editor.lineNumbers": "relative",
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.smoothScrolling": true,
+  "glassit-linux.opacity": 80,
+  "glassit.alpha": 250,
+  "workbench.colorTheme": "Vesper",
+  "workbench.tips.enabled": false,
+  "workbench.sideBar.location": "right",
+  "workbench.tree.renderIndentGuides": "none",
+  "explorer.compactFolders": false,
+  "material-icon-theme.hidesExplorerArrows": true,
+  "workbench.tree.indent": 10,
+  "window.zoomLevel": 0.4,
+  "breadcrumbs.enabled": false,
+  "workbench.editor.showTabs": "none"
+}
