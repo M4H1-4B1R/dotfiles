@@ -33,6 +33,27 @@ nord14 #a3be8c
 nord15 #b48ead
 */
 
+/*
+*
+* catppuccin palette
+*
+*/
+
+@define-color base #1e1e2e;
+@define-color mantle #181825;
+@define-color crust rgba(4, 5, 7, 1);
+
+@define-color text #f4f4f9;
+
+@define-color blue #89b4fa;
+@define-color lavender #b4befe;
+@define-color teal #94e2d5;
+@define-color green #a6e3a1;
+@define-color yellow #f9e2af;
+@define-color red #f38ba8;
+@define-color mauve #cba6f7;
+@define-color peach #fab387;
+
 /* -----------------------------------------------------------------------------
  * Base styles
  * -------------------------------------------------------------------------- */
@@ -40,38 +61,38 @@ nord15 #b48ead
 /* Reset all styles */
 
 * {
-	color: #eceff4;
-	border: 1px;
-	border-radius: 5px;
-	padding: 0 0;
-	font-family: JetBrainsMono, SymbolsNerdFont;
-	font-size: 15px;
-	margin-right: 2px;
-	margin-left: 2px;
-	padding-bottom: 2px;
+  color: @text;
+  border: 1px;
+  border-radius: 0px;
+  padding: 0 0;
+  font-family: JetBrainsMono, SymbolsNerdFont;
+  font-size: 15px;
+  margin-right: 2px;
+  margin-left: 2px;
+  padding-bottom: 2px;
 }
 
 window#waybar {
-	/* background:#2e3440; */
-	background: #040507;
-	background-color: rgba(04, 05, 07, 0.6);
+  /* background:#2e3440; */
+  background: #040507;
+  background-color: rgba(04, 05, 07, 0.8);
 }
 
 #workspaces button {
-	padding: 2px 8px;
-	border-bottom: 2px;
-	color: #eceff4;
-	border-color: #d8dee9;
-	border-style: solid;
-	margin-top: 2px;
+  padding: 2px 8px;
+  border-bottom: 2px;
+  color: @text;
+  border-color: #d8dee9;
+  border-style: solid;
+  margin-top: 2px;
 }
 
 #workspaces button.focused {
-	border-color: #81a1c1;
+  border-color: @blue;
 }
 
 #mode {
-	color: #ebcb8b;
+  color: @yellow;
 }
 
 #custom-launcher,
@@ -90,12 +111,12 @@ window#waybar {
 #clock,
 #tray,
 #custom-power {
-	padding: 2px 8px;
-	border: 1px;
-	border-bottom: 2px;
-	border-style: solid;
-	border-radius: 5px;
-	margin-top: 1px;
+  padding: 2px 8px;
+  border: 1px;
+  border-bottom: 2px;
+  border-style: solid;
+  border-radius: 5px;
+  margin-top: 1px;
 }
 
 /* -----------------------------------------------------------------------------
@@ -103,100 +124,101 @@ window#waybar {
  * -------------------------------------------------------------------------- */
 
 #custom-launcher {
-	border-style: hidden;
-	margin-top: 2px;
+  border-style: hidden;
+  margin-top: 2px;
 }
 
 #mode {
-	margin-bottom: 3px;
+  margin-bottom: 3px;
 }
 
 #window {
-	border-style: hidden;
-	margin-top: 1px;
+  border-style: hidden;
+  margin-top: 1px;
 }
 
 #network {
-	color: #81a1c1;
+  color: @blue;
 }
 
 #network.disabled,
 #network.disconnected {
-	color: #bf616a;
+  color: @red;
 }
 
 #custom-updates {
-	color: #ebcb8b;
+  color: @yellow;
 }
 
 #custom-keyboard-layout {
-	color: #d08770;
+  color: @red;
 }
 
 #cpu {
-	color: #a3be8c;
+  color: @green;
 }
 
 #temperature {
-	color: #8fbcbb;
+  color: @teal;
 }
 
 #temperature.critical {
-	color: #bf616a;
+  color: @red;
 }
 
 #memory {
-	color: #b48ead;
+  color: @mauve;
 }
 
 #idle_inhibitor {
-	color: #81a1c1;
+  color: @blue;
 }
 
 #backlight {
-	color: #ebcb8b;
+  color: @yellow;
 }
 
 #pulseaudio {
-	color: #b48ead;
+  color: @mauve;
 }
 
 #pulseaudio.muted {
-	color: #3b4252;
+  color: #3b4252;
 }
 
 #battery {
-	color: #d8dee9;
+  color: @lavender;
 }
 
 #battery.charging {
-	color: #81a1c1;
+  color: @blue;
 }
 
 @keyframes blink {
-	to {
-		color: #4c566a;
-		background-color: #eceff4;
-	}
+  to {
+    color: #4c566a;
+    background-color: @text;
+  }
 }
 
 #battery.critical:not(.charging) {
-	background: #bf616a;
-	color: #eceff4;
-	animation-name: blink;
-	animation-duration: 0.5s;
-	animation-timing-function: linear;
-	animation-iteration-count: infinite;
-	animation-direction: alternate;
+  background: @red;
+  color: @text;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 #clock {
-	color: #a3be8c;
+  color: @green;
 }
 
-#tray {}
+#tray {
+}
 
 #custom-power {
-	border-style: hidden;
-	margin-top: 2px;
+  border-style: hidden;
+  margin-top: 2px;
 }

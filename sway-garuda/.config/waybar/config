@@ -15,7 +15,7 @@
     ],    
     "custom/launcher": {
     	"format":"󰀻 ",
-    	"on-click": "exec nwg-drawer",
+    	"on-click": "exec rofi -show drun",
     	"tooltip": false,
     },
     "sway/workspaces": {
@@ -45,8 +45,6 @@
 
     "modules-right": [
         "network",
-        "custom/updates",
-        "custom/keyboard-layout",
         "cpu",
         "temperature",
         "memory",
@@ -55,8 +53,7 @@
         "pulseaudio",
         "battery",
         "clock",
-        "tray",
-        "custom/power"
+        "tray"
     ],
 
     "network": {
