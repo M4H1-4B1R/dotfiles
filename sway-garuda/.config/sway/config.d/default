@@ -78,6 +78,7 @@ bindsym $mod+f1 exec ~/.config/sway/scripts/lockman.sh
 
     # Reload the configuration file
     bindsym $mod+Shift+r reload
+    bindsym $mod+Shift+q exit 
 
 #
 # Moving around:
