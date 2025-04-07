@@ -28,6 +28,7 @@ alias mirror='sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacma
 alias matlab='/home/abir/matlab/bin/matlab -softwareopengl'
 alias bls="betterlockscreen -u"
 alias hx="helix"
+alias swinput="python /home/abir/.local/scripts/ibus-next-engine.py"
 
 # This will generate a list of explicitly installed packages
 alias list="sudo pacman -Qqe"
