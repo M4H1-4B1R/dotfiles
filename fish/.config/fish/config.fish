@@ -83,3 +83,7 @@ set -gx NVM_DIR $HOME/.nvm
 bass source ~/.nvm/nvm.sh
 # Created by `pipx` on 2024-06-25 07:23:06
 set PATH $PATH /home/abir/.local/bin
+
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
