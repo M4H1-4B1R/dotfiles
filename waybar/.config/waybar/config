@@ -4,7 +4,7 @@
     // "width": 1280, // Waybar width
     //"height": 10,
     // Choose the order of the modules
-    "modules-left": ["custom/icon", "hyprland/workspaces"],
+    "modules-left": ["hyprland/workspaces"],
     "modules-center": [],
     "modules-right": ["cpu", "kernel", "memory", "pulseaudio", "battery", "clock", "tray"],
     "hyprland/workspaces": {

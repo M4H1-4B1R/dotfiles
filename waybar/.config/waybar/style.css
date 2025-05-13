@@ -7,19 +7,21 @@
 }
 
 #waybar {
-  background: @crust;
+  background: transparent;
   color: @text;
-  margin: 2px 0px;
+  margin: 5px 5px;
 }
 
 #workspaces {
-  margin: 3px;
-  background: @lavender;
+  margin-top: 8px;
+  margin-left: 5px;
+  /* background: @lavender; */
+  background: @base;
   border-radius: 999em;
 }
 
 #workspaces button {
-  color: @crust;
+  color: @text;
   padding: 0.2rem;
   border-radius: 0;
   margin-bottom: 3px;
@@ -45,51 +47,53 @@
 #cpu,
 #window,
 #custom-kernel {
-  padding: 0.2rem 1rem;
-  color: @crust;
+  padding: 0.4rem 1rem;
+  color: @text;
   border-radius: 999em;
   margin-right: 8px;
+  margin-top: 8px;
   margin-bottom: 3px;
+  background: @base;
 }
 
 #custom-kernel {
-  background: @lavender;
+  color: @lavender;
 }
 
-/* #window { */
-/*   color: @red; */
-/* } */
+#window {
+  color: @red;
+}
 
 #clock {
-  background: @lavender;
+  color: @lavender;
 }
 
 #memory {
-  background: @peach;
+  color: @blue;
 }
 
 #cpu {
-  background: @lavender;
+  color: @red;
 }
 
 #battery {
-  background: @peach;
+  color: @green;
 }
 
 #battery.charging {
-  background: @peach;
+  color: @peach;
 }
 
 #battery.warning:not(.charging) {
-  background: @red;
+  color: @red;
 }
 
 #backlight {
-  background: @yellow;
+  color: @yellow;
 }
 
 #pulseaudio {
-  background: @lavender;
+  color: @lavender;
 }
 
 #custom-music {
