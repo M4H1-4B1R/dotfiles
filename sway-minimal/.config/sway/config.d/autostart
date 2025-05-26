@@ -1,0 +1,27 @@
+# Auth with polkit-gnome:
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
+# Desktop notifications
+exec swaync
+
+# Autotiling
+exec autotiling
+
+# nm-applet
+exec nm-applet --indicator
+
+# cliphist
+exec wl-paste --type text --watch cliphist store
+exec wl-paste --type image --watch cliphist store
+
+# Gnome Keyring
+exec gnome-keyring-daemon --daemonize --start --components=gpg,pkcs11,secrets,ssh
+
+# for Touchpad gestures
+exec libinput-gestures-setup start
+
+# Outputs
+#exec kanshi
+
+# swayrd
+#exec_always swayrd
