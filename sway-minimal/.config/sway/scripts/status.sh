@@ -1,7 +1,3 @@
-# The Sway configuration file in ~/.config/sway/config calls this script.
-# You should see changes to the status bar after saving this script.
-# If not, do "killall swaybar" and $mod+Shift+c to reload the configuration.
-
 # Produces "21 days", for example
 uptime_formatted=$(uptime | cut -d ',' -f1 | cut -d ' ' -f4,5)
 
