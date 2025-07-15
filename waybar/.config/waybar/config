@@ -5,7 +5,7 @@
     //"height": 10,
     // Choose the order of the modules
     "modules-left": ["hyprland/workspaces"],
-    "modules-center": [],
+    "modules-center": ["hyprland/window"],
     "modules-right": ["cpu", "kernel", "memory", "pulseaudio", "battery", "clock", "tray"],
     "hyprland/workspaces": {
          "disable-scroll": true,
