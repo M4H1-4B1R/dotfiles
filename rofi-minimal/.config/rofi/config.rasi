@@ -5,7 +5,7 @@
   #///////////////////////#*/
 
 configuration {
-    font:				"JetbrainsMono Nerd Font Regular 14";
+    font:				"JetbrainsMono Nerd Font Regular 12";
     show-icons:				true;
     icon-theme:				"Arc-X-D";
     display-drun:			"Apps";
@@ -20,10 +20,11 @@ configuration {
 window {
     background-color: @background;
     border:           0;
+    border-radius:    10;
     padding:          30;
 }
 listview {
-    lines:                          10;
+    lines:                          7;
     columns:                        2;
 }
 mainbox {
