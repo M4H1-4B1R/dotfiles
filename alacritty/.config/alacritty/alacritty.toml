@@ -1,5 +1,7 @@
-[terminal]
-shell = "/bin/fish"
+import = ["/home/abir/.config/alacritty/themes/nordic.toml", "/home/abir/.config/alacritty/fonts.toml"]
+
+[shell]
+program = "/usr/bin/fish"
 
 [cursor]
 unfocused_hollow = false
@@ -15,7 +17,7 @@ WINIT_X11_SCALE_FACTOR = "1.0"
 [window]
 decorations = "none"
 dynamic_title = true
-opacity = 1
+opacity = 0.9
 startup_mode = "Windowed"
 
 [window.dimensions]
@@ -26,9 +28,6 @@ lines = 25
 x = 10
 y = 10
 
-[general]
-live_config_reload = true
-import = ["/home/abir/.config/alacritty/themes/catppuccin_mocha.toml", "/home/abir/.config/alacritty/fonts.toml"]
 
 [keyboard]
 bindings = [

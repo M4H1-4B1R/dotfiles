@@ -160,7 +160,7 @@ alias ls='exa -a --icons'
 alias ll='exa -al --icons'
 alias v='nvim'
 alias snv='sudo -E -s nvim'
-alias cat='bat --theme "Catppuccin Mocha"'
+alias cat='batcat --theme "Catppuccin Mocha"'
 alias grep='rg'
 alias tx='tmux'
 alias txa='tmux attach'
@@ -235,3 +235,7 @@ function hstrnotiocsti {
 # if this is interactive shell, then bind hstr to Ctrl-r (for Vi mode check doc)
 if [[ $- =~ .*i.* ]]; then bind -x '"\C-r": "hstrnotiocsti"'; fi
 export HSTR_TIOCSTI=n
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

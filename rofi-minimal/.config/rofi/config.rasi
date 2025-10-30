@@ -5,7 +5,7 @@
   #///////////////////////#*/
 
 configuration {
-    font:				"JetbrainsMono Nerd Font Regular 12";
+    font:				"BlexMono Nerd Font Regular 14";
     show-icons:				true;
     icon-theme:				"Arc-X-D";
     display-drun:			"Apps";
