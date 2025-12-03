@@ -22,9 +22,9 @@
   "theme": {
     "mode": "system",
     "light": "One Black",
-    "dark": "Oxocarbon Dark (Variation III)"
+    "dark": "Oxocarbon Dark (Variant I)"
   },
-  "relative_line_numbers": "enabled",
+  "relative_line_numbers": true,
   "scrollbar": {
     "show": "never"
   },
