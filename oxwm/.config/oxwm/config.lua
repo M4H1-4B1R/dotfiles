@@ -39,6 +39,7 @@ local colors = {
 	grey = "#bbbbbb",
 	blue = "#6dade3",
 	purple = "#ad8ee6",
+	yellow = "#f9e2af"
 }
 
 -- Workspace tags - can be numbers, names, or icons (requires a Nerd Font)
@@ -51,6 +52,18 @@ local bar_font = "JetbrainsMono Nerd Font:style=Bold:size=12"
 -- Define your blocks
 -- Similar to widgets in qtile, or dwmblocks
 local blocks = {
+	oxwm.bar.block.shell ({
+		format = "{}",
+		command = "grep 'cpu ' /proc/stat | awk '{usage=($2+$4)*100/($2+$4+$5)} END {printf \"CPU: %.0f%%\", usage}'",
+		color = colors.yellow,
+		interval = 1,
+	}),
+	oxwm.bar.block.static({
+		text = "   ",
+		interval = 999999999,
+		color = colors.lavender,
+		underline = false,
+	}),
 	oxwm.bar.block.ram({
 		format = "Ram: {used}/{total} GB",
 		interval = 5,
@@ -133,9 +146,9 @@ oxwm.border.set_unfocused_color(colors.grey)
 -- Smart Enabled = No border if 1 window
 oxwm.gaps.set_smart(disabled)
 -- Inner gaps (horizontal, vertical) in pixels
-oxwm.gaps.set_inner(10, 10)
+oxwm.gaps.set_inner(20, 20)
 -- Outer gaps (horizontal, vertical) in pixels
-oxwm.gaps.set_outer(10, 10)
+oxwm.gaps.set_outer(20, 20)
 
 -------------------------------------------------------------------------------
 -- Window Rules
