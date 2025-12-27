@@ -29,6 +29,8 @@ alias matlab='/home/abir/matlab/bin/matlab -softwareopengl'
 alias bls="betterlockscreen -u"
 alias hx="helix"
 alias swinput="python /home/abir/.local/scripts/ibus-next-engine.py"
+alias bup="brightnessctl set +10%"
+alias bdown="brightnessctl set 10%-"
 
 # This will generate a list of explicitly installed packages
 alias list="sudo pacman -Qqe"
@@ -87,3 +89,6 @@ set PATH $PATH /home/abir/.local/bin
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
+
+# fastfetch
+colorscript random
