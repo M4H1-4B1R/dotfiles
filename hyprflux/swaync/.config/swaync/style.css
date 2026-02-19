@@ -1,0 +1,315 @@
+/* SwayNC config  */
+@define-color noti-border-color @color12;
+@define-color noti-bg #0e0e16;
+@define-color noti-bg-alt #0e0e16;
+@define-color noti-bg-hover #0e0e16;
+@define-color text-color @foreground;
+
+* {
+  font-family: "JetBrains Mono Nerd Font";
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.control-center .notification-row:focus,
+.control-center .notification-row:hover {
+  opacity: 1;
+  background: #0e0e16;
+  border-radius: 10px;
+}
+
+.notification-row {
+  outline: none;
+}
+
+.notification {
+  /*color: #cdd6f4;*/
+  background: #0e0e16;
+  padding: 7px 7px 7px 0px;
+  border-radius: 10px;
+  border: 1px solid #0e0e16;
+}
+
+.notification-group {
+  background-color: transparent;
+  border-radius: 10px;
+  /* border: 1px solid #cdd6f499; */
+}
+.image {
+  margin-right: 12px;
+  margin-left: 15px;
+  border-radius: 12px;
+  padding: 0;
+}
+
+.close-button {
+  background: #f7768e;
+  color: #0e0e16;
+  text-shadow: none;
+  padding: 0;
+  border-radius: 10px;
+  margin-top: 5px;
+  margin-right: 5px;
+}
+
+.close-button:hover {
+  box-shadow: none;
+  background: #f7768e;
+  transition: all 0.15s ease-in-out;
+  border: none;
+}
+
+.notification-action {
+  border-top: none;
+  border-radius: 10px;
+  background: #0e0e16;
+  color: #89dceb;
+  padding: 0px; /* Reduce container padding */
+  min-height: 0px; /* Remove GTK min height */
+  min-width: 0px; /* Remove GTK min width */
+}
+
+.notification-action label {
+  padding: 0px;
+  margin: 0;
+  font-size: 0.8rem;
+  font-family: monospace;
+  color: #89dceb;
+}
+
+.notification-default-action {
+  margin: 0;
+  padding: 0;
+  font-size: 0.1rem;
+  border-radius: 10px;
+  background: #0e0e16;
+}
+.notification-default-action:hover,
+.notification-action:hover {
+  color: #cdd6f4;
+  background: #0e0e16;
+}
+
+.notification-default-action:not(:only-child) {
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+
+.notification-action:first-child {
+  border-bottom-left-radius: 10px;
+  background: #0e0e16;
+}
+
+.notification-action:last-child {
+  border-bottom-right-radius: 10px;
+  background: #0e0e16;
+}
+
+.inline-reply {
+  margin-top: 8px;
+}
+
+.inline-reply-entry {
+  background: #0e0e16;
+  color: #cdd6f4;
+  caret-color: #cdd6f4;
+  border: 1px solid #0e0e16;
+  border-radius: 10px;
+}
+
+.inline-reply-button {
+  font-size: 0.5rem;
+  margin-left: 4px;
+  background: #0e0e16;
+  border: 1px solid #0e0e16;
+  border-radius: 10px;
+  color: #cdd6f4;
+}
+
+.inline-reply-button:disabled {
+  background: initial;
+  color: #cdd6f4;
+  border: 1px solid transparent;
+}
+
+.inline-reply-button:hover {
+  background: #0e0e16;
+}
+
+.body-image {
+  margin-top: 6px;
+  color: #cdd6f4;
+  border-radius: 10px;
+}
+
+.summary {
+  font-size: 0.9rem;
+  /* font-weight: bold; */
+  background: transparent;
+  color: #cdd6f4;
+  text-shadow: none;
+}
+
+.time {
+  font-size: 0.8rem;
+  /* font-weight: bold; */
+  background: transparent;
+  color: #cdd6f4;
+  text-shadow: none;
+  margin-right: 18px;
+}
+
+.body {
+  font-size: 0.8rem;
+  /* font-weight: bold; */
+  background: transparent;
+  color: #cdd6f4;
+  text-shadow: none;
+}
+
+.control-center {
+  background: #0e0e16;
+  border: 1px solid #0e0e16;
+  color: #cdd6f4;
+  border-radius: 10px;
+}
+
+.control-center-list {
+  background: transparent;
+}
+
+.control-center-list-placeholder {
+  opacity: 0.5;
+}
+
+.floating-notifications {
+  background: transparent;
+}
+
+.blank-window {
+  background: alpha(black, 0.1);
+}
+
+.widget-title {
+  color: #cdd6f4;
+  background: #0e0e16;
+  padding: 3px 6px;
+  margin: 5px;
+  font-size: 1rem;
+  border-radius: 10px;
+}
+
+.widget-title > button {
+  font-size: 0.75rem;
+  color: #cdd6f4;
+  border-radius: 10px;
+  background: transparent;
+  border: 0.5px solid #0e0e16;
+}
+
+/* clear button */
+.widget-title > button:hover {
+  background: #cdd6f4;
+  color: #d20f39;
+}
+
+.widget-dnd {
+  background: #0e0e16;
+  padding: 3px 6px;
+  margin: 5px;
+  border-radius: 12px;
+  font-size: 0.5rem;
+  color: #0e0e16;
+}
+
+.widget-dnd > switch {
+  border-radius: 12px;
+  /* border: 1px solid #00ffff; */
+  background: #cdd6f4;
+}
+
+.widget-dnd > switch:checked {
+  background: #f7768e;
+}
+
+.widget-dnd > switch slider {
+  background: #0e0e16;
+  border-radius: 12px;
+}
+
+.widget-dnd > switch:checked slider {
+  background: #0e0e16;
+  border-radius: 12px;
+}
+
+.widget-label {
+  margin: 5px;
+}
+
+.widget-label > label {
+  font-size: 1rem;
+  color: #cdd6f4;
+}
+
+.widget-mpris {
+  color: #cdd6f4;
+  background: #0e0e16;
+  padding: 3px 6px;
+  margin: 5px;
+  border-radius: 10px;
+}
+
+.widget-mpris > box > button {
+  border-radius: 10px;
+}
+
+.widget-mpris-player {
+  margin: 5px;
+}
+
+.widget-mpris-title {
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.widget-mpris-subtitle {
+  font-size: 0.75rem;
+}
+
+.widget-buttons-grid {
+  font-size: large;
+  color: #0e0e16;
+  padding: 2px;
+  margin: 5px;
+  border-radius: 10px;
+  background: #0e0e16;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button {
+  margin: 1px;
+  background: #0e0e16;
+  border-radius: 10px;
+  color: #cdd6f4;
+}
+
+/* individual buttons */
+.widget-buttons-grid > flowbox > flowboxchild > button:hover {
+  background: #cdd6f4;
+  color: #0e0e16;
+}
+
+.widget-menubar > box > .menu-button-bar > button {
+  border: none;
+  background: transparent;
+}
+
+.topbar-buttons > button {
+  border: none;
+  background: transparent;
+}
+
+.notification.low progress,
+.notification.normal progress {
+  background-color: #00ffff;
+  border-radius: 12.6px;
+}
