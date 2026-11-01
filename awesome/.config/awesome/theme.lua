@@ -11,24 +11,24 @@ local themes_path = gfs.get_themes_dir()
 
 local theme = { theme }
 
-theme.font = "BlexMono Nerd Font 14"
+theme.font = "BlexMono Nerd Font 16"
 
-theme.bg_normal = "#040507"
-theme.bg_focus = "#111213"
-theme.bg_urgent = "#cc241d"
-theme.bg_minimize = "#665c54"
-theme.bg_systray = theme.bg_normal
+theme.bg_normal = "#101012"
+theme.bg_focus = "#343434"
+theme.bg_urgent = "#cf6679"
+theme.bg_minimize = "#858893"
+theme.bg_systray = "#101012"
 
-theme.fg_normal = "#ffffff"
-theme.fg_focus = "#ffffff"
-theme.fg_urgent = "#ffffff"
-theme.fg_minimize = "#ffffff"
+theme.fg_normal = "#c0caf5"
+theme.fg_focus = "#c0caf5"
+theme.fg_urgent = "#1e2030"
+theme.fg_minimize = "#565f89"
 
 theme.useless_gap = dpi(10)
 theme.border_width = dpi(0)
-theme.border_normal = "#6791c9"
-theme.border_focus = "#a3be8c"
-theme.border_marked = "#d06f79"
+theme.border_normal = "#414868"
+theme.border_focus = "#7aa2f7"
+theme.border_marked = "#f7768e"
 theme.border_radius = 12
 
 -- There are other variable sets

@@ -1,0 +1,40 @@
+
+[terminal.shell]
+program = "/usr/bin/fish"
+
+[cursor]
+unfocused_hollow = false
+
+[cursor.style]
+blinking = "On"
+shape = "Beam"
+
+[env]
+TERM = "alacritty"
+WINIT_X11_SCALE_FACTOR = "1.0"
+
+[window]
+decorations = "none"
+dynamic_title = true
+opacity = 0.9
+startup_mode = "Windowed"
+
+[window.dimensions]
+columns = 105
+lines = 25
+
+[window.padding]
+x = 10
+y = 10
+
+
+[keyboard]
+bindings = [
+{key = "Space", action="ToggleViMode", mods="Control"}
+]
+
+[general]
+import = ["/home/abir/.config/alacritty/themes/nordic.toml", "/home/abir/.config/alacritty/fonts.toml"]
+
+[terminal]
+

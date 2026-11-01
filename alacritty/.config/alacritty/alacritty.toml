@@ -1,6 +1,5 @@
-import = ["/home/abir/.config/alacritty/themes/nordic.toml", "/home/abir/.config/alacritty/fonts.toml"]
 
-[shell]
+[terminal.shell]
 program = "/usr/bin/fish"
 
 [cursor]
@@ -15,9 +14,9 @@ TERM = "alacritty"
 WINIT_X11_SCALE_FACTOR = "1.0"
 
 [window]
-decorations = "none"
+decorations = "full"
 dynamic_title = true
-opacity = 0.9
+opacity = 0.6
 startup_mode = "Windowed"
 
 [window.dimensions]
@@ -34,3 +33,5 @@ bindings = [
 {key = "Space", action="ToggleViMode", mods="Control"}
 ]
 
+[general]
+import = ["/home/abir/.config/alacritty/themes/tokyo-night.toml", "/home/abir/.config/alacritty/fonts.toml"]

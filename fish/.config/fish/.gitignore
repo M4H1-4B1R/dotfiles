@@ -1,0 +1,5 @@
+# Machine-specific state; fish regenerates it locally and stowing it causes churn.
+fish_variables
+
+# Machine-local API keys.
+secrets.fish

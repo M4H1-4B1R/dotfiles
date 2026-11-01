@@ -1,8 +1,14 @@
 if status is-interactive
     # Commands to run in interactive sessions can go here
 end
-set PATH "$PATH":"$HOME/.local/scripts/"
+set PATH "$PATH":"$HOME/.local/scripts/" "/opt/lampp/bin" "$HOME/.config/composer/vendor/bin"   
 set PATH "$PATH": "~/.nix-profile/bin"
+set -gx OLLAMA_MAX_LENGTH 128000
+# API keys live in the gitignored secrets.fish (never track them here).
+if test -f (path dirname (status filename))/secrets.fish
+    source (path dirname (status filename))/secrets.fish
+end
+
 bind \cf zelly
 bind \ce dotsearch
 
@@ -11,7 +17,7 @@ bind \ce dotsearch
 alias ls='exa --icons -a --no-permissions'
 alias ll='exa -la'
 alias snv='sudo -E -s nvim'
-alias cat='bat --theme catppuccin_mocha'
+# alias cat='bat --theme catppuccin_mocha'
 alias startxmp='sudo /opt/lampp/./xampp start'
 alias stopxmp='sudo /opt/lampp/./xampp stop'
 alias restartxmp='sudo /opt/lampp/./xampp restart'
@@ -31,6 +37,7 @@ alias hx="helix"
 alias swinput="python /home/abir/.local/scripts/ibus-next-engine.py"
 alias bup="brightnessctl set +10%"
 alias bdown="brightnessctl set 10%-"
+alias tmuc="tmux new-session -A -s"
 
 # This will generate a list of explicitly installed packages
 alias list="sudo pacman -Qqe"
@@ -90,5 +97,20 @@ set PATH $PATH /home/abir/.local/bin
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
 
-# fastfetch
-colorscript random
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+if test -f /home/abir/miniconda3/bin/conda
+    eval /home/abir/miniconda3/bin/conda "shell.fish" "hook" $argv | source
+else
+    if test -f "/home/abir/miniconda3/etc/fish/conf.d/conda.fish"
+        . "/home/abir/miniconda3/etc/fish/conf.d/conda.fish"
+    else
+        set -x PATH "/home/abir/miniconda3/bin" $PATH
+    end
+end
+# <<< conda initialize <<<
+
+
+
+# Added by Antigravity CLI installer
+set -gx PATH "/home/abir/.local/bin" $PATH

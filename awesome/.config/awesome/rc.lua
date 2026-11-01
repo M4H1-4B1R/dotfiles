@@ -93,9 +93,9 @@ myawesomemenu = {
 			hotkeys_popup.show_help(nil, awful.screen.focused())
 		end,
 	},
-	{ "manual", terminal .. " -e man awesome" },
+	{ "manual",      terminal .. " -e man awesome" },
 	{ "edit config", editor_cmd .. " " .. awesome.conffile },
-	{ "restart", awesome.restart },
+	{ "restart",     awesome.restart },
 	{
 		"quit",
 		function()
@@ -130,10 +130,18 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 
 -- {{{ Wibar
 -- Create a textclock widget
-local text_color = "#ffffff"
-local blue_color = "#83a598"
-local teal_color = "#8ec07c"
-local magenta_color = "#d3869b"
+local text_color = beautiful.fg_normal or "#c0caf5"
+local label_kernel_color = beautiful.border_focus or text_color
+local label_cpu_color = beautiful.border_marked or text_color
+local label_mem_color = beautiful.fg_urgent or text_color
+local bar_bg = beautiful.bg_normal or "#101012"
+local segment_bg = {
+	beautiful.bg_focus or "#343434",
+	beautiful.border_normal or "#414868",
+	beautiful.bg_minimize or "#858893",
+	beautiful.bg_urgent or "#cf6679",
+	beautiful.bg_systray or bar_bg,
+}
 
 local function get_kernel_version(callback)
 	awful.spawn.easy_async_with_shell("uname -r", function(stdout)
@@ -147,7 +155,7 @@ get_kernel_version(function(kernel)
 	kernel_widget:set_markup(
 		string.format(
 			"<span foreground='%s'>  KERN </span> <span foreground='%s'>%s</span>",
-			blue_color,
+			label_kernel_color,
 			text_color,
 			kernel
 		)
@@ -161,7 +169,7 @@ local cpu_widget = wibox.widget.textbox()
 vicious.register(cpu_widget, vicious.widgets.cpu, function(widget, args)
 	return string.format(
 		"<span foreground='%s'> CPU </span> <span foreground='%s'>%d%%</span>",
-		teal_color,
+		label_cpu_color,
 		text_color,
 		args[1]
 	)
@@ -174,13 +182,58 @@ local mem_widget = wibox.widget.textbox()
 vicious.register(mem_widget, vicious.widgets.mem, function(widget, args)
 	return string.format(
 		"<span foreground='%s'> MEM </span> <span foreground='%s'>%d%%</span>",
-		magenta_color,
+		label_mem_color,
 		text_color,
 		args[1]
 	)
 end, 15) --Updates every 15 seconds
 
-mytextclock = wibox.widget.textclock()
+mytextclock = wibox.widget.textclock(
+	'<span foreground="' .. text_color .. '">  %a %b %d %H:%M</span>',
+	60
+)
+
+local function powerarrow(left_bg, right_bg)
+	return wibox.widget({
+		markup = string.format(
+			"<span foreground='%s' background='%s'></span>",
+			right_bg,
+			left_bg
+		),
+		font = "BlexMono Nerd Font 22",
+		align = "center",
+		valign = "center",
+		widget = wibox.widget.textbox,
+	})
+end
+
+local function powerarrow_right(left_bg, right_bg)
+	return wibox.widget({
+		markup = string.format(
+			"<span foreground='%s' background='%s'></span>",
+			left_bg,
+			right_bg
+		),
+		font = "BlexMono Nerd Font 22",
+		align = "center",
+		valign = "center",
+		widget = wibox.widget.textbox,
+	})
+end
+
+-- Wraps a widget in a background container with horizontal padding
+local function segment(w, bg)
+	return wibox.widget({
+		widget = wibox.container.background,
+		bg = bg,
+		{
+			layout = wibox.layout.margin,
+			left = 10,
+			right = 10,
+			w,
+		},
+	})
+end
 
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
@@ -245,8 +298,8 @@ awful.screen.connect_for_each_screen(function(s)
 	set_wallpaper(s)
 
 	-- Each screen has its own tag table.
-	awful.tag({ " 1 ", " 2 ", " 3 ", " 4 ", " 5 ", " 6 ", " 7 ", " 8 ", " 9 " }, s, awful.layout.layouts[1])
-	-- awful.tag({ "  ", " 󰈹 ", "  ", " 󰽱 ", "  " }, s, awful.layout.layouts[1])
+	-- awful.tag({ " 1 ", " 2 ", " 3 ", " 4 ", " 5 ", " 6 ", " 7 ", " 8 ", " 9 " }, s, awful.layout.layouts[1])
+	awful.tag({ "  ", " 󰈹 ", "  ", " 󰽱 ", "  " }, s, awful.layout.layouts[1])
 	-- awful.tag({ " 一 ", " 二 ", " 三 ", " 四 ", " 五 " }, s, awful.layout.layouts[1])
 
 	-- We need one layoutbox per screen.
@@ -281,7 +334,15 @@ awful.screen.connect_for_each_screen(function(s)
 	})
 
 	-- Create the wibox
-	s.mywibox = awful.wibar({ position = "top", screen = s, height = 27 })
+	s.mywibox = awful.wibar({
+		position = "top",
+		screen = s,
+		height = 37,
+		bg = bar_bg,
+	})
+
+	local tray = wibox.widget.systray()
+	tray:set_horizontal(true)
 
 	-- Add widgets to the wibox
 	s.mywibox:setup({
@@ -292,15 +353,19 @@ awful.screen.connect_for_each_screen(function(s)
 		},
 		-- s.mytasklist, -- Middle widget
 		sep,
-		{ -- Right widgets
+		{ -- Right widgets (powerarrow style)
 			layout = wibox.layout.fixed.horizontal,
-			spacing = 7,
-			kernel_widget,
-			cpu_widget,
-			mem_widget,
-			mytextclock,
-			-- wibox.widget.systray():set_base_size(27),
-			wibox.widget.systray(),
+			powerarrow(bar_bg, segment_bg[1]),
+			segment(kernel_widget, segment_bg[1]),
+			powerarrow(segment_bg[1], segment_bg[2]),
+			segment(cpu_widget, segment_bg[2]),
+			powerarrow(segment_bg[2], segment_bg[3]),
+			segment(mem_widget, segment_bg[3]),
+			powerarrow(segment_bg[3], segment_bg[4]),
+			segment(mytextclock, segment_bg[4]),
+			powerarrow(segment_bg[4], segment_bg[5]),
+			segment(tray, segment_bg[5]),
+			powerarrow_right(segment_bg[5], bar_bg),
 		},
 	})
 end)
@@ -354,7 +419,7 @@ globalkeys = gears.table.join(
 		awful.spawn(terminal)
 	end, { description = "open a terminal", group = "launcher" }),
 	awful.key({ modkey }, "e", function()
-		awful.spawn("pcmanfm")
+		awful.spawn("thunar")
 	end, { description = "open a file manager", group = "launcher" }),
 	awful.key({ modkey }, "x", function()
 		awful.util.spawn("/home/abir/.local/scripts/./power")
@@ -363,8 +428,11 @@ globalkeys = gears.table.join(
 		awful.util.spawn("betterlockscreen -l")
 	end, { description = "lockscreen", group = "launcher" }),
 	awful.key({ modkey }, "b", function()
-		awful.spawn("firefox")
+		awful.spawn("brave-browser")
 	end, { description = "open a web browser", group = "launcher" }),
+	awful.key({ modkey }, "p", function()
+		awful.spawn("/home/abir/.local/scripts/./picom")
+	end, { description = "toggles picom", group = "launcher" }),
 	awful.key({ modkey }, "w", function()
 		awful.spawn("feh --bg-fill --randomize /home/abir/walls/")
 	end, { description = "change wallpapers at random", group = "abir" }),
@@ -412,12 +480,12 @@ globalkeys = gears.table.join(
 	-- Prompt
 	awful.key({ modkey, "Shift" }, "Return", function()
 		awful.util.spawn("rofi -show drun")
-	end, { description = "run prompt", group = "launcher" }),
+	end, { description = "run prompt", group = "launcher" })
 
-	-- Menubar
-	awful.key({ modkey }, "p", function()
-		menubar.show()
-	end, { description = "show the menubar", group = "launcher" })
+-- Menubar
+-- awful.key({ modkey }, "p", function()
+-- 	menubar.show()
+-- end, { description = "show the menubar", group = "launcher" })
 )
 
 clientkeys = gears.table.join(
@@ -571,7 +639,7 @@ awful.rules.rules = {
 			role = {
 				"AlarmWindow", -- Thunderbird's calendar.
 				"ConfigManager", -- Thunderbird's about:config.
-				"pop-up", -- e.g. Google Chrome's (detached) Developer Tools.
+				"pop-up",    -- e.g. Google Chrome's (detached) Developer Tools.
 			},
 		},
 		properties = { floating = true },
