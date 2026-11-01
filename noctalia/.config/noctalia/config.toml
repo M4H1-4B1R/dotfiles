@@ -1,0 +1,158 @@
+[bar.default]
+background_opacity = 0.89999997988343239
+center = [ "workspaces", "Spacer_2", "media", "Spacer_2", "cat" ]
+end = [
+    "tray",
+    "Spacer_2",
+    "notifications",
+    "clipboard",
+    "recorder",
+    "Spacer_2",
+    "network",
+    "bluetooth",
+    "volume",
+    "brightness",
+    "battery",
+    "Spacer_2",
+    "date",
+    "clock",
+    "Spacer_2",
+    "session",
+    "Spacer"
+]
+margin_edge = 0
+margin_ends = 0
+radius_bottom_left = 0
+radius_bottom_right = 0
+radius_top_left = 0
+radius_top_right = 0
+start = [ "Spacer", "launcher", "Spacer_2", "active_window" ]
+thickness = 40
+
+[wallpaper.default]
+path = "/usr/share/wallpapers/cachyos-wallpapers/cachysurf4.jpg"
+
+[idle]
+behavior_order = [ "lock", "screen-off", "lock-and-suspend" ]
+
+    [idle.behavior.Screen-off]
+    action = "command"
+    enabled = true
+    timeout = 300.0
+
+    [idle.behavior.lock]
+    action = "lock"
+    enabled = true
+    timeout = 600.0
+
+    [idle.behavior.lock-and-suspend]
+    action = "suspend"
+    enabled = true
+    lock_before_suspend = false
+    timeout = 900.0
+
+[lockscreen_widgets]
+enabled = false
+schema_version = 2
+widget_order = [ "lockscreen-login-box@DP-2", "lockscreen-login-box@DP-1" ]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@DP-1"]
+    box_height = 70.0
+    box_width = 400.0
+    cx = 1280.0
+    cy = 1321.0
+    output = "DP-1"
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@DP-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        input_opacity = 1.0
+        input_radius = 6.0
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_unlock_hint = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@DP-2"]
+    box_height = 70.0
+    box_width = 400.0
+    cx = 1280.0
+    cy = 1321.0
+    output = "DP-2"
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@DP-2".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        input_opacity = 1.0
+        input_radius = 6.0
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_unlock_hint = true
+
+[plugin_settings."noctalia/screen_recorder"]
+restore_portal = false
+
+[plugins]
+enabled = [ "noctalia/screen_recorder", "dotnetrob/cat", "noctalia/wallhaven", "ezequiel/mango_layouts", "kenn/keybind-cheatsheet" ]
+
+    [[plugins.source]]
+    kind = "git"
+    location = "https://github.com/noctalia-dev/official-plugins"
+    name = "official"
+
+    [[plugins.source]]
+    kind = "git"
+    location = "https://github.com/noctalia-dev/community-plugins"
+    name = "community"
+
+[shell]
+polkit_agent = true
+settings_show_advanced = true
+
+[theme]
+builtin = "Noctalia"
+mode = "dark"
+source = "wallpaper"
+
+    [theme.templates]
+    builtin_ids = [ "gtk3", "gtk4", "kcolorscheme", "qt" ]
+
+[widget.Spacer]
+length = 10
+type = "spacer"
+
+[widget.Spacer_2]
+type = "spacer"
+
+[widget.cat]
+cat_size = 34
+type = "dotnetrob/cat:cat"
+
+[widget.date]
+format = "{:%a %d %b -}"
+
+[widget.launcher]
+custom_image = "/usr/share/icons/hicolor/scalable/apps/org.cachyos.hello.svg"
+scale = 1.45
+
+[widget.network]
+show_label = false
+
+[widget.recorder]
+type = "noctalia/screen_recorder:recorder"
+
+[widget.workspaces]
+anchor = true
+show_labels = false
